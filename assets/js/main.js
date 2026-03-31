@@ -112,23 +112,93 @@ if (inputText && outputSlug) {
     });
 }
 
-if (btnCopy && outputSlug) {
-    btnCopy.addEventListener('click', () => {
-        const slug = outputSlug.value;
-        if (!slug) return;
+function copyToClipboard(btn, getValue) {
+    const value = getValue();
+    if (!value) return;
 
-        navigator.clipboard.writeText(slug).then(() => {
-            const original = btnCopy.textContent;
-            btnCopy.textContent = 'Copiado!';
-            btnCopy.classList.add('btn-success');
-            setTimeout(() => {
-                btnCopy.textContent = original;
-                btnCopy.classList.remove('btn-success');
-            }, 2000);
-        }).catch(() => {
-            // Fallback para ambientes sem HTTPS
-            outputSlug.select();
-            document.execCommand('copy');
-        });
+    navigator.clipboard.writeText(value).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copiado!';
+        btn.classList.add('btn-success');
+        setTimeout(() => {
+            btn.textContent = original;
+            btn.classList.remove('btn-success');
+        }, 2000);
+    }).catch(() => {
+        const el = document.getElementById('output-slug') || document.getElementById('hash-output');
+        if (el) { el.select(); document.execCommand('copy'); }
     });
+}
+
+if (btnCopy && outputSlug) {
+    btnCopy.addEventListener('click', () => copyToClipboard(btnCopy, () => outputSlug.value));
+}
+
+// ── Hash Generator ─────────────────────────────────────────────────────────
+
+const btnGenerate = document.getElementById('btn-generate-hash');
+const hashOutput  = document.getElementById('hash-output');
+const btnCopyHash = document.getElementById('btn-copy-hash');
+
+async function sha256Hex(str) {
+    const encoded = new TextEncoder().encode(str);
+    const buffer  = await crypto.subtle.digest('SHA-256', encoded);
+    return Array.from(new Uint8Array(buffer))
+        .map((b) => b.toString(16).padStart(2, '0'))
+        .join('');
+}
+
+async function generateHash() {
+    if (!btnGenerate || !hashOutput) return;
+
+    const input     = document.getElementById('hash-input');
+    const algorithm = document.querySelector('input[name="hash-algorithm"]:checked');
+    const string    = input ? input.value : '';
+    const algo      = algorithm ? algorithm.value : 'bcrypt';
+
+    if (!string) {
+        hashOutput.placeholder = 'Digite uma string antes de gerar o hash.';
+        return;
+    }
+
+    hashOutput.value = '';
+    hashOutput.placeholder = 'Gerando…';
+    hashOutput.classList.add('hash-output-loading');
+    btnGenerate.disabled = true;
+
+    try {
+        let hash = '';
+
+        if (algo === 'sha256') {
+            hash = await sha256Hex(string);
+        } else {
+            const response = await fetch(
+                '/carloszucolli/toolboxdevdesign/api/generate-hash',
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ string, algorithm: algo }),
+                }
+            );
+            const data = await response.json();
+            if (data.error) throw new Error(data.error);
+            hash = data.hash;
+        }
+
+        hashOutput.value = hash;
+        hashOutput.placeholder = '';
+    } catch (err) {
+        hashOutput.placeholder = 'Erro ao gerar hash. Tente novamente.';
+    } finally {
+        hashOutput.classList.remove('hash-output-loading');
+        btnGenerate.disabled = false;
+    }
+}
+
+if (btnGenerate) {
+    btnGenerate.addEventListener('click', generateHash);
+}
+
+if (btnCopyHash && hashOutput) {
+    btnCopyHash.addEventListener('click', () => copyToClipboard(btnCopyHash, () => hashOutput.value));
 }

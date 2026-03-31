@@ -14,6 +14,29 @@ $path = trim($path, '/');
 $titulo = 'Toolbox Dev Design';
 $view   = null;
 
+// API endpoint: generate-hash (must run before HTML output)
+if ($path === 'api/generate-hash') {
+    header('Content-Type: application/json');
+    $body      = (string) file_get_contents('php://input');
+    $data      = json_decode($body, true);
+    $string    = isset($data['string']) ? (string) $data['string'] : '';
+    $algorithm = isset($data['algorithm']) ? (string) $data['algorithm'] : '';
+
+    $hash = match ($algorithm) {
+        'bcrypt' => password_hash($string, PASSWORD_BCRYPT, ['cost' => 12]),
+        'md5'    => md5($string),
+        default  => null,
+    };
+
+    if ($hash === null) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Algoritmo inválido.']);
+    } else {
+        echo json_encode(['hash' => $hash]);
+    }
+    exit;
+}
+
 match ($path) {
     '', 'slug-generator' => (function () use (&$titulo, &$view) {
         $titulo = 'Gerador de Slugs — Toolbox Dev Design';
@@ -22,6 +45,10 @@ match ($path) {
     'contrast-checker' => (function () use (&$titulo, &$view) {
         $titulo = 'Calculadora de Contraste WCAG — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/contrast-checker.php';
+    })(),
+    'hash-generator' => (function () use (&$titulo, &$view) {
+        $titulo = 'Gerador de Hashes — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/hash-generator.php';
     })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
