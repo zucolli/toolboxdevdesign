@@ -304,3 +304,158 @@ if (btnClearEncoded && urlEncoded) {
         if (urlDecodeErr) urlDecodeErr.hidden = true;
     });
 }
+
+// ── Color Palette Generator ────────────────────────────────────────────────
+
+function hexToHsl(hex) {
+    const clean = hex.replace('#', '');
+    if (!/^[0-9a-fA-F]{6}$/.test(clean)) return null;
+    let r = parseInt(clean.slice(0, 2), 16) / 255;
+    let g = parseInt(clean.slice(2, 4), 16) / 255;
+    let b = parseInt(clean.slice(4, 6), 16) / 255;
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    const d   = max - min;
+    let h = 0, s = 0;
+    const l = (max + min) / 2;
+
+    if (d !== 0) {
+        s = d / (1 - Math.abs(2 * l - 1));
+        switch (max) {
+            case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+            case g: h = ((b - r) / d + 2) / 6; break;
+            case b: h = ((r - g) / d + 4) / 6; break;
+        }
+    }
+    return { h: h * 360, s: s * 100, l: l * 100 };
+}
+
+function hslToHex(h, s, l) {
+    h = ((h % 360) + 360) % 360;
+    s = Math.max(0, Math.min(100, s)) / 100;
+    l = Math.max(0, Math.min(100, l)) / 100;
+
+    const a = s * Math.min(l, 1 - l);
+    const f = (n) => {
+        const k = (n + h / 30) % 12;
+        const v = l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+        return Math.round(255 * v).toString(16).padStart(2, '0');
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+function swatchTextColor(hex) {
+    const rgb = hex.replace('#', '');
+    const r = parseInt(rgb.slice(0, 2), 16) / 255;
+    const g = parseInt(rgb.slice(2, 4), 16) / 255;
+    const b = parseInt(rgb.slice(4, 6), 16) / 255;
+    const chan = (c) => c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    const lum = 0.2126 * chan(r) + 0.7152 * chan(g) + 0.0722 * chan(b);
+    return lum > 0.35 ? '#111111' : '#ffffff';
+}
+
+function buildPalette(baseHex, harmony) {
+    const hsl = hexToHsl(baseHex);
+    if (!hsl) return null;
+    const { h, s, l } = hsl;
+
+    switch (harmony) {
+        case 'analogous':
+            return [
+                hslToHex(h - 60, s, l),
+                hslToHex(h - 30, s, l),
+                baseHex,
+                hslToHex(h + 30, s, l),
+                hslToHex(h + 60, s, l),
+            ];
+        case 'complementary': {
+            const comp = h + 180;
+            return [
+                hslToHex(h,    s, Math.max(l - 20, 10)),
+                hslToHex(h,    s, l),
+                hslToHex(h,    s, Math.min(l + 20, 90)),
+                hslToHex(comp, s, l),
+                hslToHex(comp, s, Math.max(l - 20, 10)),
+            ];
+        }
+        case 'triadic': {
+            const t1 = h + 120;
+            const t2 = h + 240;
+            return [
+                hslToHex(h,  s, Math.min(l + 15, 90)),
+                baseHex,
+                hslToHex(h,  s, Math.max(l - 15, 10)),
+                hslToHex(t1, s, l),
+                hslToHex(t2, s, l),
+            ];
+        }
+        case 'monochromatic':
+            return [20, 40, 60, 80, 90].map((lightness) => hslToHex(h, s, lightness));
+        default:
+            return null;
+    }
+}
+
+function renderPalette() {
+    const pickerEl  = document.getElementById('palette-picker');
+    const hexEl     = document.getElementById('palette-hex');
+    const harmonyEl = document.querySelector('input[name="palette-harmony"]:checked');
+    if (!pickerEl || !hexEl || !harmonyEl) return;
+
+    const hex     = hexEl.value.trim();
+    const harmony = harmonyEl.value;
+    const colors  = buildPalette(hex, harmony);
+    if (!colors) return;
+
+    document.querySelectorAll('.color-swatch').forEach((swatch, i) => {
+        const color     = colors[i];
+        const textColor = swatchTextColor(color);
+        swatch.style.backgroundColor = color;
+        swatch.dataset.hex = color;
+
+        swatch.innerHTML = `
+            <span class="swatch-hex" style="color:${textColor}">${color.toUpperCase()}</span>
+            <span class="swatch-copy-hint" style="color:${textColor};opacity:0.6">clique para copiar</span>
+        `;
+    });
+}
+
+const palettePicker = document.getElementById('palette-picker');
+const paletteHex    = document.getElementById('palette-hex');
+
+if (palettePicker && paletteHex) {
+    palettePicker.addEventListener('input', () => {
+        paletteHex.value = palettePicker.value;
+        renderPalette();
+    });
+
+    paletteHex.addEventListener('input', () => {
+        const val = paletteHex.value.trim();
+        if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+            palettePicker.value = val;
+        }
+        renderPalette();
+    });
+
+    document.querySelectorAll('input[name="palette-harmony"]').forEach((radio) => {
+        radio.addEventListener('change', renderPalette);
+    });
+
+    document.getElementById('palette-swatches')?.addEventListener('click', (e) => {
+        const swatch = e.target.closest('.color-swatch');
+        if (!swatch) return;
+        const hex = swatch.dataset.hex;
+        if (!hex) return;
+
+        navigator.clipboard.writeText(hex).then(() => {
+            const hexSpan = swatch.querySelector('.swatch-hex');
+            if (!hexSpan) return;
+            const original = hexSpan.textContent;
+            hexSpan.textContent = 'Copiado!';
+            setTimeout(() => { hexSpan.textContent = original; }, 1500);
+        });
+    });
+
+    renderPalette();
+}

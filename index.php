@@ -58,6 +58,10 @@ match ($path) {
         $titulo = 'URL Encoder/Decoder — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/url-encoder-decoder.php';
     })(),
+    'color-palette-generator' => (function () use (&$titulo, &$view) {
+        $titulo = 'Color Palette Generator — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/color-palette-generator.php';
+    })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
         $titulo = 'Página não encontrada — Toolbox Dev Design';
