@@ -50,6 +50,10 @@ match ($path) {
         $titulo = 'Gerador de Hashes — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/hash-generator.php';
     })(),
+    'utm-builder' => (function () use (&$titulo, &$view) {
+        $titulo = 'Gerador de UTMs — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/utm-builder.php';
+    })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
         $titulo = 'Página não encontrada — Toolbox Dev Design';

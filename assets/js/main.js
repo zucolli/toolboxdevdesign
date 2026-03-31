@@ -202,3 +202,48 @@ if (btnGenerate) {
 if (btnCopyHash && hashOutput) {
     btnCopyHash.addEventListener('click', () => copyToClipboard(btnCopyHash, () => hashOutput.value));
 }
+
+// ── UTM Builder ────────────────────────────────────────────────────────────
+
+const utmFields = ['utm-url', 'utm-source', 'utm-medium', 'utm-campaign', 'utm-term', 'utm-content'];
+const utmOutput  = document.getElementById('utm-output');
+const btnCopyUtm = document.getElementById('btn-copy-utm');
+
+function buildUtmUrl() {
+    if (!utmOutput) return;
+
+    const base     = (document.getElementById('utm-url')?.value ?? '').trim();
+    const source   = (document.getElementById('utm-source')?.value ?? '').trim();
+    const medium   = (document.getElementById('utm-medium')?.value ?? '').trim();
+    const campaign = (document.getElementById('utm-campaign')?.value ?? '').trim();
+    const term     = (document.getElementById('utm-term')?.value ?? '').trim();
+    const content  = (document.getElementById('utm-content')?.value ?? '').trim();
+
+    if (!base || !source || !medium || !campaign) {
+        utmOutput.value = '';
+        return;
+    }
+
+    const params = [
+        ['utm_source',   source],
+        ['utm_medium',   medium],
+        ['utm_campaign', campaign],
+        ['utm_term',     term],
+        ['utm_content',  content],
+    ]
+        .filter(([, v]) => v !== '')
+        .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
+        .join('&');
+
+    const separator  = base.includes('?') ? '&' : '?';
+    utmOutput.value  = base + separator + params;
+}
+
+utmFields.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', buildUtmUrl);
+});
+
+if (btnCopyUtm && utmOutput) {
+    btnCopyUtm.addEventListener('click', () => copyToClipboard(btnCopyUtm, () => utmOutput.value));
+}

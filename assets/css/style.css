@@ -467,6 +467,59 @@ input[type="text"]:focus {
 }
 
 /* ============================================================
+   UTM Builder
+   ============================================================ */
+.required-mark {
+    color: #e5383b;
+    font-weight: 700;
+}
+
+.utm-section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin: 20px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.utm-section-label--optional {
+    color: var(--color-text-muted);
+    opacity: 0.7;
+}
+
+.utm-fields-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+.field-hint {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.input-copy-row--tall {
+    align-items: flex-start;
+}
+
+.input-copy-row--tall .input-readonly {
+    resize: vertical;
+    min-height: 72px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    padding-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .utm-fields-group { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {
