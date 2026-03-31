@@ -201,7 +201,8 @@ a:hover { text-decoration: underline; }
 }
 
 textarea,
-input[type="text"] {
+input[type="text"],
+input[type="url"] {
     width: 100%;
     font-family: var(--font-sans);
     font-size: 0.9375rem;
@@ -216,7 +217,8 @@ input[type="text"] {
 }
 
 textarea:focus,
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="url"]:focus {
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
 }
