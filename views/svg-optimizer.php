@@ -88,4 +88,4 @@
     <p id="svg-error" class="svg-error" hidden></p>
 </div>
 
-<script id="svgo-script" src="https://unpkg.com/svgo@3/dist/svgo.browser.js"></script>
+<script id="svgo-script" src="https://cdn.jsdelivr.net/npm/svgo@2/dist/svgo.browser.js"></script>
