@@ -505,7 +505,7 @@ if (btnArgon2Verify) {
         const hash     = (document.getElementById('verify-hash')?.value ?? '').trim();
         if (!password || !hash || !argon2VerifyResult) return;
 
-        argon2VerifyResult.hidden    = true;
+        argon2VerifyResult.classList.remove('is-visible');
         btnArgon2Verify.disabled     = true;
         btnArgon2Verify.textContent  = 'Verificando…';
 
@@ -518,15 +518,15 @@ if (btnArgon2Verify) {
             const data = await res.json();
             if (data.error) throw new Error(data.error);
 
-            argon2VerifyResult.hidden     = false;
             argon2VerifyResult.className  = 'argon2-alert ' + (data.match ? 'alert-success' : 'alert-danger');
             argon2VerifyResult.textContent = data.match
                 ? '✓ O hash confere com a senha!'
                 : '✗ Senha inválida — o hash não confere.';
+            requestAnimationFrame(() => argon2VerifyResult.classList.add('is-visible'));
         } catch {
-            argon2VerifyResult.hidden    = false;
             argon2VerifyResult.className = 'argon2-alert alert-danger';
             argon2VerifyResult.textContent = 'Erro ao verificar. Certifique-se de que o hash é válido.';
+            requestAnimationFrame(() => argon2VerifyResult.classList.add('is-visible'));
         } finally {
             btnArgon2Verify.disabled    = false;
             btnArgon2Verify.textContent = 'Verificar';

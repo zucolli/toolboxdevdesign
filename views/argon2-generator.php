@@ -55,7 +55,7 @@
                 Verificar
             </button>
 
-            <div id="argon2-verify-result" class="argon2-alert" hidden></div>
+            <div id="argon2-verify-result" class="argon2-alert"></div>
         </div>
 
     </div>
