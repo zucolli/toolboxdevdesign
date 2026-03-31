@@ -460,6 +460,66 @@ if (palettePicker && paletteHex) {
     renderPalette();
 }
 
+// ── SHA-512 / CRC32 Generator ──────────────────────────────────────────────
+
+// Tabela CRC32 (IEEE 802.3) gerada uma única vez
+const crc32Table = (() => {
+    const table = new Uint32Array(256);
+    for (let i = 0; i < 256; i++) {
+        let c = i;
+        for (let j = 0; j < 8; j++) {
+            c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+        }
+        table[i] = c;
+    }
+    return table;
+})();
+
+function calculateCRC32(str) {
+    const bytes = new TextEncoder().encode(str);
+    let crc = 0xFFFFFFFF;
+    for (let i = 0; i < bytes.length; i++) {
+        crc = (crc >>> 8) ^ crc32Table[(crc ^ bytes[i]) & 0xFF];
+    }
+    return ((crc ^ 0xFFFFFFFF) >>> 0).toString(16).padStart(8, '0');
+}
+
+async function calculateSHA512(str) {
+    const buffer = new TextEncoder().encode(str);
+    const digest = await crypto.subtle.digest('SHA-512', buffer);
+    return Array.from(new Uint8Array(digest))
+        .map((b) => b.toString(16).padStart(2, '0'))
+        .join('');
+}
+
+const checksumInput  = document.getElementById('checksum-input');
+const sha512Output   = document.getElementById('sha512-output');
+const crc32Output    = document.getElementById('crc32-output');
+const btnCopySha512  = document.getElementById('btn-copy-sha512');
+const btnCopyCrc32   = document.getElementById('btn-copy-crc32');
+
+if (checksumInput) {
+    checksumInput.addEventListener('input', async () => {
+        const text = checksumInput.value;
+
+        if (!text) {
+            if (sha512Output) sha512Output.value = '';
+            if (crc32Output)  crc32Output.value  = '';
+            return;
+        }
+
+        if (crc32Output)  crc32Output.value  = calculateCRC32(text);
+        if (sha512Output) sha512Output.value  = await calculateSHA512(text);
+    });
+}
+
+if (btnCopySha512 && sha512Output) {
+    btnCopySha512.addEventListener('click', () => copyToClipboard(btnCopySha512, () => sha512Output.value));
+}
+if (btnCopyCrc32 && crc32Output) {
+    btnCopyCrc32.addEventListener('click', () => copyToClipboard(btnCopyCrc32, () => crc32Output.value));
+}
+
 // ── Argon2id Generator / Verifier ──────────────────────────────────────────
 
 const btnArgon2Generate  = document.getElementById('btn-argon2-generate');

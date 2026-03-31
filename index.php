@@ -105,6 +105,10 @@ match ($path) {
         $titulo = 'Gerador Argon2id — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/argon2-generator.php';
     })(),
+    'sha512-crc32-generator' => (function () use (&$titulo, &$view) {
+        $titulo = 'Gerador SHA-512 e CRC32 — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/sha512-crc32-generator.php';
+    })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
         $titulo = 'Página não encontrada — Toolbox Dev Design';
