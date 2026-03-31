@@ -491,34 +491,47 @@ function svgClearError() {
 function optimizeSvg(raw) {
     let s = raw;
 
-    // Remove declaração XML e DOCTYPE
+    // ── 1. Remove declaração XML, DOCTYPE e comentários ──────────────────
     s = s.replace(/<\?xml[^?]*\?>/gi, '');
     s = s.replace(/<!DOCTYPE[^>[\]]*(?:\[[\s\S]*?\])?\s*>/gi, '');
-
-    // Remove comentários HTML
     s = s.replace(/<!--[\s\S]*?-->/g, '');
 
-    // Remove blocos de metadados
+    // ── 2. Remove blocos de metadados e namespaces de editores ───────────
     s = s.replace(/<metadata[\s\S]*?<\/metadata>/gi, '');
     s = s.replace(/<rdf:RDF[\s\S]*?<\/rdf:RDF>/gi, '');
-
-    // Remove elementos Inkscape / Sodipodi / Adobe
     s = s.replace(/<(sodipodi|inkscape):[^\s>]*[^>]*\/>/gi, '');
     s = s.replace(/<(sodipodi|inkscape):[^\s>]*[\s\S]*?<\/(sodipodi|inkscape):[^>]*>/gi, '');
-
-    // Remove atributos de editores (inkscape:, sodipodi:, dc:, cc:, rdf:, serif:)
     s = s.replace(/\s+(?:inkscape|sodipodi|dc|cc|rdf|serif|xlink|xml):[a-zA-Z:_-]+=(?:"[^"]*"|'[^']*')/g, '');
-
-    // Remove xml:space e data-name
     s = s.replace(/\s+(?:xml:space|data-name)=(?:"[^"]*"|'[^']*')/g, '');
-
-    // Remove declarações de namespace de editores
     s = s.replace(/\s+xmlns:(?:sodipodi|inkscape|dc|cc|rdf|serif)=(?:"[^"]*"|'[^']*')/g, '');
 
-    // Remove grupos vazios
-    s = s.replace(/<g[^>]*>\s*<\/g>/g, '');
+    // ── 3. Remove IDs não referenciados ───────────────────────────────────
+    const referencedIds = new Set();
+    for (const m of s.matchAll(/(?:url\(#|href="#|xlink:href="#|\bclip-path="#)([^)"']+)/g)) {
+        referencedIds.add(m[1]);
+    }
+    s = s.replace(/\s+id="([^"]*)"/g, (match, id) => referencedIds.has(id) ? match : '');
 
-    // Colapsa espaços entre tags
+    // ── 4. Arredonda coordenadas numéricas para 2 casas decimais ──────────
+    // Afeta path d="", pontos, cx/cy/r, width/height com decimais longos
+    s = s.replace(/\b(\d+\.\d{3,})/g, (n) => {
+        const rounded = parseFloat(n).toFixed(2);
+        // Remove zeros à direita: 1.50 → 1.5 | 1.00 → 1
+        return rounded.replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '');
+    });
+
+    // ── 5. Comprime dados de path (remove espaços desnecessários) ─────────
+    s = s.replace(/\bd="([^"]*)"/g, (_, d) => {
+        const compressed = d
+            .replace(/\s*([MmZzLlHhVvCcSsQqTtAa])\s*/g, '$1') // sem espaço ao redor de comandos
+            .replace(/\s*,\s*/g, ',')                           // normaliza separadores
+            .replace(/\s+/g, ' ')                               // colapsa espaços
+            .trim();
+        return `d="${compressed}"`;
+    });
+
+    // ── 6. Remove grupos vazios e colapsa whitespace entre tags ──────────
+    s = s.replace(/<g[^>]*>\s*<\/g>/g, '');
     s = s.replace(/>\s{2,}</g, '><');
     s = s.replace(/\s{2,}/g, ' ');
 
