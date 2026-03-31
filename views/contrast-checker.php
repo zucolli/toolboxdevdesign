@@ -1,5 +1,5 @@
 <div class="card">
-    <h1 class="card-title">Calculadora de Contraste WCAG</h1>
+    <h1 class="card-title">Calculadora de Contraste WCAG zzz</h1>
     <p class="card-description">Verifique a acessibilidade entre cor de fundo e cor de texto conforme as diretrizes WCAG 2.1.</p>
 
     <div class="contrast-inputs">
