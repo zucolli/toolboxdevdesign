@@ -488,29 +488,42 @@ function svgClearError() {
     if (svgError) svgError.hidden = true;
 }
 
-// Aguarda o SVGO carregar e habilita o botão
-function waitForSvgo() {
-    if (!btnOptimize) return;
-    if (typeof svgo !== 'undefined') return; // já carregou antes do main.js
+function optimizeSvg(raw) {
+    let s = raw;
 
-    btnOptimize.disabled    = true;
-    btnOptimize.textContent = 'Carregando SVGO…';
+    // Remove declaração XML e DOCTYPE
+    s = s.replace(/<\?xml[^?]*\?>/gi, '');
+    s = s.replace(/<!DOCTYPE[^>[\]]*(?:\[[\s\S]*?\])?\s*>/gi, '');
 
-    const svgoScript = document.getElementById('svgo-script');
-    if (!svgoScript) return;
+    // Remove comentários HTML
+    s = s.replace(/<!--[\s\S]*?-->/g, '');
 
-    svgoScript.addEventListener('load', () => {
-        btnOptimize.disabled    = false;
-        btnOptimize.innerHTML   = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Otimizar SVG`;
-    });
+    // Remove blocos de metadados
+    s = s.replace(/<metadata[\s\S]*?<\/metadata>/gi, '');
+    s = s.replace(/<rdf:RDF[\s\S]*?<\/rdf:RDF>/gi, '');
 
-    svgoScript.addEventListener('error', () => {
-        btnOptimize.textContent = 'Falha ao carregar SVGO';
-        svgShowError('Não foi possível carregar o SVGO do CDN. Verifique sua conexão e recarregue a página.');
-    });
+    // Remove elementos Inkscape / Sodipodi / Adobe
+    s = s.replace(/<(sodipodi|inkscape):[^\s>]*[^>]*\/>/gi, '');
+    s = s.replace(/<(sodipodi|inkscape):[^\s>]*[\s\S]*?<\/(sodipodi|inkscape):[^>]*>/gi, '');
+
+    // Remove atributos de editores (inkscape:, sodipodi:, dc:, cc:, rdf:, serif:)
+    s = s.replace(/\s+(?:inkscape|sodipodi|dc|cc|rdf|serif|xlink|xml):[a-zA-Z:_-]+=(?:"[^"]*"|'[^']*')/g, '');
+
+    // Remove xml:space e data-name
+    s = s.replace(/\s+(?:xml:space|data-name)=(?:"[^"]*"|'[^']*')/g, '');
+
+    // Remove declarações de namespace de editores
+    s = s.replace(/\s+xmlns:(?:sodipodi|inkscape|dc|cc|rdf|serif)=(?:"[^"]*"|'[^']*')/g, '');
+
+    // Remove grupos vazios
+    s = s.replace(/<g[^>]*>\s*<\/g>/g, '');
+
+    // Colapsa espaços entre tags
+    s = s.replace(/>\s{2,}</g, '><');
+    s = s.replace(/\s{2,}/g, ' ');
+
+    return s.trim();
 }
-
-waitForSvgo();
 
 function runOptimize() {
     if (!svgInput || !svgOutput || !svgOutputCol) return;
@@ -520,15 +533,14 @@ function runOptimize() {
     if (!raw.includes('<svg')) { svgShowError('O conteúdo não parece ser um SVG válido.'); return; }
     svgClearError();
 
-    let result;
+    let optimized;
     try {
-        result = svgo.optimize(raw, { multipass: true });
+        optimized = optimizeSvg(raw);
     } catch (e) {
         svgShowError('Erro ao otimizar: ' + e.message);
         return;
     }
 
-    const optimized   = result.data;
     const origSize    = new Blob([raw]).size;
     const optSize     = new Blob([optimized]).size;
     const reduction   = origSize > 0 ? Math.round((1 - optSize / origSize) * 100) : 0;
