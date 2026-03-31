@@ -8,11 +8,17 @@
                     Gerador de Slugs
                 </a>
             </li>
+            <li>
+                <a href="<?= BASE_URL ?>contrast-checker" class="nav-link <?= ($path === 'contrast-checker') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+                    Contraste WCAG
+                </a>
+            </li>
         </ul>
     </div>
 
     <div class="sidebar-promo">
-        <span class="sidebar-label">Serviços NuAto</span>
+        <span class="sidebar-label">Serviços</span>
         <ul class="promo-list">
             <li class="promo-item">Desenvolvimento Web</li>
             <li class="promo-item">Marketing Digital &amp; SEO</li>

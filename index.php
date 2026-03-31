@@ -11,17 +11,21 @@ $path = parse_url($requestUri, PHP_URL_PATH);
 $path = str_replace(BASE_URL, '', $path);
 $path = trim($path, '/');
 
-$titulo = 'NuAto Tools';
+$titulo = 'Toolbox Dev Design';
 $view   = null;
 
 match ($path) {
     '', 'slug-generator' => (function () use (&$titulo, &$view) {
-        $titulo = 'Gerador de Slugs — NuAto Tools';
+        $titulo = 'Gerador de Slugs — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/slug-generator.php';
+    })(),
+    'contrast-checker' => (function () use (&$titulo, &$view) {
+        $titulo = 'Calculadora de Contraste WCAG — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/contrast-checker.php';
     })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
-        $titulo = 'Página não encontrada — NuAto Tools';
+        $titulo = 'Página não encontrada — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/404.php';
     })(),
 };
