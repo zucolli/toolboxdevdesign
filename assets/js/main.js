@@ -27,13 +27,14 @@ function contrastRatio(l1, l2) {
 }
 
 function updateContrast() {
-    const bgHex   = document.getElementById('color-bg-hex')?.value.trim();
-    const textHex = document.getElementById('color-text-hex')?.value.trim();
     const preview = document.getElementById('contrast-preview');
     const sample  = document.getElementById('preview-sample');
     const ratioEl = document.getElementById('contrast-ratio');
 
     if (!preview || !sample || !ratioEl) return;
+
+    const bgHex   = (document.getElementById('color-bg-hex')?.value ?? '').trim();
+    const textHex = (document.getElementById('color-text-hex')?.value ?? '').trim();
 
     const rgbBg   = hexToRgb(bgHex);
     const rgbText = hexToRgb(textHex);
@@ -71,13 +72,16 @@ function syncColorPair(pickerId, hexId) {
     picker.addEventListener('input',  () => { hex.value = picker.value; updateContrast(); });
     picker.addEventListener('change', () => { hex.value = picker.value; updateContrast(); });
 
-    hex.addEventListener('input', () => {
+    const syncHex = () => {
         const val = hex.value.trim();
         if (/^#[0-9a-fA-F]{6}$/.test(val)) {
             picker.value = val;
         }
         updateContrast();
-    });
+    };
+
+    hex.addEventListener('input', syncHex);
+    hex.addEventListener('paste', () => setTimeout(syncHex, 0));
 }
 
 syncColorPair('color-bg-picker',   'color-bg-hex');
