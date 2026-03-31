@@ -54,6 +54,10 @@ match ($path) {
         $titulo = 'Gerador de UTMs — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/utm-builder.php';
     })(),
+    'url-encoder-decoder' => (function () use (&$titulo, &$view) {
+        $titulo = 'URL Encoder/Decoder — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/url-encoder-decoder.php';
+    })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
         $titulo = 'Página não encontrada — Toolbox Dev Design';

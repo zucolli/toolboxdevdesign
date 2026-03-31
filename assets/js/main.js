@@ -247,3 +247,60 @@ utmFields.forEach((id) => {
 if (btnCopyUtm && utmOutput) {
     btnCopyUtm.addEventListener('click', () => copyToClipboard(btnCopyUtm, () => utmOutput.value));
 }
+
+// ── URL Encoder / Decoder ──────────────────────────────────────────────────
+
+const urlOriginal   = document.getElementById('url-original');
+const urlEncoded    = document.getElementById('url-encoded');
+const urlDecodeErr  = document.getElementById('url-decode-error');
+
+// Flag para evitar loop infinito nos listeners bidirecionais
+let urlUpdating = false;
+
+if (urlOriginal && urlEncoded) {
+    urlOriginal.addEventListener('input', () => {
+        if (urlUpdating) return;
+        urlUpdating = true;
+        urlEncoded.value = encodeURIComponent(urlOriginal.value);
+        if (urlDecodeErr) urlDecodeErr.hidden = true;
+        urlUpdating = false;
+    });
+
+    urlEncoded.addEventListener('input', () => {
+        if (urlUpdating) return;
+        urlUpdating = true;
+        try {
+            urlOriginal.value = decodeURIComponent(urlEncoded.value);
+            if (urlDecodeErr) urlDecodeErr.hidden = true;
+        } catch {
+            if (urlDecodeErr) urlDecodeErr.hidden = false;
+        }
+        urlUpdating = false;
+    });
+}
+
+const btnCopyOriginal  = document.getElementById('btn-copy-original');
+const btnCopyEncoded   = document.getElementById('btn-copy-encoded');
+const btnClearOriginal = document.getElementById('btn-clear-original');
+const btnClearEncoded  = document.getElementById('btn-clear-encoded');
+
+if (btnCopyOriginal && urlOriginal) {
+    btnCopyOriginal.addEventListener('click', () => copyToClipboard(btnCopyOriginal, () => urlOriginal.value));
+}
+if (btnCopyEncoded && urlEncoded) {
+    btnCopyEncoded.addEventListener('click', () => copyToClipboard(btnCopyEncoded, () => urlEncoded.value));
+}
+if (btnClearOriginal && urlOriginal) {
+    btnClearOriginal.addEventListener('click', () => {
+        urlOriginal.value = '';
+        if (urlEncoded) urlEncoded.value = '';
+        if (urlDecodeErr) urlDecodeErr.hidden = true;
+    });
+}
+if (btnClearEncoded && urlEncoded) {
+    btnClearEncoded.addEventListener('click', () => {
+        urlEncoded.value = '';
+        if (urlOriginal) urlOriginal.value = '';
+        if (urlDecodeErr) urlDecodeErr.hidden = true;
+    });
+}
