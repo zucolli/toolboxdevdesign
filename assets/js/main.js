@@ -488,6 +488,30 @@ function svgClearError() {
     if (svgError) svgError.hidden = true;
 }
 
+// Aguarda o SVGO carregar e habilita o botão
+function waitForSvgo() {
+    if (!btnOptimize) return;
+    if (typeof svgo !== 'undefined') return; // já carregou antes do main.js
+
+    btnOptimize.disabled    = true;
+    btnOptimize.textContent = 'Carregando SVGO…';
+
+    const svgoScript = document.getElementById('svgo-script');
+    if (!svgoScript) return;
+
+    svgoScript.addEventListener('load', () => {
+        btnOptimize.disabled    = false;
+        btnOptimize.innerHTML   = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Otimizar SVG`;
+    });
+
+    svgoScript.addEventListener('error', () => {
+        btnOptimize.textContent = 'Falha ao carregar SVGO';
+        svgShowError('Não foi possível carregar o SVGO do CDN. Verifique sua conexão e recarregue a página.');
+    });
+}
+
+waitForSvgo();
+
 function runOptimize() {
     if (!svgInput || !svgOutput || !svgOutputCol) return;
 
@@ -495,11 +519,6 @@ function runOptimize() {
     if (!raw) { svgShowError('Cole ou carregue um SVG antes de otimizar.'); return; }
     if (!raw.includes('<svg')) { svgShowError('O conteúdo não parece ser um SVG válido.'); return; }
     svgClearError();
-
-    if (typeof svgo === 'undefined') {
-        svgShowError('A biblioteca SVGO ainda está carregando. Aguarde um momento e tente novamente.');
-        return;
-    }
 
     let result;
     try {
