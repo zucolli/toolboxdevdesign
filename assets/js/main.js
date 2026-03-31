@@ -460,6 +460,84 @@ if (palettePicker && paletteHex) {
     renderPalette();
 }
 
+// ── Argon2id Generator / Verifier ──────────────────────────────────────────
+
+const btnArgon2Generate  = document.getElementById('btn-argon2-generate');
+const btnArgon2Verify    = document.getElementById('btn-argon2-verify');
+const argon2HashOutput   = document.getElementById('argon2-hash-output');
+const btnCopyArgon2      = document.getElementById('btn-copy-argon2');
+const argon2VerifyResult = document.getElementById('argon2-verify-result');
+
+const BASE = '/carloszucolli/toolboxdevdesign/';
+
+if (btnArgon2Generate) {
+    btnArgon2Generate.addEventListener('click', async () => {
+        const password = (document.getElementById('argon2-password')?.value ?? '').trim();
+        if (!password) return;
+
+        argon2HashOutput.value       = '';
+        argon2HashOutput.placeholder = 'Gerando…';
+        argon2HashOutput.classList.add('hash-output-loading');
+        btnArgon2Generate.disabled   = true;
+
+        try {
+            const res  = await fetch(BASE + 'api/generate-argon2', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({ password }),
+            });
+            const data = await res.json();
+            if (data.error) throw new Error(data.error);
+            argon2HashOutput.value       = data.hash;
+            argon2HashOutput.placeholder = '';
+        } catch {
+            argon2HashOutput.placeholder = 'Erro ao gerar hash.';
+        } finally {
+            argon2HashOutput.classList.remove('hash-output-loading');
+            btnArgon2Generate.disabled = false;
+        }
+    });
+}
+
+if (btnArgon2Verify) {
+    btnArgon2Verify.addEventListener('click', async () => {
+        const password = (document.getElementById('verify-password')?.value ?? '').trim();
+        const hash     = (document.getElementById('verify-hash')?.value ?? '').trim();
+        if (!password || !hash || !argon2VerifyResult) return;
+
+        argon2VerifyResult.hidden    = true;
+        btnArgon2Verify.disabled     = true;
+        btnArgon2Verify.textContent  = 'Verificando…';
+
+        try {
+            const res  = await fetch(BASE + 'api/verify-argon2', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({ password, hash }),
+            });
+            const data = await res.json();
+            if (data.error) throw new Error(data.error);
+
+            argon2VerifyResult.hidden     = false;
+            argon2VerifyResult.className  = 'argon2-alert ' + (data.match ? 'alert-success' : 'alert-danger');
+            argon2VerifyResult.textContent = data.match
+                ? '✓ O hash confere com a senha!'
+                : '✗ Senha inválida — o hash não confere.';
+        } catch {
+            argon2VerifyResult.hidden    = false;
+            argon2VerifyResult.className = 'argon2-alert alert-danger';
+            argon2VerifyResult.textContent = 'Erro ao verificar. Certifique-se de que o hash é válido.';
+        } finally {
+            btnArgon2Verify.disabled    = false;
+            btnArgon2Verify.textContent = 'Verificar';
+        }
+    });
+}
+
+if (btnCopyArgon2 && argon2HashOutput) {
+    btnCopyArgon2.addEventListener('click', () => copyToClipboard(btnCopyArgon2, () => argon2HashOutput.value));
+}
+
 // ── URL Parser ─────────────────────────────────────────────────────────────
 
 const parserInput         = document.getElementById('parser-input');

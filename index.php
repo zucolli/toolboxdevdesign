@@ -14,7 +14,42 @@ $path = trim($path, '/');
 $titulo = 'Toolbox Dev Design';
 $view   = null;
 
-// API endpoint: generate-hash (must run before HTML output)
+// API endpoints (must run before HTML output)
+if ($path === 'api/generate-argon2') {
+    header('Content-Type: application/json');
+    $body = (string) file_get_contents('php://input');
+    $data = json_decode($body, true);
+    $password = isset($data['password']) ? (string) $data['password'] : '';
+    if ($password === '') {
+        http_response_code(400);
+        echo json_encode(['error' => 'Senha não pode ser vazia.']);
+        exit;
+    }
+    try {
+        $hash = password_hash($password, PASSWORD_ARGON2ID);
+        echo json_encode(['hash' => $hash]);
+    } catch (\Throwable $e) {
+        http_response_code(500);
+        echo json_encode(['error' => 'Erro ao gerar hash.']);
+    }
+    exit;
+}
+
+if ($path === 'api/verify-argon2') {
+    header('Content-Type: application/json');
+    $body     = (string) file_get_contents('php://input');
+    $data     = json_decode($body, true);
+    $password = isset($data['password']) ? (string) $data['password'] : '';
+    $hash     = isset($data['hash'])     ? (string) $data['hash']     : '';
+    if ($password === '' || $hash === '') {
+        http_response_code(400);
+        echo json_encode(['error' => 'Senha e hash são obrigatórios.']);
+        exit;
+    }
+    echo json_encode(['match' => password_verify($password, $hash)]);
+    exit;
+}
+
 if ($path === 'api/generate-hash') {
     header('Content-Type: application/json');
     $body      = (string) file_get_contents('php://input');
@@ -65,6 +100,10 @@ match ($path) {
     'url-parser' => (function () use (&$titulo, &$view) {
         $titulo = 'URL Parser — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/url-parser.php';
+    })(),
+    'argon2-generator' => (function () use (&$titulo, &$view) {
+        $titulo = 'Gerador Argon2id — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/argon2-generator.php';
     })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
