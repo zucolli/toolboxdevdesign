@@ -583,6 +583,153 @@ input[type="url"]:focus {
 }
 
 /* ============================================================
+   SVG Optimizer
+   ============================================================ */
+.svg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.svg-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.svg-dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 28px 20px;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+    text-align: center;
+    user-select: none;
+}
+
+.svg-dropzone:hover,
+.svg-dropzone:focus-visible {
+    border-color: var(--color-primary);
+    background: rgba(0, 112, 243, 0.04);
+    color: var(--color-primary);
+    outline: none;
+}
+
+.svg-dropzone.dropzone-active {
+    border-color: var(--color-primary);
+    background: rgba(0, 112, 243, 0.08);
+    color: var(--color-primary);
+}
+
+.dropzone-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.dropzone-sub {
+    font-size: 0.78rem;
+    opacity: 0.7;
+}
+
+.svg-col-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 10px;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+}
+
+.svg-col-divider::before,
+.svg-col-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.svg-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.svg-stat {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.svg-stat--highlight {
+    border-color: #6ee7b7;
+    background: #d1fae5;
+}
+
+.svg-stat-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+}
+
+.svg-stat--highlight .svg-stat-label { color: #065f46; }
+
+.svg-stat-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+}
+
+.svg-stat--highlight .svg-stat-value { color: #065f46; }
+
+.svg-preview-block {
+    margin-top: 12px;
+}
+
+.svg-preview {
+    background: repeating-conic-gradient(#e5e7eb 0% 25%, #fff 0% 50%) 0 0 / 16px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 12px;
+}
+
+.svg-preview img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+}
+
+.svg-error {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #991b1b;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .svg-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    SHA-512 / CRC32 Generator
    ============================================================ */
 .checksum-results {

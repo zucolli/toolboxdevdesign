@@ -1,0 +1,91 @@
+<div class="card">
+    <h1 class="card-title">Otimizador de SVG</h1>
+    <p class="card-description">Arraste um arquivo <code>.svg</code>, cole o código ou clique na área abaixo. A otimização acontece 100% no navegador — o servidor não toca no seu arquivo.</p>
+
+    <div class="svg-grid">
+
+        <!-- Coluna Esquerda: Entrada -->
+        <div class="svg-col">
+            <div
+                id="svg-dropzone"
+                class="svg-dropzone"
+                role="button"
+                tabindex="0"
+                aria-label="Área de Drag and Drop para SVG"
+            >
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span class="dropzone-text">Arraste um <strong>.svg</strong> aqui</span>
+                <span class="dropzone-sub">ou clique para escolher</span>
+                <input type="file" id="svg-file-input" accept=".svg,image/svg+xml" hidden>
+            </div>
+
+            <div class="svg-col-divider">
+                <span>ou cole o código SVG abaixo</span>
+            </div>
+
+            <textarea
+                id="svg-input"
+                rows="10"
+                placeholder="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; ...&gt;&lt;/svg&gt;"
+                spellcheck="false"
+            ></textarea>
+
+            <button id="btn-svg-optimize" class="btn btn-primary" type="button" style="margin-top:12px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Otimizar SVG
+            </button>
+        </div>
+
+        <!-- Coluna Direita: Saída -->
+        <div class="svg-col" id="svg-output-col" hidden>
+
+            <div id="svg-stats" class="svg-stats">
+                <div class="svg-stat">
+                    <span class="svg-stat-label">Original</span>
+                    <span id="stat-original" class="svg-stat-value">—</span>
+                </div>
+                <div class="svg-stat">
+                    <span class="svg-stat-label">Otimizado</span>
+                    <span id="stat-optimized" class="svg-stat-value">—</span>
+                </div>
+                <div class="svg-stat svg-stat--highlight">
+                    <span class="svg-stat-label">Redução</span>
+                    <span id="stat-reduction" class="svg-stat-value">—</span>
+                </div>
+            </div>
+
+            <div class="checksum-block" style="margin-bottom:12px;">
+                <div class="checksum-block-header">
+                    <span class="checksum-block-title">Código Otimizado</span>
+                    <div style="display:flex;gap:6px;">
+                        <button id="btn-copy-svg" class="btn btn-ghost btn-sm" type="button">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            Copiar
+                        </button>
+                        <button id="btn-download-svg" class="btn btn-ghost btn-sm" type="button">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Baixar SVG
+                        </button>
+                    </div>
+                </div>
+                <textarea
+                    id="svg-output"
+                    class="input-readonly checksum-output"
+                    readonly
+                    rows="10"
+                    spellcheck="false"
+                ></textarea>
+            </div>
+
+            <div class="svg-preview-block">
+                <span class="checksum-block-title" style="display:block;margin-bottom:10px;">Preview</span>
+                <div id="svg-preview" class="svg-preview"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <p id="svg-error" class="svg-error" hidden></p>
+</div>
+
+<script src="https://unpkg.com/svgo@3/dist/svgo.browser.js"></script>

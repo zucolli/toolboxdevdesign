@@ -460,6 +460,132 @@ if (palettePicker && paletteHex) {
     renderPalette();
 }
 
+// ── SVG Optimizer ──────────────────────────────────────────────────────────
+
+const svgDropzone   = document.getElementById('svg-dropzone');
+const svgFileInput  = document.getElementById('svg-file-input');
+const svgInput      = document.getElementById('svg-input');
+const svgOutput     = document.getElementById('svg-output');
+const svgOutputCol  = document.getElementById('svg-output-col');
+const svgPreview    = document.getElementById('svg-preview');
+const svgError      = document.getElementById('svg-error');
+const btnOptimize   = document.getElementById('btn-svg-optimize');
+const btnCopySvg    = document.getElementById('btn-copy-svg');
+const btnDownloadSvg = document.getElementById('btn-download-svg');
+
+function formatBytes(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    return (bytes / 1024).toFixed(2) + ' KB';
+}
+
+function svgShowError(msg) {
+    if (!svgError) return;
+    svgError.textContent = msg;
+    svgError.hidden = false;
+}
+
+function svgClearError() {
+    if (svgError) svgError.hidden = true;
+}
+
+function runOptimize() {
+    if (!svgInput || !svgOutput || !svgOutputCol) return;
+
+    const raw = svgInput.value.trim();
+    if (!raw) { svgShowError('Cole ou carregue um SVG antes de otimizar.'); return; }
+    if (!raw.includes('<svg')) { svgShowError('O conteúdo não parece ser um SVG válido.'); return; }
+    svgClearError();
+
+    if (typeof svgo === 'undefined') {
+        svgShowError('A biblioteca SVGO ainda está carregando. Aguarde um momento e tente novamente.');
+        return;
+    }
+
+    let result;
+    try {
+        result = svgo.optimize(raw, { multipass: true });
+    } catch (e) {
+        svgShowError('Erro ao otimizar: ' + e.message);
+        return;
+    }
+
+    const optimized   = result.data;
+    const origSize    = new Blob([raw]).size;
+    const optSize     = new Blob([optimized]).size;
+    const reduction   = origSize > 0 ? Math.round((1 - optSize / origSize) * 100) : 0;
+
+    svgOutput.value = optimized;
+
+    const statOriginal  = document.getElementById('stat-original');
+    const statOptimized = document.getElementById('stat-optimized');
+    const statReduction = document.getElementById('stat-reduction');
+    if (statOriginal)  statOriginal.textContent  = formatBytes(origSize);
+    if (statOptimized) statOptimized.textContent = formatBytes(optSize);
+    if (statReduction) statReduction.textContent = reduction + '% menor';
+
+    // Preview via Blob URL (mais seguro que innerHTML direto)
+    if (svgPreview) {
+        const prev = svgPreview.querySelector('img');
+        if (prev) URL.revokeObjectURL(prev.src);
+        const blob = new Blob([optimized], { type: 'image/svg+xml' });
+        const url  = URL.createObjectURL(blob);
+        svgPreview.innerHTML = `<img src="${url}" alt="Preview do SVG otimizado">`;
+    }
+
+    svgOutputCol.hidden = false;
+}
+
+function loadSvgFile(file) {
+    if (!file || !file.name.toLowerCase().endsWith('.svg')) {
+        svgShowError('Apenas arquivos .svg são aceitos.');
+        return;
+    }
+    svgClearError();
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        if (svgInput) svgInput.value = e.target.result;
+    };
+    reader.readAsText(file);
+}
+
+// Drag & Drop
+if (svgDropzone) {
+    svgDropzone.addEventListener('click', () => svgFileInput?.click());
+    svgDropzone.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') svgFileInput?.click(); });
+
+    svgDropzone.addEventListener('dragover',  (e) => { e.preventDefault(); svgDropzone.classList.add('dropzone-active'); });
+    svgDropzone.addEventListener('dragleave', ()  => svgDropzone.classList.remove('dropzone-active'));
+    svgDropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        svgDropzone.classList.remove('dropzone-active');
+        loadSvgFile(e.dataTransfer.files[0]);
+    });
+}
+
+if (svgFileInput) {
+    svgFileInput.addEventListener('change', () => loadSvgFile(svgFileInput.files[0]));
+}
+
+if (btnOptimize)   btnOptimize.addEventListener('click', runOptimize);
+
+if (btnCopySvg && svgOutput) {
+    btnCopySvg.addEventListener('click', () => copyToClipboard(btnCopySvg, () => svgOutput.value));
+}
+
+if (btnDownloadSvg && svgOutput) {
+    btnDownloadSvg.addEventListener('click', () => {
+        const content = svgOutput.value;
+        if (!content) return;
+        const blob = new Blob([content], { type: 'image/svg+xml' });
+        const url  = URL.createObjectURL(blob);
+        const a    = document.createElement('a');
+        a.href     = url;
+        a.download = 'optimized.svg';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+}
+
 // ── SHA-512 / CRC32 Generator ──────────────────────────────────────────────
 
 // Tabela CRC32 (IEEE 802.3) gerada uma única vez

@@ -109,6 +109,10 @@ match ($path) {
         $titulo = 'Gerador SHA-512 e CRC32 — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/sha512-crc32-generator.php';
     })(),
+    'svg-optimizer' => (function () use (&$titulo, &$view) {
+        $titulo = 'Otimizador de SVG — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/svg-optimizer.php';
+    })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
         $titulo = 'Página não encontrada — Toolbox Dev Design';
