@@ -68,10 +68,8 @@ function syncColorPair(pickerId, hexId) {
     const hex    = document.getElementById(hexId);
     if (!picker || !hex) return;
 
-    picker.addEventListener('input', () => {
-        hex.value = picker.value;
-        updateContrast();
-    });
+    picker.addEventListener('input',  () => { hex.value = picker.value; updateContrast(); });
+    picker.addEventListener('change', () => { hex.value = picker.value; updateContrast(); });
 
     hex.addEventListener('input', () => {
         const val = hex.value.trim();
