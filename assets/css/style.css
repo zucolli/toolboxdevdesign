@@ -583,6 +583,88 @@ input[type="url"]:focus {
 }
 
 /* ============================================================
+   URL Parser
+   ============================================================ */
+.parser-hint {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: 8px;
+}
+
+.parser-section {
+    margin-top: 28px;
+}
+
+.parser-section-title {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.parser-components {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+.parser-field {
+    margin-bottom: 16px;
+}
+
+.parser-field-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+}
+
+.parser-params-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.parser-param-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    flex-wrap: wrap;
+}
+
+.param-key {
+    color: var(--color-primary);
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.param-sep {
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.param-val {
+    color: var(--color-text);
+    word-break: break-all;
+}
+
+@media (max-width: 600px) {
+    .parser-components { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    URL Encoder / Decoder
    ============================================================ */
 .encoder-grid {

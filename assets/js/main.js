@@ -459,3 +459,76 @@ if (palettePicker && paletteHex) {
 
     renderPalette();
 }
+
+// ── URL Parser ─────────────────────────────────────────────────────────────
+
+const parserInput         = document.getElementById('parser-input');
+const parserResults       = document.getElementById('parser-results');
+const parserHint          = document.getElementById('parser-hint');
+const parserParamsSection = document.getElementById('parser-params-section');
+const parserParamsList    = document.getElementById('parser-params');
+
+function setField(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.value = value || '';
+}
+
+function parseUrl() {
+    if (!parserInput) return;
+    const raw = parserInput.value.trim();
+
+    if (!raw) {
+        parserResults.hidden = true;
+        parserHint.hidden    = false;
+        parserHint.textContent = 'Aguardando uma URL válida…';
+        return;
+    }
+
+    try {
+        const u = new URL(raw);
+
+        setField('p-protocol', u.protocol);
+        setField('p-hostname', u.hostname);
+        setField('p-port',     u.port);
+        setField('p-pathname', u.pathname);
+        setField('p-hash',     u.hash);
+
+        const params = [...u.searchParams];
+        if (params.length) {
+            parserParamsList.innerHTML = params.map(([key, val]) => `
+                <div class="parser-param-row">
+                    <span class="param-key">${escHtml(key)}</span>
+                    <span class="param-sep">=</span>
+                    <span class="param-val">${escHtml(val)}</span>
+                </div>
+            `).join('');
+            parserParamsSection.hidden = false;
+        } else {
+            parserParamsSection.hidden = true;
+        }
+
+        parserResults.hidden = false;
+        parserHint.hidden    = true;
+    } catch {
+        parserResults.hidden = true;
+        parserHint.hidden    = false;
+        parserHint.textContent = 'URL inválida — certifique-se de incluir o protocolo (https://).';
+    }
+}
+
+function escHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+if (parserInput) {
+    parserInput.addEventListener('input', parseUrl);
+}
+
+// Botões de copiar dinâmicos do parser (delegação no card inteiro)
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-copy-from]');
+    if (!btn) return;
+    const source = document.getElementById(btn.dataset.copyFrom);
+    if (!source || !source.value) return;
+    copyToClipboard(btn, () => source.value);
+});

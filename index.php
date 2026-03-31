@@ -62,6 +62,10 @@ match ($path) {
         $titulo = 'Color Palette Generator — Toolbox Dev Design';
         $view   = BASE_PATH . '/views/color-palette-generator.php';
     })(),
+    'url-parser' => (function () use (&$titulo, &$view) {
+        $titulo = 'URL Parser — Toolbox Dev Design';
+        $view   = BASE_PATH . '/views/url-parser.php';
+    })(),
     default => (function () use (&$titulo, &$view) {
         http_response_code(404);
         $titulo = 'Página não encontrada — Toolbox Dev Design';
