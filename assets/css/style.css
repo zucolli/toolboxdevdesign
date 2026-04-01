@@ -188,7 +188,8 @@ a:hover { text-decoration: underline; }
 
 textarea,
 input[type="text"],
-input[type="url"] {
+input[type="url"],
+input[type="number"] {
     width: 100%;
     font-family: var(--font-sans);
     font-size: 0.9375rem;
@@ -204,7 +205,8 @@ input[type="url"] {
 
 textarea:focus,
 input[type="text"]:focus,
-input[type="url"]:focus {
+input[type="url"]:focus,
+input[type="number"]:focus {
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
 }
