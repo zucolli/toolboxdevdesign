@@ -1277,3 +1277,208 @@ document.addEventListener('click', (e) => {
         }
     });
 })();
+
+// ── CSS Box Shadow Generator ──────────────────────────────────────────────────
+(function () {
+    var offsetX  = document.getElementById('bs-offset-x');
+    if (!offsetX) return;
+
+    var offsetY  = document.getElementById('bs-offset-y');
+    var blur     = document.getElementById('bs-blur');
+    var spread   = document.getElementById('bs-spread');
+    var color    = document.getElementById('bs-color');
+    var opacity  = document.getElementById('bs-opacity');
+    var bgColor  = document.getElementById('bs-bg-color');
+    var inset    = document.getElementById('bs-inset');
+    var previewBox = document.getElementById('bs-preview-box');
+    var previewBg  = document.getElementById('bs-preview-bg');
+    var result   = document.getElementById('bs-result');
+    var copyBtn  = document.getElementById('bs-copy-btn');
+
+    var valX  = document.getElementById('bs-offset-x-val');
+    var valY  = document.getElementById('bs-offset-y-val');
+    var valB  = document.getElementById('bs-blur-val');
+    var valS  = document.getElementById('bs-spread-val');
+    var valO  = document.getElementById('bs-opacity-val');
+
+    function hexToRgb(hex) {
+        var r = parseInt(hex.slice(1,3), 16);
+        var g = parseInt(hex.slice(3,5), 16);
+        var b = parseInt(hex.slice(5,7), 16);
+        return { r: r, g: g, b: b };
+    }
+
+    function update() {
+        valX.textContent = offsetX.value;
+        valY.textContent = offsetY.value;
+        valB.textContent = blur.value;
+        valS.textContent = spread.value;
+        valO.textContent = opacity.value;
+
+        var rgb = hexToRgb(color.value);
+        var alpha = (parseInt(opacity.value) / 100).toFixed(2);
+        var insetStr = inset.checked ? 'inset ' : '';
+        var css = 'box-shadow: ' + insetStr +
+            offsetX.value + 'px ' +
+            offsetY.value + 'px ' +
+            blur.value + 'px ' +
+            spread.value + 'px ' +
+            'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + alpha + ');';
+
+        previewBox.style.boxShadow = insetStr +
+            offsetX.value + 'px ' +
+            offsetY.value + 'px ' +
+            blur.value + 'px ' +
+            spread.value + 'px ' +
+            'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + alpha + ')';
+
+        previewBg.style.backgroundColor = bgColor.value;
+        result.value = css;
+    }
+
+    [offsetX, offsetY, blur, spread, color, opacity, bgColor, inset].forEach(function (el) {
+        el.addEventListener('input', update);
+        el.addEventListener('change', update);
+    });
+
+    copyBtn.addEventListener('click', function () {
+        copyToClipboard(copyBtn, function () { return result.value; });
+    });
+
+    update();
+})();
+
+// ── CSS Gradient Generator ────────────────────────────────────────────────────
+(function () {
+    var typeEl   = document.getElementById('grad-type');
+    if (!typeEl) return;
+
+    var angleEl  = document.getElementById('grad-angle');
+    var angleGroup = document.getElementById('grad-angle-group');
+    var angleVal = document.getElementById('grad-angle-val');
+    var color1   = document.getElementById('grad-color1');
+    var color2   = document.getElementById('grad-color2');
+    var preview  = document.getElementById('grad-preview');
+    var result   = document.getElementById('grad-result');
+    var copyBtn  = document.getElementById('grad-copy-btn');
+
+    function update() {
+        angleVal.textContent = angleEl.value;
+        var isLinear = typeEl.value === 'linear';
+        angleGroup.style.display = isLinear ? '' : 'none';
+
+        var css;
+        if (isLinear) {
+            css = 'background: linear-gradient(' + angleEl.value + 'deg, ' + color1.value + ', ' + color2.value + ');';
+            preview.style.background = 'linear-gradient(' + angleEl.value + 'deg, ' + color1.value + ', ' + color2.value + ')';
+        } else {
+            css = 'background: radial-gradient(circle, ' + color1.value + ', ' + color2.value + ');';
+            preview.style.background = 'radial-gradient(circle, ' + color1.value + ', ' + color2.value + ')';
+        }
+        result.value = css;
+    }
+
+    [typeEl, angleEl, color1, color2].forEach(function (el) {
+        el.addEventListener('input', update);
+        el.addEventListener('change', update);
+    });
+
+    copyBtn.addEventListener('click', function () {
+        copyToClipboard(copyBtn, function () { return result.value; });
+    });
+
+    update();
+})();
+
+// ── Password Generator ────────────────────────────────────────────────────────
+(function () {
+    var lengthEl    = document.getElementById('pw-length');
+    if (!lengthEl) return;
+
+    var lengthVal   = document.getElementById('pw-length-val');
+    var uppercase   = document.getElementById('pw-uppercase');
+    var lowercase   = document.getElementById('pw-lowercase');
+    var numbers     = document.getElementById('pw-numbers');
+    var symbols     = document.getElementById('pw-symbols');
+    var resultEl    = document.getElementById('pw-result');
+    var copyBtn     = document.getElementById('pw-copy-btn');
+    var generateBtn = document.getElementById('pw-generate-btn');
+    var strengthFill  = document.getElementById('pw-strength-fill');
+    var strengthLabel = document.getElementById('pw-strength-label');
+
+    var CHARS_UPPER   = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var CHARS_LOWER   = 'abcdefghijklmnopqrstuvwxyz';
+    var CHARS_NUMBERS = '0123456789';
+    var CHARS_SYMBOLS = '!@#$%^&*()-_=+[]{}|;:,.<>?';
+
+    function buildPool() {
+        var pool = '';
+        if (uppercase.checked) pool += CHARS_UPPER;
+        if (lowercase.checked) pool += CHARS_LOWER;
+        if (numbers.checked)   pool += CHARS_NUMBERS;
+        if (symbols.checked)   pool += CHARS_SYMBOLS;
+        return pool;
+    }
+
+    function generate() {
+        var pool = buildPool();
+        if (!pool) {
+            resultEl.value = '';
+            updateStrength('', 0);
+            return;
+        }
+        var len = parseInt(lengthEl.value, 10);
+        var bytes = new Uint32Array(len);
+        window.crypto.getRandomValues(bytes);
+        var pw = '';
+        for (var i = 0; i < len; i++) {
+            pw += pool[bytes[i] % pool.length];
+        }
+        resultEl.value = pw;
+        updateStrength(pw, countTypes());
+    }
+
+    function countTypes() {
+        var n = 0;
+        if (uppercase.checked) n++;
+        if (lowercase.checked) n++;
+        if (numbers.checked)   n++;
+        if (symbols.checked)   n++;
+        return n;
+    }
+
+    function updateStrength(pw, types) {
+        var len = pw.length;
+        var level = '';
+        if (len === 0 || types === 0) {
+            level = '';
+        } else if (len < 12 || types < 2) {
+            level = 'weak';
+        } else if (len < 16 || types < 3) {
+            level = 'medium';
+        } else {
+            level = 'strong';
+        }
+
+        strengthFill.className = 'pw-strength-fill' + (level ? ' ' + level : '');
+        var labels = { weak: 'Fraca', medium: 'Média', strong: 'Forte', '': '—' };
+        strengthLabel.textContent = labels[level];
+    }
+
+    lengthEl.addEventListener('input', function () {
+        lengthVal.textContent = lengthEl.value;
+        generate();
+    });
+
+    [uppercase, lowercase, numbers, symbols].forEach(function (el) {
+        el.addEventListener('change', generate);
+    });
+
+    generateBtn.addEventListener('click', generate);
+
+    copyBtn.addEventListener('click', function () {
+        copyToClipboard(copyBtn, function () { return resultEl.value; });
+    });
+
+    generate();
+})();

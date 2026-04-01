@@ -159,6 +159,21 @@ match ($path) {
         $pageDescription = 'Converta valores de PX para REM e vice-versa em tempo real. Base configurável, ideal para projetos com font-size customizado.';
         $view            = BASE_PATH . '/views/px-rem-converter.php';
     })(),
+    'css-box-shadow' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de CSS Box Shadow | Toolbox Dev Design';
+        $pageDescription = 'Crie e personalize sombras CSS visualmente com sliders em tempo real. Gere o código box-shadow pronto para copiar e usar no seu projeto.';
+        $view            = BASE_PATH . '/views/css-box-shadow.php';
+    })(),
+    'css-gradient' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de CSS Gradient | Toolbox Dev Design';
+        $pageDescription = 'Crie gradientes lineares e radiais com preview em tempo real. Gere o código CSS pronto para copiar — 100% gratuito e no navegador.';
+        $view            = BASE_PATH . '/views/css-gradient.php';
+    })(),
+    'password-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Senhas Fortes | Toolbox Dev Design';
+        $pageDescription = 'Gere senhas criptograficamente seguras com a Web Crypto API. Configure comprimento, maiúsculas, números e símbolos. 100% client-side.';
+        $view            = BASE_PATH . '/views/password-generator.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';

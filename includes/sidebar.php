@@ -78,6 +78,36 @@
     </div>
 
     <div class="sidebar-section">
+        <span class="sidebar-label">Design</span>
+        <ul class="nav-list">
+            <li>
+                <a href="<?= BASE_URL ?>css-box-shadow" class="nav-link <?= ($path === 'css-box-shadow') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="13" height="13" rx="2"/><rect x="8" y="8" width="13" height="13" rx="2"/></svg>
+                    CSS Box Shadow
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>css-gradient" class="nav-link <?= ($path === 'css-gradient') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#667eea"/><stop offset="100%" stop-color="#764ba2"/></linearGradient></defs><rect x="2" y="6" width="20" height="12" rx="3" fill="url(#sg)" stroke="currentColor"/></svg>
+                    CSS Gradient
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
+        <span class="sidebar-label">Segurança</span>
+        <ul class="nav-list">
+            <li>
+                <a href="<?= BASE_URL ?>password-generator" class="nav-link <?= ($path === 'password-generator') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg>
+                    Gerador de Senhas
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
         <span class="sidebar-label">Marketing</span>
         <ul class="nav-list">
             <li>
