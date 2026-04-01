@@ -71,6 +71,15 @@
         </ul>
     </div>
 
+    <aside class="knowledge-card" id="knowledge-card" aria-label="Pílula de conhecimento">
+        <div class="knowledge-card-header">
+            <span class="badge-type" id="knowledge-type">Dica Prática</span>
+        </div>
+        <h4 class="knowledge-title" id="knowledge-title"></h4>
+        <p class="knowledge-content" id="knowledge-content"></p>
+        <button class="knowledge-btn" id="btn-random-knowledge" type="button">🎲 Ver outra</button>
+    </aside>
+
     <div class="sidebar-promo">
         <span class="sidebar-promo-title">Conheça a NuAto</span>
         <ul class="promo-list">

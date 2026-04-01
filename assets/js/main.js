@@ -926,3 +926,54 @@ document.addEventListener('click', (e) => {
         btnCopiar.addEventListener('click', () => copyToClipboard(btnCopiar, () => output.value));
     }
 })();
+
+/* ============================================================
+   Pílulas de Conhecimento
+   ============================================================ */
+(function () {
+    const card    = document.getElementById('knowledge-card');
+    const elType  = document.getElementById('knowledge-type');
+    const elTitle = document.getElementById('knowledge-title');
+    const elBody  = document.getElementById('knowledge-content');
+    const btnRand = document.getElementById('btn-random-knowledge');
+
+    if (!card) return;
+
+    let knowledgeData = [];
+
+    function renderItem(item) {
+        elType.textContent        = item.type;
+        elType.dataset.type       = item.type;
+        elTitle.textContent       = item.title;
+        elBody.textContent        = item.content;
+    }
+
+    function getDayOfYear() {
+        const now   = new Date();
+        const start = new Date(now.getFullYear(), 0, 0);
+        return Math.floor((now - start) / 1000 / 60 / 60 / 24);
+    }
+
+    function loadKnowledge() {
+        fetch('/carloszucolli/toolboxdevdesign/assets/data/knowledge.json')
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                knowledgeData = data;
+                const idx = getDayOfYear() % data.length;
+                renderItem(data[idx]);
+            })
+            .catch(function () {
+                card.style.display = 'none';
+            });
+    }
+
+    if (btnRand) {
+        btnRand.addEventListener('click', function () {
+            if (!knowledgeData.length) return;
+            const idx = Math.floor(Math.random() * knowledgeData.length);
+            renderItem(knowledgeData[idx]);
+        });
+    }
+
+    loadKnowledge();
+})();

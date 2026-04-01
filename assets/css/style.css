@@ -1161,6 +1161,96 @@ input[type="url"]:focus {
 }
 
 /* ============================================================
+   Knowledge Card — Pílulas de Conhecimento
+   ============================================================ */
+.knowledge-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 14px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.knowledge-card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-type {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.badge-type[data-type="Curiosidade"] {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.badge-type[data-type="História"] {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+@media (prefers-color-scheme: dark) {
+    .badge-type {
+        background: #1e3a5f;
+        color: #93c5fd;
+    }
+    .badge-type[data-type="Curiosidade"] {
+        background: #451a03;
+        color: #fcd34d;
+    }
+    .badge-type[data-type="História"] {
+        background: #2e1065;
+        color: #c4b5fd;
+    }
+}
+
+.knowledge-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.35;
+    margin: 0;
+}
+
+.knowledge-content {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.knowledge-btn {
+    align-self: flex-start;
+    margin-top: 4px;
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    font-size: 0.73rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.knowledge-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {

@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "type": "Dica Prática",
+    "theme": "CSS",
+    "title": "Anime com transform, não com layout",
+    "content": "Prefira animar transform e opacity em vez de width, height ou top. Essas propriedades não causam reflow no navegador e são processadas diretamente pela GPU, resultando em 60fps consistentes."
+  },
+  {
+    "id": 2,
+    "type": "Curiosidade",
+    "theme": "História",
+    "title": "O primeiro bug de computador foi literal",
+    "content": "Em 1947, Grace Hopper encontrou uma mariposa real presa num relé do Harvard Mark II. Ela colou o inseto no diário de bordo e anotou: 'First actual case of bug being found.' O termo já existia, mas esse registro popularizou o uso em TI."
+  },
+  {
+    "id": 3,
+    "type": "Dica Prática",
+    "theme": "Performance",
+    "title": "font-display: swap elimina texto invisível",
+    "content": "Adicione font-display: swap nas suas @font-face declarations. Isso faz o browser exibir o texto imediatamente com uma fonte fallback enquanto a fonte customizada carrega, evitando o FOIT (Flash of Invisible Text) que prejudica a experiência e o LCP."
+  },
+  {
+    "id": 4,
+    "type": "História",
+    "theme": "Design",
+    "title": "O ícone de salvar que nunca existiu",
+    "content": "O ícone de disquete virou símbolo universal de 'salvar' — mas gerações inteiras nunca viram um disquete real. É o maior exemplo de skeuomorphism sobrevivendo à tecnologia que o inspirou. Figma e Photoshop ainda o usam em 2024."
+  },
+  {
+    "id": 5,
+    "type": "Dica Prática",
+    "theme": "Acessibilidade",
+    "title": "aria-label não substitui contraste",
+    "content": "aria-label ajuda leitores de tela, mas não resolve problemas de contraste visual. Usuários com baixa visão que não usam screen readers dependem do contraste. A WCAG exige mínimo 4.5:1 para texto normal — verifique com um checker real."
+  },
+  {
+    "id": 6,
+    "type": "Curiosidade",
+    "theme": "Dev",
+    "title": "404 vem de um corredor em Genebra",
+    "content": "O código 404 tem origem na sala 404 do CERN, onde ficavam os servidores originais da World Wide Web. Quando um arquivo não era encontrado, o sistema retornava o número da sala. Tim Berners-Lee confirmou a história, embora nunca tenha sido documentada formalmente."
+  },
+  {
+    "id": 7,
+    "type": "Dica Prática",
+    "theme": "CSS",
+    "title": "Contain melhora a performance de paint",
+    "content": "Use contain: layout paint em componentes isolados como cards ou modais. Isso informa o browser que mudanças internas não afetam o layout externo, reduzindo drasticamente o escopo de recalculate style e repaint nas atualizações de UI."
+  },
+  {
+    "id": 8,
+    "type": "História",
+    "theme": "Dev",
+    "title": "JavaScript foi criado em 10 dias",
+    "content": "Brendan Eich criou o JavaScript em maio de 1995 em apenas 10 dias na Netscape. A pressão era lançar antes da Microsoft. O nome original era Mocha, depois LiveScript, e só virou JavaScript por acordo de marketing com a Sun Microsystems."
+  },
+  {
+    "id": 9,
+    "type": "Dica Prática",
+    "theme": "UX",
+    "title": "Skeleton screens reduzem percepção de lentidão",
+    "content": "Substituir spinners por skeleton screens (blocos cinza no formato do conteúdo) reduz a percepção de tempo de carregamento em até 20%. O cérebro processa antecipação de estrutura como progresso, tornando a espera subjetivamente mais curta."
+  },
+  {
+    "id": 10,
+    "type": "Curiosidade",
+    "theme": "Design",
+    "title": "O botão OK veio antes do Cancel",
+    "content": "Nas primeiras interfaces gráficas da Xerox PARC nos anos 70, não existia botão Cancel — só OK. A ideia era que o usuário deveria confirmar toda ação. O Cancel surgiu quando os testes com usuários mostraram que as pessoas precisavam de uma saída segura."
+  },
+  {
+    "id": 11,
+    "type": "Dica Prática",
+    "theme": "Performance",
+    "title": "Prefetch de rotas acelera a navegação",
+    "content": "Use <link rel=\"prefetch\"> para pré-carregar páginas que o usuário provavelmente visitará em seguida. O browser baixa o recurso em background com prioridade baixa. Ideal para fluxos lineares: listagem → detalhe, onboarding step 1 → step 2."
+  },
+  {
+    "id": 12,
+    "type": "História",
+    "theme": "Design",
+    "title": "A Helvetica nasceu de uma encomenda governamental",
+    "content": "Em 1957, Max Miedinger criou a Helvetica (originalmente Neue Haas Grotesk) para a fundição Haas Type Foundry na Suíça. O objetivo era competir com a Akzidenz-Grotesk da Alemanha. Hoje é usada pela NASA, American Airlines e pelos metrôs de NY e Tokyo."
+  }
+]
