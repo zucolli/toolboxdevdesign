@@ -14,9 +14,17 @@ Todas as respostas devem ser em **português brasileiro**. Este arquivo deve ser
 ## Deploy / GitHub
 
 - Repositório: `https://github.com/zucolli/toolboxdevdesign.git` (branch `main`)
-- A skill `/commit-push` está disponível no nível do projeto (`.claude/skills/commit-push.md`)
-- **Ao finalizar qualquer tarefa que deva ser testada na web, executar `/commit-push` automaticamente antes de avisar o usuário para testar.**
 - URL de produção: `https://digitallps.com.br/carloszucolli/toolboxdevdesign/`
+
+**Ao finalizar qualquer tarefa que deva ser testada na web, executar o fluxo de deploy abaixo automaticamente (sem usar `Skill()`) antes de avisar o usuário para testar:**
+
+```
+git add <arquivos modificados>
+git commit -m "tipo: descrição resumida"
+git push
+```
+
+> **Nota técnica:** A skill `/commit-push` (`.claude/skills/commit-push.md`) só funciona quando o **usuário** digita `/commit-push` no prompt. O CC **não consegue** invocá-la via `Skill("commit-push")` — isso sempre resulta em "Unknown skill". Portanto, execute os comandos git diretamente via `Bash`.
 
 ## Arquitetura
 
