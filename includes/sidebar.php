@@ -39,12 +39,6 @@
                 </a>
             </li>
             <li>
-                <a href="<?= BASE_URL ?>utm-builder" class="nav-link <?= ($path === 'utm-builder') ? 'active' : '' ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/><line x1="5" y1="12" x2="5" y2="12.01"/><line x1="12" y1="5" x2="12" y2="5.01"/></svg>
-                    Gerador de UTMs
-                </a>
-            </li>
-            <li>
                 <a href="<?= BASE_URL ?>url-encoder-decoder" class="nav-link <?= ($path === 'url-encoder-decoder') ? 'active' : '' ?>">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     URL Encoder/Decoder
@@ -60,12 +54,6 @@
                 <a href="<?= BASE_URL ?>color-palette-generator" class="nav-link <?= ($path === 'color-palette-generator') ? 'active' : '' ?>">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="13" r="2.5"/><circle cx="10" cy="19.5" r="2.5"/><circle cx="17" cy="19.5" r="2.5"/></svg>
                     Color Palette
-                </a>
-            </li>
-            <li>
-                <a href="<?= BASE_URL ?>copy-generator" class="nav-link <?= ($path === 'copy-generator') ? 'active' : '' ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                    Copy Generator
                 </a>
             </li>
             <li>
@@ -108,6 +96,18 @@
                 <a href="<?= BASE_URL ?>bulk-utm-generator" class="nav-link <?= ($path === 'bulk-utm-generator') ? 'active' : '' ?>">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/><line x1="5" y1="19" x2="5" y2="19.01"/><line x1="5" y1="5" x2="5" y2="5.01"/><line x1="19" y1="12" x2="19" y2="12.01"/></svg>
                     UTM em Massa
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>utm-builder" class="nav-link <?= ($path === 'utm-builder') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/><line x1="5" y1="12" x2="5" y2="12.01"/><line x1="12" y1="5" x2="12" y2="5.01"/></svg>
+                    Gerador de UTMs
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>copy-generator" class="nav-link <?= ($path === 'copy-generator') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    Copy Generator
                 </a>
             </li>
         </ul>
