@@ -74,6 +74,18 @@
                     JSON Formatter
                 </a>
             </li>
+            <li>
+                <a href="<?= BASE_URL ?>base64-encoder" class="nav-link <?= ($path === 'base64-encoder') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 11h.01M10 11h.01M14 11h4"/></svg>
+                    Base64
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>px-rem-converter" class="nav-link <?= ($path === 'px-rem-converter') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M9 4v16"/><path d="M4 9h5"/><path d="M4 14h5"/></svg>
+                    PX → REM
+                </a>
+            </li>
         </ul>
     </div>
 
@@ -90,6 +102,12 @@
                 <a href="<?= BASE_URL ?>whatsapp-link" class="nav-link <?= ($path === 'whatsapp-link') ? 'active' : '' ?>">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                     WhatsApp Link
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>bulk-utm-generator" class="nav-link <?= ($path === 'bulk-utm-generator') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/><line x1="5" y1="19" x2="5" y2="19.01"/><line x1="5" y1="5" x2="5" y2="5.01"/><line x1="19" y1="12" x2="19" y2="12.01"/></svg>
+                    UTM em Massa
                 </a>
             </li>
         </ul>

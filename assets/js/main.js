@@ -1106,3 +1106,174 @@ document.addEventListener('click', (e) => {
         if (link) window.open(link, '_blank', 'noopener,noreferrer');
     });
 })();
+
+/* ============================================================
+   Bulk UTM Generator
+   ============================================================ */
+(function () {
+    var sourceEl   = document.getElementById('bulk-utm-source');
+    var mediumEl   = document.getElementById('bulk-utm-medium');
+    var campaignEl = document.getElementById('bulk-utm-campaign');
+    var contentEl  = document.getElementById('bulk-utm-content');
+    var termEl     = document.getElementById('bulk-utm-term');
+    var inputEl    = document.getElementById('bulk-utm-input');
+    var outputEl   = document.getElementById('bulk-utm-output');
+    var btnGen     = document.getElementById('btn-bulk-utm-generate');
+    var btnCopy    = document.getElementById('btn-bulk-utm-copy');
+    var outputGroup = document.getElementById('bulk-utm-output-group');
+    var summaryEl  = document.getElementById('bulk-utm-summary');
+
+    if (!btnGen) return;
+
+    btnGen.addEventListener('click', function () {
+        var source   = (sourceEl.value || '').trim();
+        var medium   = (mediumEl.value || '').trim();
+        var campaign = (campaignEl.value || '').trim();
+        var content  = (contentEl.value || '').trim();
+        var term     = (termEl.value || '').trim();
+
+        if (!source || !medium || !campaign) {
+            showToast('Preencha Source, Medium e Campaign antes de gerar.', 'error');
+            return;
+        }
+
+        var lines = (inputEl.value || '').split('\n');
+        var results = [];
+        var skipped = 0;
+
+        lines.forEach(function (line) {
+            var raw = line.trim();
+            if (!raw) return;
+            try {
+                var url = new URL(raw);
+                url.searchParams.set('utm_source', source);
+                url.searchParams.set('utm_medium', medium);
+                url.searchParams.set('utm_campaign', campaign);
+                if (content) url.searchParams.set('utm_content', content);
+                if (term)    url.searchParams.set('utm_term', term);
+                results.push(url.toString());
+            } catch (e) {
+                skipped++;
+            }
+        });
+
+        if (!results.length) {
+            showToast('Nenhuma URL válida encontrada.', 'error');
+            return;
+        }
+
+        outputEl.value = results.join('\n');
+        outputGroup.style.display = '';
+        var msg = results.length + ' link(s) gerado(s)';
+        if (skipped) msg += ' · ' + skipped + ' URL(s) inválida(s) ignorada(s)';
+        summaryEl.textContent = msg;
+    });
+
+    btnCopy.addEventListener('click', function () {
+        copyToClipboard(btnCopy, function () { return outputEl.value; });
+    });
+})();
+
+/* ============================================================
+   Base64 Encoder / Decoder
+   ============================================================ */
+(function () {
+    var plainEl   = document.getElementById('b64-plain');
+    var encodedEl = document.getElementById('b64-encoded');
+    var errEl     = document.getElementById('b64-decode-error');
+
+    if (!plainEl) return;
+
+    var updating = false;
+
+    plainEl.addEventListener('input', function () {
+        if (updating) return;
+        updating = true;
+        try {
+            encodedEl.value = btoa(unescape(encodeURIComponent(plainEl.value)));
+            if (errEl) errEl.hidden = true;
+        } catch (e) {
+            encodedEl.value = '';
+        }
+        updating = false;
+    });
+
+    encodedEl.addEventListener('input', function () {
+        if (updating) return;
+        updating = true;
+        try {
+            plainEl.value = decodeURIComponent(escape(atob(encodedEl.value)));
+            if (errEl) errEl.hidden = true;
+        } catch (e) {
+            plainEl.value = '';
+            if (errEl) errEl.hidden = false;
+        }
+        updating = false;
+    });
+
+    document.getElementById('btn-copy-b64-plain').addEventListener('click', function () {
+        copyToClipboard(this, function () { return plainEl.value; });
+    });
+
+    document.getElementById('btn-copy-b64-encoded').addEventListener('click', function () {
+        copyToClipboard(this, function () { return encodedEl.value; });
+    });
+
+    document.getElementById('btn-clear-b64-plain').addEventListener('click', function () {
+        plainEl.value = '';
+        encodedEl.value = '';
+        if (errEl) errEl.hidden = true;
+        plainEl.focus();
+    });
+
+    document.getElementById('btn-clear-b64-encoded').addEventListener('click', function () {
+        encodedEl.value = '';
+        plainEl.value = '';
+        if (errEl) errEl.hidden = true;
+        encodedEl.focus();
+    });
+})();
+
+/* ============================================================
+   PX ↔ REM Converter
+   ============================================================ */
+(function () {
+    var baseEl      = document.getElementById('px-rem-base');
+    var pxInputEl   = document.getElementById('px-rem-px-input');
+    var pxResultEl  = document.getElementById('px-rem-px-result');
+    var remInputEl  = document.getElementById('px-rem-rem-input');
+    var remResultEl = document.getElementById('px-rem-rem-result');
+
+    if (!baseEl) return;
+
+    function getBase() {
+        var b = parseFloat(baseEl.value);
+        return (b && b > 0) ? b : 16;
+    }
+
+    function round(n, decimals) {
+        var factor = Math.pow(10, decimals);
+        return Math.round(n * factor) / factor;
+    }
+
+    pxInputEl.addEventListener('input', function () {
+        var px = parseFloat(pxInputEl.value);
+        pxResultEl.value = isNaN(px) ? '' : round(px / getBase(), 4);
+    });
+
+    remInputEl.addEventListener('input', function () {
+        var rem = parseFloat(remInputEl.value);
+        remResultEl.value = isNaN(rem) ? '' : round(rem * getBase(), 4);
+    });
+
+    baseEl.addEventListener('input', function () {
+        if (pxInputEl.value !== '') {
+            var px = parseFloat(pxInputEl.value);
+            pxResultEl.value = isNaN(px) ? '' : round(px / getBase(), 4);
+        }
+        if (remInputEl.value !== '') {
+            var rem = parseFloat(remInputEl.value);
+            remResultEl.value = isNaN(rem) ? '' : round(rem * getBase(), 4);
+        }
+    });
+})();

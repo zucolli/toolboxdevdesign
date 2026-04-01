@@ -144,6 +144,21 @@ match ($path) {
         $pageDescription = 'Crie links wa.me com mensagem pré-definida para o WhatsApp. Encode automático de caracteres especiais e acentos. Gratuito e instantâneo.';
         $view            = BASE_PATH . '/views/whatsapp-link.php';
     })(),
+    'bulk-utm-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de UTM em Massa | Toolbox Dev Design';
+        $pageDescription = 'Adicione parâmetros UTM a dezenas de URLs de uma vez. Ideal para campanhas de e-mail e tráfego pago com múltiplos destinos. Gratuito e 100% no navegador.';
+        $view            = BASE_PATH . '/views/bulk-utm-generator.php';
+    })(),
+    'base64-encoder' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Base64 Encoder / Decoder | Toolbox Dev Design';
+        $pageDescription = 'Encode e decode Base64 com suporte completo a UTF-8 e acentuação. Two-way binding em tempo real, sem enviar dados ao servidor.';
+        $view            = BASE_PATH . '/views/base64-encoder.php';
+    })(),
+    'px-rem-converter' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Conversor PX para REM | Toolbox Dev Design';
+        $pageDescription = 'Converta valores de PX para REM e vice-versa em tempo real. Base configurável, ideal para projetos com font-size customizado.';
+        $view            = BASE_PATH . '/views/px-rem-converter.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';
