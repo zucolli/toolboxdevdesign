@@ -1,5 +1,24 @@
 'use strict';
 
+// ── Toast Notification ─────────────────────────────────────────────────────
+
+window.showToast = function (message, type) {
+    type = type || 'success';
+    var el = document.createElement('div');
+    el.className = 'toast toast-' + type + ' toast-enter';
+    el.textContent = message;
+    document.body.appendChild(el);
+    requestAnimationFrame(function () {
+        el.classList.remove('toast-enter');
+        el.classList.add('toast-visible');
+    });
+    setTimeout(function () {
+        el.classList.remove('toast-visible');
+        el.classList.add('toast-leave');
+        el.addEventListener('transitionend', function () { el.remove(); }, { once: true });
+    }, 3000);
+};
+
 // ── Contrast Checker (WCAG) ────────────────────────────────────────────────
 
 function hexToRgb(hex) {
@@ -117,11 +136,9 @@ function copyToClipboard(btn, getValue) {
     if (!value) return;
 
     navigator.clipboard.writeText(value).then(() => {
-        const original = btn.textContent;
-        btn.textContent = 'Copiado!';
+        showToast('Copiado para a área de transferência!');
         btn.classList.add('btn-success');
         setTimeout(() => {
-            btn.textContent = original;
             btn.classList.remove('btn-success');
         }, 2000);
     }).catch(() => {
@@ -449,11 +466,7 @@ if (palettePicker && paletteHex) {
         if (!hex) return;
 
         navigator.clipboard.writeText(hex).then(() => {
-            const hexSpan = swatch.querySelector('.swatch-hex');
-            if (!hexSpan) return;
-            const original = hexSpan.textContent;
-            hexSpan.textContent = 'Copiado!';
-            setTimeout(() => { hexSpan.textContent = original; }, 1500);
+            showToast('Cor copiada: ' + hex);
         });
     });
 

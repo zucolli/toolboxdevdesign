@@ -60,3 +60,18 @@
 
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que é Argon2id?</h2>
+    <p>Argon2id é o algoritmo vencedor da Password Hashing Competition (2015) e é hoje o padrão recomendado pelo OWASP para armazenamento seguro de senhas. Combina resistência a ataques de GPU (Argon2d) e resistência a ataques de side-channel (Argon2i), sendo a variante híbrida mais equilibrada para uso geral.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Use Argon2id sempre que precisar armazenar senhas de usuários em banco de dados. Diferente de MD5 ou SHA-256 (algoritmos rápidos, facilmente quebráveis por GPUs modernas), o Argon2id é intencionalmente lento e exige muita memória RAM, tornando ataques de força bruta proibitivamente caros. É suportado nativamente pelo PHP 7.2+ via <code>password_hash()</code> com <code>PASSWORD_ARGON2ID</code>.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Na aba "Gerar Hash": insira a senha e clique em "Gerar Argon2id". O hash é criado no servidor PHP e retornado via API — nunca armazenado. Na aba "Verificar Hash": insira a senha em texto claro e o hash armazenado; o servidor verifica a correspondência usando <code>password_verify()</code> sem precisar conhecer a senha original.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

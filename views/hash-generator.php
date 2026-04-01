@@ -59,3 +59,18 @@
         </div>
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que é um Hash Criptográfico?</h2>
+    <p>Um hash é uma função unidirecional que transforma qualquer entrada em uma string de tamanho fixo. É unidirecional: você não consegue recuperar o texto original a partir do hash. Isso torna hashes ideais para armazenar senhas e verificar integridade de dados.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p><strong>Bcrypt</strong> é o padrão recomendado para armazenar senhas em banco de dados: ele é lento por design (fator de custo configurável), o que dificulta ataques de força bruta. <strong>MD5</strong> é rápido e útil para checksums não críticos, como verificar se um arquivo foi corrompido durante a transferência — nunca para senhas. <strong>SHA-256</strong> é mais seguro que MD5 e usado amplamente em certificados digitais e blockchain.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Digite o texto no campo acima, selecione o algoritmo desejado e clique em "Gerar Hash". Bcrypt e MD5 são processados pelo servidor PHP; SHA-256 é calculado diretamente no navegador usando a Web Crypto API, sem enviar dados à rede.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

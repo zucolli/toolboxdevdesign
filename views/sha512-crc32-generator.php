@@ -48,3 +48,18 @@
         </div>
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que são SHA-512 e CRC32?</h2>
+    <p><strong>SHA-512</strong> é um algoritmo da família SHA-2, produzindo um hash de 512 bits (128 caracteres hexadecimais). É criptograficamente seguro e amplamente usado para verificar integridade de dados, assinar documentos digitais e em protocolos como TLS. <strong>CRC32</strong> é um checksum de 32 bits (8 caracteres HEX), rápido e eficiente, mas não criptograficamente seguro — ideal para detecção de erros em transferências de dados.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Use <strong>SHA-512</strong> para verificar se um arquivo baixado da internet não foi corrompido ou adulterado (distribuidores de software publicam o hash do instalador). Use também para criar tokens de sessão ou assinar dados em APIs. Use <strong>CRC32</strong> para verificações rápidas de integridade em redes, arquivos ZIP e bancos de dados — onde performance importa mais que segurança criptográfica.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Digite ou cole qualquer texto no campo acima. O SHA-512 é calculado via Web Crypto API (<code>crypto.subtle.digest</code>) diretamente no navegador, sem comunicação com servidor. O CRC32 é implementado em JavaScript puro usando uma tabela de lookup polinomial. Ambos os resultados são atualizados em tempo real a cada tecla digitada.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

@@ -57,3 +57,18 @@
 
     <p id="parser-hint" class="parser-hint">Aguardando uma URL válida…</p>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que é um URL Parser?</h2>
+    <p>Um URL Parser decompõe uma URL completa em seus componentes individuais conforme a RFC 3986: protocolo (scheme), domínio (hostname), porta, caminho (pathname), query string (parâmetros) e fragmento (hash). Isso facilita a inspeção e o debugging de URLs complexas.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Fundamental para desenvolvedores back-end e front-end ao trabalhar com APIs, redirects, configurações de CORS e autenticação OAuth. Útil também para times de marketing e SEO que precisam auditar parâmetros UTM ou entender a estrutura de URLs de e-commerce. Ao integrar sistemas externos, entender cada parte da URL evita erros difíceis de debugar.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Cole qualquer URL no campo acima (incluindo o protocolo, ex: <code>https://</code>). A ferramenta usa a API nativa <code>URL</code> do navegador para fazer o parse em tempo real e exibe cada componente em campos separados, com botão de cópia individual. Os query params são listados como pares chave=valor para fácil leitura.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

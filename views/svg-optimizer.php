@@ -88,3 +88,18 @@
     <p id="svg-error" class="svg-error" hidden></p>
 </div>
 
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que é um Otimizador de SVG?</h2>
+    <p>Editores vetoriais como Illustrator, Figma e Inkscape exportam arquivos SVG com muito código desnecessário: metadados do editor, namespaces proprietários, IDs não referenciados, comentários e coordenadas de path com precisão excessiva. Um otimizador remove esse "lixo" sem alterar a aparência visual do ícone ou ilustração.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Performance web depende diretamente do tamanho dos assets. SVGs usados inline em HTML ou como <code>img src</code> devem ser os menores possíveis. Um SVG exportado do Figma pode ter 8KB; após otimização, pode cair para 2KB — redução de 75% sem perda visual. Use antes de fazer commit de ícones, ilustrações de landing pages, logos para e-mail marketing ou sprites SVG em design systems.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Arraste um arquivo <code>.svg</code>, clique na dropzone para escolher um arquivo, ou cole o código SVG diretamente na textarea. Clique em "Otimizar SVG" para processar. A ferramenta remove metadados de editores, namespaces desnecessários, IDs órfãos (não referenciados em nenhum <code>fill</code>, <code>stroke</code> ou <code>use</code>) e arredonda coordenadas de path para 2 casas decimais. Todo o processamento acontece 100% no navegador.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+

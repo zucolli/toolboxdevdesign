@@ -63,3 +63,18 @@
         </div>
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que são Parâmetros UTM?</h2>
+    <p>UTM (Urchin Tracking Module) são parâmetros adicionados ao final de uma URL para identificar a origem do tráfego no Google Analytics 4 e outras plataformas de analytics. Permitem saber exatamente de qual campanha, canal e fonte veio cada visita ao seu site.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Use parâmetros UTM em toda campanha de marketing digital: links em e-mails marketing (<code>utm_medium=email</code>), anúncios pagos no Google Ads (<code>utm_medium=cpc</code>), posts em redes sociais (<code>utm_medium=social</code>), parceiros e afiliados. Sem UTMs, o Google Analytics agrupa essas visitas como "direct" ou "referral", impossibilitando a análise de ROI por campanha.</p>
+
+    <h3>Como funcionar?</h3>
+    <p>Preencha a URL de destino e os três campos obrigatórios: <strong>Source</strong> (quem enviou o tráfego, ex: google), <strong>Medium</strong> (o tipo de mídia, ex: cpc) e <strong>Campaign</strong> (o nome da campanha). Os campos Term e Content são opcionais e servem para distinguir anúncios dentro da mesma campanha.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

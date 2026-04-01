@@ -30,3 +30,18 @@
         Copiar Slug
     </button>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que é um Slug?</h2>
+    <p>Um slug é a parte de uma URL que identifica uma página de forma legível por humanos e motores de busca. É gerado a partir do título ou texto da página, removendo acentos, caracteres especiais e substituindo espaços por hífens. Exemplo: "Ação de Varejo 100% OFF!" vira <code>acao-de-varejo-100-off</code>.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Slugs limpos são fundamentais para SEO: URLs amigáveis têm maior chance de ranquear bem no Google e são mais fáceis de compartilhar. Use este gerador ao criar posts em CMS (WordPress, Ghost, Strapi), rotas em frameworks (Laravel, Next.js), IDs de produtos em e-commerce ou qualquer situação em que o texto precisa virar parte de uma URL.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Cole ou escreva qualquer texto no campo acima. A ferramenta normaliza o texto em tempo real: converte para minúsculas, remove acentos via NFD, elimina caracteres não alfanuméricos e substitui espaços consecutivos por um único hífen. O resultado aparece imediatamente no campo "Slug gerado".</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

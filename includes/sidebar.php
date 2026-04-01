@@ -66,12 +66,13 @@
     </div>
 
     <div class="sidebar-promo">
-        <span class="sidebar-label">Serviços</span>
+        <span class="sidebar-promo-title">Conheça a NuAto</span>
         <ul class="promo-list">
             <li class="promo-item">Desenvolvimento Web</li>
             <li class="promo-item">Marketing Digital &amp; SEO</li>
             <li class="promo-item">Branding &amp; Design</li>
         </ul>
+        <a href="https://nuato.com.br" target="_blank" rel="noopener" class="promo-cta-link">Ver serviços →</a>
     </div>
 </nav>
 

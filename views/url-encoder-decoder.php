@@ -51,3 +51,18 @@
         </div>
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que é URL Encoding?</h2>
+    <p>URL Encoding (também chamado de percent-encoding) é o processo de substituir caracteres que não são permitidos em URLs por uma sequência de porcentagem seguida de dois dígitos hexadecimais. Por exemplo, o espaço vira <code>%20</code> e a letra "ç" vira <code>%C3%A7</code>. O padrão é definido pela RFC 3986.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Sempre que você precisa incluir texto com caracteres especiais (acentos, símbolos, espaços) em uma URL. Casos comuns: parâmetros de busca em APIs REST (<code>?q=cal%C3%A7a</code>), criação manual de query strings, debugging de requisições HTTP com ferramentas como Postman ou cURL, e construção de links em campanhas de marketing com conteúdo em português.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Digite no quadro da esquerda para codificar automaticamente. Digite no quadro da direita para decodificar. A conversão é bidirecional e acontece em tempo real, caractere a caractere. Se uma string encoded estiver malformada (por ex: <code>%2</code> incompleto), uma mensagem de erro aparece abaixo do campo.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

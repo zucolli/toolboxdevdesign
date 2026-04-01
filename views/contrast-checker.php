@@ -53,3 +53,18 @@
         </div>
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<article class="tool-content">
+    <h2>O que é a Calculadora de Contraste WCAG?</h2>
+    <p>Esta ferramenta calcula a razão de contraste entre duas cores (fundo e texto) e indica se a combinação atende às diretrizes WCAG 2.1 (Web Content Accessibility Guidelines). A razão é calculada com base na luminância relativa de cada cor, conforme definido pelo W3C.</p>
+
+    <h3>Onde e por que usar?</h3>
+    <p>Acessibilidade digital não é opcional: a legislação de vários países (incluindo o Brasil, pela LBI) exige que sites sejam acessíveis a pessoas com deficiência visual. Designers de UI, desenvolvedores front-end e times de marketing devem verificar o contraste de cada combinação de cor antes de colocar um layout em produção. Nível AA (mínimo recomendado) exige 4,5:1 para texto normal e 3:1 para texto grande. Nível AAA (excelência) exige 7:1 e 4,5:1 respectivamente.</p>
+
+    <h3>Como funciona?</h3>
+    <p>Selecione a cor de fundo e a cor do texto usando os seletores ou digitando o código HEX. A razão de contraste é calculada em tempo real e exibida junto com quatro badges indicando aprovação ou reprovação em cada critério WCAG. Use as badges para guiar suas decisões de design.</p>
+</article>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

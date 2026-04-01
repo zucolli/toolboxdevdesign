@@ -11,8 +11,9 @@ $path = parse_url($requestUri, PHP_URL_PATH);
 $path = str_replace(BASE_URL, '', $path);
 $path = trim($path, '/');
 
-$titulo = 'Toolbox Dev Design';
-$view   = null;
+$titulo          = 'Toolbox Dev Design';
+$pageDescription = 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.';
+$view            = null;
 
 // API endpoints (must run before HTML output)
 if ($path === 'api/generate-argon2') {
@@ -73,50 +74,61 @@ if ($path === 'api/generate-hash') {
 }
 
 match ($path) {
-    '', 'slug-generator' => (function () use (&$titulo, &$view) {
-        $titulo = 'Gerador de Slugs — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/slug-generator.php';
+    '', 'slug-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Slugs | Toolbox Dev Design';
+        $pageDescription = 'Converta qualquer texto em slugs limpos e otimizados para URLs e SEO instantaneamente. Ideal para CMS, WordPress e e-commerce.';
+        $view            = BASE_PATH . '/views/slug-generator.php';
     })(),
-    'contrast-checker' => (function () use (&$titulo, &$view) {
-        $titulo = 'Calculadora de Contraste WCAG — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/contrast-checker.php';
+    'contrast-checker' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Calculadora de Contraste WCAG | Toolbox Dev Design';
+        $pageDescription = 'Verifique se suas cores passam nos critérios de acessibilidade WCAG 2.1 AA e AAA. Essencial para UI design inclusivo.';
+        $view            = BASE_PATH . '/views/contrast-checker.php';
     })(),
-    'hash-generator' => (function () use (&$titulo, &$view) {
-        $titulo = 'Gerador de Hashes — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/hash-generator.php';
+    'hash-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Hashes | Toolbox Dev Design';
+        $pageDescription = 'Gere hashes Bcrypt, MD5 e SHA-256 de forma segura diretamente no navegador, sem enviar dados ao servidor.';
+        $view            = BASE_PATH . '/views/hash-generator.php';
     })(),
-    'utm-builder' => (function () use (&$titulo, &$view) {
-        $titulo = 'Gerador de UTMs — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/utm-builder.php';
+    'utm-builder' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de UTMs | Toolbox Dev Design';
+        $pageDescription = 'Crie URLs rastreáveis com parâmetros UTM para suas campanhas no Google Analytics 4. Simples, rápido e gratuito.';
+        $view            = BASE_PATH . '/views/utm-builder.php';
     })(),
-    'url-encoder-decoder' => (function () use (&$titulo, &$view) {
-        $titulo = 'URL Encoder/Decoder — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/url-encoder-decoder.php';
+    'url-encoder-decoder' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'URL Encoder / Decoder | Toolbox Dev Design';
+        $pageDescription = 'Encode e decode URLs com caracteres especiais em tempo real. Perfeito para depurar APIs REST e query strings.';
+        $view            = BASE_PATH . '/views/url-encoder-decoder.php';
     })(),
-    'color-palette-generator' => (function () use (&$titulo, &$view) {
-        $titulo = 'Color Palette Generator — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/color-palette-generator.php';
+    'color-palette-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Paleta de Cores | Toolbox Dev Design';
+        $pageDescription = 'Gere paletas de cores harmoniosas — analógica, complementar, triádica e monocromática — a partir de uma cor base.';
+        $view            = BASE_PATH . '/views/color-palette-generator.php';
     })(),
-    'url-parser' => (function () use (&$titulo, &$view) {
-        $titulo = 'URL Parser — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/url-parser.php';
+    'url-parser' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'URL Parser | Toolbox Dev Design';
+        $pageDescription = 'Desmembre qualquer URL em seus componentes: protocolo, host, path, query params e hash. Ótimo para debugging.';
+        $view            = BASE_PATH . '/views/url-parser.php';
     })(),
-    'argon2-generator' => (function () use (&$titulo, &$view) {
-        $titulo = 'Gerador Argon2id — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/argon2-generator.php';
+    'argon2-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador Argon2id | Toolbox Dev Design';
+        $pageDescription = 'Gere e verifique hashes Argon2id, o padrão ouro atual para segurança de senhas, via backend PHP.';
+        $view            = BASE_PATH . '/views/argon2-generator.php';
     })(),
-    'sha512-crc32-generator' => (function () use (&$titulo, &$view) {
-        $titulo = 'Gerador SHA-512 e CRC32 — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/sha512-crc32-generator.php';
+    'sha512-crc32-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador SHA-512 e CRC32 | Toolbox Dev Design';
+        $pageDescription = 'Calcule hashes SHA-512 e checksums CRC32 localmente, sem enviar dados ao servidor. Ideal para verificar integridade de arquivos.';
+        $view            = BASE_PATH . '/views/sha512-crc32-generator.php';
     })(),
-    'svg-optimizer' => (function () use (&$titulo, &$view) {
-        $titulo = 'Otimizador de SVG — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/svg-optimizer.php';
+    'svg-optimizer' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Otimizador de SVG | Toolbox Dev Design';
+        $pageDescription = 'Reduza o tamanho de arquivos SVG removendo metadados desnecessários e otimizando paths, 100% no navegador.';
+        $view            = BASE_PATH . '/views/svg-optimizer.php';
     })(),
-    default => (function () use (&$titulo, &$view) {
+    default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
-        $titulo = 'Página não encontrada — Toolbox Dev Design';
-        $view   = BASE_PATH . '/views/404.php';
+        $titulo          = 'Página não encontrada | Toolbox Dev Design';
+        $pageDescription = 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.';
+        $view            = BASE_PATH . '/views/404.php';
     })(),
 };
 
