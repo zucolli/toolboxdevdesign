@@ -1316,6 +1316,134 @@ input[type="url"]:focus {
 }
 
 /* ============================================================
+   JSON Formatter
+   ============================================================ */
+.json-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.json-textarea {
+    width: 100%;
+    min-height: 260px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    color: var(--color-text);
+    resize: vertical;
+}
+
+.json-textarea.input-readonly {
+    background: var(--color-bg-secondary);
+    color: var(--color-primary);
+}
+
+.json-textarea.json-output--error {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+    .json-textarea.json-output--error {
+        color: #f87171;
+        background: #1f0606;
+    }
+}
+
+.json-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media (max-width: 640px) {
+    .json-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   ROI / ROAS Calculator
+   ============================================================ */
+.roi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+    .roi-grid { grid-template-columns: 1fr; }
+}
+
+.roi-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 640px) {
+    .roi-results { grid-template-columns: 1fr; }
+}
+
+.roi-result-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+
+.roi-result-card--negative {
+    border-color: #dc2626;
+    background: #fef2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+    .roi-result-card--negative {
+        border-color: #f87171;
+        background: #1f0606;
+    }
+}
+
+.roi-result-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+}
+
+.roi-result-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.roi-result-card--negative .roi-result-value {
+    color: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+    .roi-result-card--negative .roi-result-value { color: #f87171; }
+}
+
+.roi-result-sub {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {

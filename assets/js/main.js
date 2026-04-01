@@ -977,3 +977,132 @@ document.addEventListener('click', (e) => {
 
     loadKnowledge();
 })();
+
+/* ============================================================
+   JSON Formatter / Validator
+   ============================================================ */
+(function () {
+    var inputEl  = document.getElementById('json-input');
+    var outputEl = document.getElementById('json-output');
+    var btnFormat = document.getElementById('btn-json-format');
+    var btnMinify = document.getElementById('btn-json-minify');
+    var btnCopy   = document.getElementById('btn-json-copy');
+    var btnClear  = document.getElementById('btn-json-clear');
+
+    if (!inputEl) return;
+
+    function setOutput(text, isError) {
+        outputEl.value = text;
+        outputEl.classList.toggle('json-output--error', !!isError);
+    }
+
+    function doFormat(indent) {
+        var raw = inputEl.value.trim();
+        if (!raw) { setOutput(''); return; }
+        try {
+            var parsed = JSON.parse(raw);
+            setOutput(JSON.stringify(parsed, null, indent), false);
+        } catch (e) {
+            setOutput('Erro de sintaxe: ' + e.message, true);
+        }
+    }
+
+    btnFormat.addEventListener('click', function () { doFormat(2); });
+    btnMinify.addEventListener('click', function () { doFormat(0); });
+
+    btnCopy.addEventListener('click', function () {
+        copyToClipboard(btnCopy, function () { return outputEl.value; });
+    });
+
+    btnClear.addEventListener('click', function () {
+        inputEl.value  = '';
+        setOutput('', false);
+        inputEl.focus();
+    });
+})();
+
+/* ============================================================
+   ROI / ROAS Calculator
+   ============================================================ */
+(function () {
+    var investEl = document.getElementById('roi-investment');
+    var revenueEl = document.getElementById('roi-revenue');
+    var costEl   = document.getElementById('roi-cost');
+    var valRoas  = document.getElementById('roi-val-roas');
+    var valRoi   = document.getElementById('roi-val-roi');
+    var valProfit = document.getElementById('roi-val-profit');
+
+    if (!investEl) return;
+
+    var fmtBRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    var fmtPct = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    function calc() {
+        var invest  = parseFloat(investEl.value)  || 0;
+        var revenue = parseFloat(revenueEl.value) || 0;
+        var cost    = parseFloat(costEl.value)    || 0;
+
+        if (invest <= 0 || revenue <= 0) {
+            valRoas.textContent  = '—';
+            valRoi.textContent   = '—';
+            valProfit.textContent = '—';
+            return;
+        }
+
+        var roas   = revenue / invest;
+        var base   = invest + cost;
+        var profit = revenue - invest - cost;
+        var roi    = base > 0 ? (profit / base) * 100 : 0;
+
+        valRoas.textContent   = fmtPct.format(roas) + 'x';
+        valRoi.textContent    = fmtPct.format(roi) + '%';
+        valProfit.textContent = fmtBRL.format(profit);
+
+        document.getElementById('roi-card-roi').classList.toggle('roi-result-card--negative', roi < 0);
+        document.getElementById('roi-card-profit').classList.toggle('roi-result-card--negative', profit < 0);
+    }
+
+    investEl.addEventListener('input', calc);
+    revenueEl.addEventListener('input', calc);
+    costEl.addEventListener('input', calc);
+})();
+
+/* ============================================================
+   WhatsApp Link Generator
+   ============================================================ */
+(function () {
+    var phoneEl  = document.getElementById('wa-phone');
+    var msgEl    = document.getElementById('wa-message');
+    var outputEl = document.getElementById('wa-output');
+    var btnCopy  = document.getElementById('btn-copy-wa');
+    var btnTest  = document.getElementById('btn-test-wa');
+
+    if (!phoneEl) return;
+
+    function buildLink() {
+        var phone = (phoneEl.value || '').replace(/\D/g, '');
+        var msg   = msgEl ? msgEl.value : '';
+        if (!phone) return '';
+        var url = 'https://wa.me/' + phone;
+        if (msg.trim()) url += '?text=' + encodeURIComponent(msg.trim());
+        return url;
+    }
+
+    function update() {
+        var link = buildLink();
+        outputEl.value = link;
+        btnTest.disabled = !link;
+    }
+
+    phoneEl.addEventListener('input', update);
+    if (msgEl) msgEl.addEventListener('input', update);
+
+    btnCopy.addEventListener('click', function () {
+        copyToClipboard(btnCopy, function () { return outputEl.value; });
+    });
+
+    btnTest.addEventListener('click', function () {
+        var link = buildLink();
+        if (link) window.open(link, '_blank', 'noopener,noreferrer');
+    });
+})();

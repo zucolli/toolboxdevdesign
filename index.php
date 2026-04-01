@@ -129,6 +129,21 @@ match ($path) {
         $pageDescription = 'Crie textos persuasivos para posts e ofertas usando fórmulas de copywriting (AIDA, PAS, BAB) instantaneamente, sem IA paga.';
         $view            = BASE_PATH . '/views/copy-generator.php';
     })(),
+    'json-formatter' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Formatador e Validador de JSON | Toolbox Dev Design';
+        $pageDescription = 'Formate, valide e minifique JSON diretamente no navegador. Detecta erros de sintaxe com indicação de linha, 100% client-side e gratuito.';
+        $view            = BASE_PATH . '/views/json-formatter.php';
+    })(),
+    'roi-calculator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Calculadora de ROI e ROAS | Toolbox Dev Design';
+        $pageDescription = 'Calcule ROI, ROAS e Lucro Líquido das suas campanhas de marketing em tempo real. Gratuito, sem cadastro, 100% no navegador.';
+        $view            = BASE_PATH . '/views/roi-calculator.php';
+    })(),
+    'whatsapp-link' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Link do WhatsApp | Toolbox Dev Design';
+        $pageDescription = 'Crie links wa.me com mensagem pré-definida para o WhatsApp. Encode automático de caracteres especiais e acentos. Gratuito e instantâneo.';
+        $view            = BASE_PATH . '/views/whatsapp-link.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';
