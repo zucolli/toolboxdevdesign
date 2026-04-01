@@ -1,5 +1,3 @@
-<div class="ad-placeholder"><span class="ad-placeholder-label">Espaço Reservado · AdSense</span></div>
-
 <div class="card">
     <h1 class="card-title">Formatador e Validador de JSON</h1>
     <p class="card-description">Cole seu JSON no campo da esquerda e clique em <strong>Formatar</strong> ou <strong>Minificar</strong>. Erros de sintaxe são exibidos com a linha indicada.</p>
@@ -35,6 +33,8 @@
     </div>
 </div>
 
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
 <article class="tool-content">
     <h2>O que é o Formatador de JSON?</h2>
     <p>O JSON (JavaScript Object Notation) é o formato de troca de dados mais usado em APIs e aplicações web. Minificado, ele é difícil de ler — esta ferramenta formata com indentação de 2 espaços para facilitar a leitura e depuração.</p>
@@ -46,4 +46,4 @@
     <p>A validação usa <code>JSON.parse()</code> nativo do navegador — o mesmo motor que qualquer API JavaScript usa. Erros comuns incluem aspas simples no lugar de duplas, vírgula após o último item, e chaves/colchetes não fechados.</p>
 </article>
 
-<div class="ad-placeholder"><span class="ad-placeholder-label">Espaço Reservado · AdSense</span></div>
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

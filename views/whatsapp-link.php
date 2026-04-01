@@ -1,5 +1,3 @@
-<div class="ad-placeholder"><span class="ad-placeholder-label">Espaço Reservado · AdSense</span></div>
-
 <div class="card">
     <h1 class="card-title">Gerador de Link do WhatsApp</h1>
     <p class="card-description">Preencha o número e a mensagem para gerar um link <code>wa.me</code> pronto para usar em botões, bio, e-mail ou anúncios.</p>
@@ -35,6 +33,8 @@
     </div>
 </div>
 
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
 <article class="tool-content">
     <h2>O que é o link wa.me?</h2>
     <p>O <code>wa.me</code> é o domínio oficial do WhatsApp para links de contato direto. Ao acessar <code>https://wa.me/5511999999999</code>, o WhatsApp abre automaticamente uma conversa com aquele número — sem que o visitante precise salvar o contato antes.</p>
@@ -46,4 +46,4 @@
     <p>O número deve conter o código do país (Brasil = 55) seguido do DDD e do número com 9 dígitos. Exemplo: <code>5511987654321</code>. Não use espaços, parênteses, traços ou o sinal de +.</p>
 </article>
 
-<div class="ad-placeholder"><span class="ad-placeholder-label">Espaço Reservado · AdSense</span></div>
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>

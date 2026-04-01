@@ -1,5 +1,3 @@
-<div class="ad-placeholder"><span class="ad-placeholder-label">Espaço Reservado · AdSense</span></div>
-
 <div class="card">
     <h1 class="card-title">Calculadora de ROI e ROAS</h1>
     <p class="card-description">Preencha os valores da sua campanha e veja o ROI, ROAS e Lucro Líquido calculados em tempo real.</p>
@@ -41,6 +39,8 @@
     </div>
 </div>
 
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
 <article class="tool-content">
     <h2>Diferença entre ROI e ROAS</h2>
     <p><strong>ROAS</strong> (Return on Ad Spend) mede quantos reais de receita bruta cada real investido em anúncios gerou. Um ROAS de 5x significa R$5 de receita para cada R$1 gasto em mídia — mas não considera o custo do produto.</p>
@@ -56,4 +56,4 @@
     <p>Um ROAS abaixo de 1x indica que a campanha nem pagou a mídia. Um ROI negativo significa prejuízo operacional. O ROAS ideal varia por setor — e-commerce de moda costuma exigir ROAS mínimo de 3x, enquanto serviços com alta margem podem ser rentáveis com ROAS de 1,5x.</p>
 </article>
 
-<div class="ad-placeholder"><span class="ad-placeholder-label">Espaço Reservado · AdSense</span></div>
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
