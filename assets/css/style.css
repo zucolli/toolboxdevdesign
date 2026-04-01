@@ -1314,19 +1314,77 @@ input[type="url"]:focus {
 
 /* Mobile: 1 coluna — tudo empilhado */
 @media (max-width: 768px) {
+    /* Evita scroll horizontal */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Topbar: z-index elevado, fundo sólido garantido */
+    .topbar {
+        z-index: 1000;
+    }
+
+    /* Layout: coluna única, sem overflow lateral */
     .layout {
         grid-template-columns: 1fr;
+        width: 100%;
     }
+
+    /* Sidebar esquerda — barra de navegação horizontal compacta */
     .sidebar {
         position: static;
         height: auto;
         border-right: none;
         border-bottom: 1px solid var(--color-border);
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 12px 16px;
-        gap: 16px;
+        flex-direction: column;
+        padding: 10px 12px;
+        gap: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
+
+    /* Oculta o label "Ferramentas" no mobile */
+    .sidebar-label {
+        display: none;
+    }
+
+    /* Lista de links: flex horizontal, centralizado, com quebra */
+    .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+    }
+
+    /* Links menores e mais compactos para toque */
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+        gap: 5px;
+        min-height: 36px; /* touch target adequado */
+        justify-content: center;
+    }
+
+    .nav-link svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+
+    /* Conteúdo principal */
+    .content {
+        padding: 20px 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Card com padding reduzido */
+    .card {
+        padding: 20px 16px;
+    }
+
+    /* Sidebar direita — empilhada abaixo, coluna */
     .sidebar-right {
         grid-column: 1;
         position: static;
@@ -1334,10 +1392,17 @@ input[type="url"]:focus {
         border-left: none;
         border-top: 1px solid var(--color-border);
         flex-direction: column;
-        padding: 16px 20px;
+        padding: 16px;
         gap: 16px;
+        width: 100%;
+        box-sizing: border-box;
     }
-    .content {
-        padding: 24px 20px;
+
+    /* Anúncios: banner horizontal mobile (não ocupa tela toda) */
+    .ad-placeholder {
+        width: 100%;
+        min-height: 50px;
+        max-height: 100px;
+        margin: 8px 0;
     }
 }
