@@ -1318,20 +1318,17 @@ document.addEventListener('click', (e) => {
         var rgb = hexToRgb(color.value);
         var alpha = (parseInt(opacity.value) / 100).toFixed(2);
         var insetStr = inset.checked ? 'inset ' : '';
-        var css = 'box-shadow: ' + insetStr +
-            offsetX.value + 'px ' +
-            offsetY.value + 'px ' +
-            blur.value + 'px ' +
-            spread.value + 'px ' +
-            'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + alpha + ');';
-
-        previewBox.style.boxShadow = insetStr +
+        var shadowVal = insetStr +
             offsetX.value + 'px ' +
             offsetY.value + 'px ' +
             blur.value + 'px ' +
             spread.value + 'px ' +
             'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + alpha + ')';
 
+        var css = '-webkit-box-shadow: ' + shadowVal + ';\n' +
+                  'box-shadow: ' + shadowVal + ';';
+
+        previewBox.style.boxShadow = shadowVal;
         previewBg.style.backgroundColor = bgColor.value;
         result.value = css;
     }
@@ -1369,11 +1366,15 @@ document.addEventListener('click', (e) => {
 
         var css;
         if (isLinear) {
-            css = 'background: linear-gradient(' + angleEl.value + 'deg, ' + color1.value + ', ' + color2.value + ');';
-            preview.style.background = 'linear-gradient(' + angleEl.value + 'deg, ' + color1.value + ', ' + color2.value + ')';
+            var gradVal = 'linear-gradient(' + angleEl.value + 'deg, ' + color1.value + ', ' + color2.value + ')';
+            css = 'background: -webkit-' + gradVal + ';\n' +
+                  'background: ' + gradVal + ';';
+            preview.style.background = gradVal;
         } else {
-            css = 'background: radial-gradient(circle, ' + color1.value + ', ' + color2.value + ');';
-            preview.style.background = 'radial-gradient(circle, ' + color1.value + ', ' + color2.value + ')';
+            var gradVal = 'radial-gradient(circle, ' + color1.value + ', ' + color2.value + ')';
+            css = 'background: -webkit-' + gradVal + ';\n' +
+                  'background: ' + gradVal + ';';
+            preview.style.background = gradVal;
         }
         result.value = css;
     }
@@ -1481,4 +1482,24 @@ document.addEventListener('click', (e) => {
     });
 
     generate();
+})();
+
+// ── Sidebar collapsible sections ─────────────────────────────────────────────
+(function () {
+    document.querySelectorAll('.sidebar-label[data-key]').forEach(function (btn) {
+        var key  = 'sidebar-' + btn.dataset.key;
+        var list = btn.nextElementSibling;
+        if (!list) return;
+
+        if (localStorage.getItem(key) === '0') {
+            btn.classList.add('is-collapsed');
+            list.classList.add('is-collapsed');
+        }
+
+        btn.addEventListener('click', function () {
+            var collapsed = btn.classList.toggle('is-collapsed');
+            list.classList.toggle('is-collapsed', collapsed);
+            localStorage.setItem(key, collapsed ? '0' : '1');
+        });
+    });
 })();

@@ -1,12 +1,8 @@
 <div class="card">
     <h1 class="card-title">Gerador de CSS Box Shadow</h1>
     <p class="card-description">Crie e personalize sombras CSS visualmente. Arraste os sliders e copie o código pronto.</p>
-</div>
 
-<div class="ad-placeholder">Espaço Reservado · AdSense</div>
-
-<div class="card">
-    <div class="bs-layout">
+    <div class="bs-layout" style="margin-top:24px">
         <div class="bs-controls">
             <div class="form-group">
                 <label class="form-label" for="bs-offset-x">Deslocamento X: <span id="bs-offset-x-val">4</span>px</label>
@@ -53,24 +49,26 @@
         </div>
     </div>
 
-    <div class="form-group" style="margin-top:16px">
+    <div class="form-group" style="margin-top:20px">
         <label class="form-label">CSS Gerado</label>
         <div class="input-copy-row">
-            <textarea id="bs-result" class="input-readonly bs-result-textarea" readonly>box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.30);</textarea>
+            <textarea id="bs-result" class="input-readonly bs-result-textarea" readonly></textarea>
             <button class="btn btn-secondary btn-sm" id="bs-copy-btn">Copiar</button>
         </div>
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
 
 <article class="tool-content">
     <h2>O que é CSS Box Shadow?</h2>
     <p>A propriedade <code>box-shadow</code> aplica sombras ao redor de um elemento HTML. É amplamente usada em UI design para criar profundidade, realce de cards e efeitos de foco em botões.</p>
 
     <h3>Parâmetros da propriedade</h3>
-    <p>A sintaxe completa é: <code>box-shadow: [inset] offset-x offset-y blur-radius spread-radius color;</code>. O <strong>offset-x</strong> e <strong>offset-y</strong> definem a posição da sombra, <strong>blur</strong> controla o desfoque e <strong>spread</strong> expande ou contrai a sombra.</p>
+    <p>A sintaxe completa é: <code>box-shadow: [inset] offset-x offset-y blur-radius spread-radius color;</code>. O <strong>offset-x</strong> e <strong>offset-y</strong> definem a posição da sombra, <strong>blur</strong> controla o desfoque e <strong>spread</strong> expande ou contrai a sombra. O prefixo <code>-webkit-box-shadow</code> garante compatibilidade com versões antigas de Safari e Chrome.</p>
 
     <h3>Como usar esta ferramenta</h3>
-    <p>Ajuste os sliders para personalizar a sombra em tempo real. Use o checkbox "inset" para criar sombras internas. Marque a cor com transparência usando o controle de opacidade. Quando estiver satisfeito, clique em "Copiar" para obter o CSS pronto.</p>
+    <p>Ajuste os sliders para personalizar a sombra em tempo real. Use o checkbox "inset" para criar sombras internas. Controle a transparência com o slider de opacidade. Quando estiver satisfeito, clique em "Copiar" para obter o CSS pronto — já com prefixo cross-browser incluído.</p>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

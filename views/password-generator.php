@@ -1,12 +1,8 @@
 <div class="card">
     <h1 class="card-title">Gerador de Senhas Fortes</h1>
     <p class="card-description">Gere senhas criptograficamente seguras usando a Web Crypto API. Nenhum dado é enviado ao servidor.</p>
-</div>
 
-<div class="ad-placeholder">Espaço Reservado · AdSense</div>
-
-<div class="card">
-    <div class="pw-output-area">
+    <div class="pw-output-area" style="margin-top:24px">
         <input type="text" id="pw-result" class="input-readonly pw-result-input" readonly placeholder="Clique em Gerar...">
         <div class="pw-action-row">
             <button class="btn btn-secondary btn-sm" id="pw-copy-btn">Copiar</button>
@@ -48,6 +44,8 @@
         </div>
     </div>
 </div>
+
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
 
 <article class="tool-content">
     <h2>Por que usar senhas fortes?</h2>

@@ -1,12 +1,8 @@
 <div class="card">
     <h1 class="card-title">Gerador de CSS Gradient</h1>
     <p class="card-description">Crie gradientes lineares e radiais com preview em tempo real. Copie o código CSS com um clique.</p>
-</div>
 
-<div class="ad-placeholder">Espaço Reservado · AdSense</div>
-
-<div class="card">
-    <div class="grad-preview" id="grad-preview"></div>
+    <div class="grad-preview" id="grad-preview" style="margin-top:24px"></div>
 
     <div class="grad-controls">
         <div class="grad-controls-row">
@@ -36,7 +32,7 @@
         </div>
     </div>
 
-    <div class="form-group" style="margin-top:16px">
+    <div class="form-group" style="margin-top:20px">
         <label class="form-label">CSS Gerado</label>
         <div class="input-copy-row">
             <textarea id="grad-result" class="input-readonly bs-result-textarea" readonly></textarea>
@@ -45,15 +41,17 @@
     </div>
 </div>
 
+<div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
 <article class="tool-content">
     <h2>O que são gradientes CSS?</h2>
     <p>Gradientes CSS permitem criar transições suaves entre duas ou mais cores diretamente via CSS, sem imagens. Eles são amplamente usados em backgrounds, botões e overlays modernos.</p>
 
     <h3>Linear vs Radial</h3>
-    <p>O <code>linear-gradient</code> distribui as cores ao longo de uma linha reta com um ângulo definido (0° = baixo para cima, 90° = esquerda para direita). Já o <code>radial-gradient</code> irradia do centro para fora em forma circular.</p>
+    <p>O <code>linear-gradient</code> distribui as cores ao longo de uma linha reta com um ângulo definido (0° = baixo para cima, 90° = esquerda para direita). Já o <code>radial-gradient</code> irradia do centro para fora em forma circular. O CSS gerado inclui o prefixo <code>-webkit-</code> para garantir compatibilidade com versões antigas de Safari.</p>
 
     <h3>Como usar esta ferramenta</h3>
-    <p>Escolha o tipo de gradiente, selecione as duas cores e ajuste o ângulo (apenas para Linear). O preview atualiza instantaneamente. Clique em "Copiar" para levar o CSS para o seu projeto.</p>
+    <p>Escolha o tipo de gradiente, selecione as duas cores e ajuste o ângulo (apenas para Linear). O preview atualiza instantaneamente. Clique em "Copiar" para levar o CSS para o seu projeto — já com prefixo cross-browser incluído.</p>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

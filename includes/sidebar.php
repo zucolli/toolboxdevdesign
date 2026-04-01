@@ -1,17 +1,14 @@
 <nav class="sidebar">
     <div class="sidebar-section">
-        <span class="sidebar-label">Ferramentas</span>
+        <button class="sidebar-label" data-key="ferramentas">
+            Ferramentas
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
         <ul class="nav-list">
             <li>
                 <a href="<?= BASE_URL ?>slug-generator" class="nav-link <?= ($path === '' || $path === 'slug-generator') ? 'active' : '' ?>">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                     Gerador de Slugs
-                </a>
-            </li>
-            <li>
-                <a href="<?= BASE_URL ?>contrast-checker" class="nav-link <?= ($path === 'contrast-checker') ? 'active' : '' ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
-                    Contraste WCAG
                 </a>
             </li>
             <li>
@@ -36,6 +33,12 @@
                 <a href="<?= BASE_URL ?>svg-optimizer" class="nav-link <?= ($path === 'svg-optimizer') ? 'active' : '' ?>">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     SVG Optimizer
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>contrast-checker" class="nav-link <?= ($path === 'contrast-checker') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+                    Contraste WCAG
                 </a>
             </li>
             <li>
@@ -78,7 +81,10 @@
     </div>
 
     <div class="sidebar-section">
-        <span class="sidebar-label">Design</span>
+        <button class="sidebar-label" data-key="design">
+            Design
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
         <ul class="nav-list">
             <li>
                 <a href="<?= BASE_URL ?>css-box-shadow" class="nav-link <?= ($path === 'css-box-shadow') ? 'active' : '' ?>">
@@ -88,7 +94,7 @@
             </li>
             <li>
                 <a href="<?= BASE_URL ?>css-gradient" class="nav-link <?= ($path === 'css-gradient') ? 'active' : '' ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#667eea"/><stop offset="100%" stop-color="#764ba2"/></linearGradient></defs><rect x="2" y="6" width="20" height="12" rx="3" fill="url(#sg)" stroke="currentColor"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><line x1="2" y1="12" x2="22" y2="12" stroke-dasharray="3 3"/></svg>
                     CSS Gradient
                 </a>
             </li>
@@ -96,7 +102,10 @@
     </div>
 
     <div class="sidebar-section">
-        <span class="sidebar-label">Segurança</span>
+        <button class="sidebar-label" data-key="seguranca">
+            Segurança
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
         <ul class="nav-list">
             <li>
                 <a href="<?= BASE_URL ?>password-generator" class="nav-link <?= ($path === 'password-generator') ? 'active' : '' ?>">
@@ -108,7 +117,10 @@
     </div>
 
     <div class="sidebar-section">
-        <span class="sidebar-label">Marketing</span>
+        <button class="sidebar-label" data-key="marketing">
+            Marketing
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
         <ul class="nav-list">
             <li>
                 <a href="<?= BASE_URL ?>roi-calculator" class="nav-link <?= ($path === 'roi-calculator') ? 'active' : '' ?>">
