@@ -124,6 +124,11 @@ match ($path) {
         $pageDescription = 'Reduza o tamanho de arquivos SVG removendo metadados desnecessários e otimizando paths, 100% no navegador.';
         $view            = BASE_PATH . '/views/svg-optimizer.php';
     })(),
+    'copy-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Copy para Ofertas | Toolbox Dev Design';
+        $pageDescription = 'Crie textos persuasivos para posts e ofertas usando fórmulas de copywriting (AIDA, PAS, BAB) instantaneamente, sem IA paga.';
+        $view            = BASE_PATH . '/views/copy-generator.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';

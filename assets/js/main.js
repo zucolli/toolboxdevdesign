@@ -853,3 +853,76 @@ document.addEventListener('click', (e) => {
     if (!source || !source.value) return;
     copyToClipboard(btn, () => source.value);
 });
+
+// ── Copy Generator ─────────────────────────────────────────────────────────
+
+(function () {
+    const btnGerar   = document.getElementById('btn-gerar-copy');
+    const btnCopiar  = document.getElementById('btn-copy-copy');
+    const output     = document.getElementById('copy-output');
+
+    if (!btnGerar || !output) return;
+
+    function val(id) {
+        return (document.getElementById(id)?.value ?? '').trim();
+    }
+
+    function formula() {
+        return document.querySelector('input[name="copy-formula"]:checked')?.value ?? 'aida';
+    }
+
+    function buildAida(produto, publico, beneficio, problema, oferta) {
+        const ofertaLinha = oferta ? `\n\n👉 ${oferta}. Não perca!` : '';
+        return `🔥 Atenção, ${publico}!\n\n` +
+            `Conheça o ${produto} — feito para quem leva a sério.\n\n` +
+            `✅ ${beneficio}.\n\n` +
+            `Cansado de sofrer com ${problema}? O ${produto} resolve isso de vez.` +
+            ofertaLinha + `\n\nClique no link e garanta o seu agora!`;
+    }
+
+    function buildPas(produto, publico, beneficio, problema, oferta) {
+        const ofertaLinha = oferta ? ` E ainda: ${oferta}.` : '';
+        return `😣 Problema: Cansado de ${problema}?\n\n` +
+            `😤 Agitação: Sabemos como é frustrante para ${publico} lidar com isso todo dia. Cada tentativa sem resultado é tempo e energia desperdiçados.\n\n` +
+            `💡 Solução: O ${produto} chegou para mudar esse jogo. Com ${beneficio}, você finalmente resolve o problema de uma vez por todas.` +
+            ofertaLinha + `\n\n👉 Clique no link da bio e aproveite!`;
+    }
+
+    function buildBab(produto, publico, beneficio, problema, oferta) {
+        const ofertaLinha = oferta ? `\n\n🎁 ${oferta}. Por tempo limitado!` : '';
+        return `⏳ Antes: ${publico} enfrentam ${problema} sem saber por onde começar. A frustração bate toda vez.\n\n` +
+            `✨ Depois: Imagine ter ${beneficio} no seu dia a dia — sem dor, sem perda de tempo, com resultados reais.\n\n` +
+            `🌉 A ponte: o ${produto} é exatamente isso. A solução que faltava para transformar sua rotina.` +
+            ofertaLinha + `\n\n👉 Acesse agora e comece a mudança!`;
+    }
+
+    function buildDireta(produto, publico, beneficio, problema, oferta) {
+        const ofertaLinha = oferta ? ` | ${oferta}` : '';
+        return `${produto} para ${publico}${ofertaLinha}\n\n` +
+            `✅ ${beneficio}\n` +
+            `❌ Chega de ${problema}\n\n` +
+            `👉 Clique no link e compre agora!`;
+    }
+
+    btnGerar.addEventListener('click', () => {
+        const produto   = val('copy-produto');
+        const publico   = val('copy-publico');
+        const beneficio = val('copy-beneficio');
+        const problema  = val('copy-problema');
+        const oferta    = val('copy-oferta');
+
+        if (!produto || !publico || !beneficio || !problema) {
+            showToast('Preencha os campos obrigatórios (*).', 'error');
+            return;
+        }
+
+        const builders = { aida: buildAida, pas: buildPas, bab: buildBab, direta: buildDireta };
+        const texto = builders[formula()](produto, publico, beneficio, problema, oferta);
+        output.value = texto;
+        showToast('Texto gerado com sucesso!');
+    });
+
+    if (btnCopiar) {
+        btnCopiar.addEventListener('click', () => copyToClipboard(btnCopiar, () => output.value));
+    }
+})();
