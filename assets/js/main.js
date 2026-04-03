@@ -2301,3 +2301,49 @@ document.addEventListener('click', (e) => {
         });
     }
 })();
+
+// ============================================================
+// Home — Busca em tempo real
+// ============================================================
+(function () {
+    var searchInput = document.getElementById('tool-search');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function () {
+        var q = this.value.toLowerCase().trim();
+        var noResults = document.getElementById('home-no-results');
+        var totalVisible = 0;
+
+        document.querySelectorAll('.home-category').forEach(function (cat) {
+            var cards = cat.querySelectorAll('.tool-card');
+            var visible = 0;
+
+            cards.forEach(function (card) {
+                var title = card.querySelector('.tool-card-title').textContent.toLowerCase();
+                var desc  = card.querySelector('.tool-card-desc').textContent.toLowerCase();
+
+                if (!q || title.indexOf(q) !== -1 || desc.indexOf(q) !== -1) {
+                    card.classList.remove('hidden');
+                    visible++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visible === 0) {
+                cat.classList.add('hidden');
+            } else {
+                cat.classList.remove('hidden');
+            }
+            totalVisible += visible;
+        });
+
+        if (noResults) {
+            if (q && totalVisible === 0) {
+                noResults.removeAttribute('hidden');
+            } else {
+                noResults.setAttribute('hidden', '');
+            }
+        }
+    });
+})();

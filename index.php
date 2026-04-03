@@ -14,6 +14,7 @@ $path = trim($path, '/');
 $titulo          = 'Toolbox Dev Design';
 $pageDescription = 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.';
 $view            = null;
+$bodyClass       = '';
 
 // API endpoints (must run before HTML output)
 if ($path === 'api/get-ip') {
@@ -87,7 +88,13 @@ if ($path === 'api/generate-hash') {
 }
 
 match ($path) {
-    '', 'slug-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+    '' => (function () use (&$titulo, &$pageDescription, &$view, &$bodyClass) {
+        $titulo          = 'Toolbox Dev Design — 32 Ferramentas Gratuitas para Dev & Design';
+        $pageDescription = '32 ferramentas gratuitas para desenvolvedores, designers e profissionais de marketing. Sem cadastro, 100% no navegador.';
+        $view            = BASE_PATH . '/views/home.php';
+        $bodyClass       = 'page-home';
+    })(),
+    'slug-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
         $titulo          = 'Gerador de Slugs | Toolbox Dev Design';
         $pageDescription = 'Converta qualquer texto em slugs limpos e otimizados para URLs e SEO instantaneamente. Ideal para CMS, WordPress e e-commerce.';
         $view            = BASE_PATH . '/views/slug-generator.php';
