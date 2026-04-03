@@ -104,6 +104,33 @@
                     Case Converter
                 </a>
             </li>
+            <li>
+                <a href="<?= BASE_URL ?>text-cleaner" class="nav-link <?= ($path === 'text-cleaner') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><rect x="5" y="10" width="14" height="10" rx="2"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                    Limpador de Texto
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
+        <button class="sidebar-label" data-key="imagens">
+            Imagens
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="nav-list">
+            <li>
+                <a href="<?= BASE_URL ?>image-base64" class="nav-link <?= ($path === 'image-base64') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Imagem → Base64
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>image-placeholder" class="nav-link <?= ($path === 'image-placeholder') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="3" x2="21" y2="21"/></svg>
+                    Placeholder
+                </a>
+            </li>
         </ul>
     </div>
 

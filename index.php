@@ -217,6 +217,21 @@ match ($path) {
         $pageDescription = 'Descubra seu endereço IP público instantaneamente. Ferramenta simples, sem cadastro e 100% gratuita.';
         $view            = BASE_PATH . '/views/my-ip.php';
     })(),
+    'image-base64' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Conversor de Imagem para Base64 | Toolbox Dev Design';
+        $pageDescription = 'Converta qualquer imagem (PNG, JPG, WebP, SVG) para código Base64 Data URL no navegador. Sem upload, sem servidor, 100% privado.';
+        $view            = BASE_PATH . '/views/image-base64.php';
+    })(),
+    'image-placeholder' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Placeholder de Imagem | Toolbox Dev Design';
+        $pageDescription = 'Gere imagens placeholder personalizadas com dimensões, cores e texto configuráveis. Preview em tempo real via Canvas API — gratuito e 100% no navegador.';
+        $view            = BASE_PATH . '/views/image-placeholder.php';
+    })(),
+    'text-cleaner' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Limpador de Texto | Toolbox Dev Design';
+        $pageDescription = 'Remova espaços extras, linhas vazias e duplicatas de qualquer texto em tempo real. Ideal para limpar conteúdos copiados de PDFs, e-mails e planilhas.';
+        $view            = BASE_PATH . '/views/text-cleaner.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';

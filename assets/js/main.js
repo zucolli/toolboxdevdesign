@@ -1882,3 +1882,192 @@ document.addEventListener('click', (e) => {
         });
     });
 })();
+
+// ── Imagem → Base64 ──────────────────────────────────────────────────────────
+(function () {
+    var dropzone   = document.getElementById('ib64-dropzone');
+    var fileInput  = document.getElementById('ib64-file');
+    var previewWrap= document.getElementById('ib64-preview-wrap');
+    var previewImg = document.getElementById('ib64-preview-img');
+    var meta       = document.getElementById('ib64-meta');
+    var resultWrap = document.getElementById('ib64-result-wrap');
+    var output     = document.getElementById('ib64-output');
+    var copyBtn    = document.getElementById('ib64-copy-btn');
+    if (!dropzone) return;
+
+    function processFile(file) {
+        if (!file || !file.type.startsWith('image/')) return;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var dataUrl = e.target.result;
+            previewImg.src = dataUrl;
+            previewWrap.removeAttribute('hidden');
+            meta.innerHTML =
+                '<strong>Nome:</strong> ' + file.name + '<br>' +
+                '<strong>Tipo:</strong> ' + file.type + '<br>' +
+                '<strong>Tamanho original:</strong> ' + (file.size / 1024).toFixed(1) + ' KB<br>' +
+                '<strong>Tamanho Base64:</strong> ' + (dataUrl.length / 1024).toFixed(1) + ' KB';
+            output.value = dataUrl;
+            resultWrap.removeAttribute('hidden');
+        };
+        reader.readAsDataURL(file);
+    }
+
+    dropzone.addEventListener('click', function (e) {
+        if (e.target !== fileInput) fileInput.click();
+    });
+    fileInput.addEventListener('change', function () {
+        processFile(fileInput.files[0]);
+    });
+    dropzone.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        dropzone.classList.add('is-over');
+    });
+    dropzone.addEventListener('dragleave', function () {
+        dropzone.classList.remove('is-over');
+    });
+    dropzone.addEventListener('drop', function (e) {
+        e.preventDefault();
+        dropzone.classList.remove('is-over');
+        processFile(e.dataTransfer.files[0]);
+    });
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            copyToClipboard(copyBtn, function () { return output.value; });
+        });
+    }
+})();
+
+// ── Gerador de Placeholder de Imagem ─────────────────────────────────────────
+(function () {
+    var canvas      = document.getElementById('iph-canvas');
+    if (!canvas) return;
+    var ctx         = canvas.getContext('2d');
+    var wInput      = document.getElementById('iph-width');
+    var hInput      = document.getElementById('iph-height');
+    var bgInput     = document.getElementById('iph-bg');
+    var bgHex       = document.getElementById('iph-bg-hex');
+    var fgInput     = document.getElementById('iph-fg');
+    var fgHex       = document.getElementById('iph-fg-hex');
+    var textInput   = document.getElementById('iph-text');
+    var downloadBtn = document.getElementById('iph-download-btn');
+    var copyUrlBtn  = document.getElementById('iph-copy-url-btn');
+
+    function clamp(val, min, max) { return Math.min(max, Math.max(min, val)); }
+
+    function render() {
+        var w   = clamp(parseInt(wInput.value) || 400, 1, 2000);
+        var h   = clamp(parseInt(hInput.value) || 300, 1, 2000);
+        var bg  = bgInput.value;
+        var fg  = fgInput.value;
+        var txt = textInput.value.trim() || (w + ' × ' + h);
+
+        canvas.width  = w;
+        canvas.height = h;
+
+        // Background
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, w, h);
+
+        // Text
+        var fontSize = Math.max(12, Math.min(w / 10, h / 5, 48));
+        ctx.fillStyle = fg;
+        ctx.font = 'bold ' + fontSize + 'px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(txt, w / 2, h / 2);
+    }
+
+    // Sync color picker ↔ hex text
+    function syncColor(picker, hexField) {
+        picker.addEventListener('input', function () { hexField.value = picker.value; render(); });
+        hexField.addEventListener('input', function () {
+            if (/^#[0-9a-fA-F]{6}$/.test(hexField.value)) {
+                picker.value = hexField.value;
+                render();
+            }
+        });
+    }
+    syncColor(bgInput, bgHex);
+    syncColor(fgInput, fgHex);
+
+    [wInput, hInput, textInput].forEach(function (el) {
+        el.addEventListener('input', render);
+    });
+
+    downloadBtn.addEventListener('click', function () {
+        var w   = parseInt(wInput.value) || 400;
+        var h   = parseInt(hInput.value) || 300;
+        var a   = document.createElement('a');
+        a.download = 'placeholder-' + w + 'x' + h + '.png';
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+    });
+
+    if (copyUrlBtn) {
+        copyUrlBtn.addEventListener('click', function () {
+            copyToClipboard(copyUrlBtn, function () { return canvas.toDataURL('image/png'); });
+        });
+    }
+
+    render();
+})();
+
+// ── Limpador de Texto ─────────────────────────────────────────────────────────
+(function () {
+    var input          = document.getElementById('tc-input');
+    if (!input) return;
+    var output         = document.getElementById('tc-output');
+    var copyBtn        = document.getElementById('tc-copy-btn');
+    var stats          = document.getElementById('tc-stats');
+    var statOriginal   = document.getElementById('tc-stat-original');
+    var statCleaned    = document.getElementById('tc-stat-cleaned');
+    var statRemoved    = document.getElementById('tc-stat-removed');
+    var chkSpaces      = document.getElementById('tc-extra-spaces');
+    var chkEmptyLines  = document.getElementById('tc-empty-lines');
+    var chkDuplicates  = document.getElementById('tc-duplicate-lines');
+    var chkTrimLines   = document.getElementById('tc-trim-lines');
+
+    function clean() {
+        var txt = input.value;
+        if (!txt) {
+            output.value = '';
+            stats.setAttribute('hidden', '');
+            return;
+        }
+
+        if (chkTrimLines.checked) {
+            txt = txt.split('\n').map(function (l) { return l.trim(); }).join('\n');
+        }
+        if (chkSpaces.checked) {
+            txt = txt.replace(/ +/g, ' ');
+        }
+        if (chkEmptyLines.checked) {
+            txt = txt.replace(/^\s*[\r\n]/gm, '');
+        }
+        if (chkDuplicates.checked) {
+            txt = Array.from(new Set(txt.split('\n'))).join('\n');
+        }
+
+        output.value = txt;
+
+        var origLines    = input.value.split('\n').length;
+        var cleanedLines = txt.split('\n').length;
+        statOriginal.textContent  = origLines + ' linhas originais';
+        statCleaned.textContent   = cleanedLines + ' linhas após limpeza';
+        statRemoved.textContent   = Math.max(0, origLines - cleanedLines) + ' removidas';
+        stats.removeAttribute('hidden');
+    }
+
+    input.addEventListener('input', clean);
+    [chkSpaces, chkEmptyLines, chkDuplicates, chkTrimLines].forEach(function (cb) {
+        cb.addEventListener('change', clean);
+    });
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            copyToClipboard(copyBtn, function () { return output.value; });
+        });
+    }
+})();

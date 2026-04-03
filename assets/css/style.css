@@ -1965,6 +1965,137 @@ input[type="number"]:focus {
 }
 
 /* ============================================================
+   Image → Base64
+   ============================================================ */
+.ib64-dropzone {
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 40px 24px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    transition: border-color 0.2s, background 0.2s;
+}
+.ib64-dropzone:hover,
+.ib64-dropzone.is-over {
+    border-color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+.ib64-dropzone svg { margin-bottom: 12px; opacity: 0.5; }
+.ib64-dropzone p { margin: 0; line-height: 1.6; }
+.ib64-browse-label {
+    color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.ib64-preview-wrap {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.ib64-preview-img {
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    object-fit: contain;
+    background: var(--color-bg-secondary);
+}
+.ib64-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+/* ============================================================
+   Image Placeholder Generator
+   ============================================================ */
+.iph-controls { margin-bottom: 20px; }
+.iph-row {
+    display: flex;
+    gap: 16px;
+}
+.iph-row .form-group { flex: 1; }
+.iph-color-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.iph-color-input {
+    width: 40px;
+    height: 38px;
+    padding: 2px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: transparent;
+    flex-shrink: 0;
+}
+.iph-hex-input { flex: 1; font-family: monospace; }
+.iph-preview-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    overflow: auto;
+}
+.iph-canvas {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    display: block;
+}
+.iph-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+    .iph-row { flex-direction: column; gap: 0; }
+}
+
+/* ============================================================
+   Text Cleaner
+   ============================================================ */
+.tc-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+.tc-columns {
+    display: flex;
+    gap: 16px;
+}
+.tc-col { flex: 1; min-width: 0; }
+.tc-stats {
+    margin-top: 12px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+.tc-stats span {
+    padding: 4px 10px;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+}
+
+@media (max-width: 600px) {
+    .tc-columns { flex-direction: column; }
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {
