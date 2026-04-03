@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /assets/data/
+Disallow: /api/
+
+Sitemap: https://toolboxdevdesign.com.br/sitemap.xml
