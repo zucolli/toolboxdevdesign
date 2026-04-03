@@ -1761,6 +1761,139 @@ input[type="number"]:focus {
     .pw-checkboxes {
         grid-template-columns: 1fr;
     }
+
+    .wc-metrics {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lorem-controls {
+        flex-direction: column;
+    }
+}
+
+/* ============================================================
+   Word Counter
+   ============================================================ */
+.wc-metrics {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.wc-metric-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 14px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.wc-metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.wc-metric-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.wc-density-table-wrap {
+    overflow-x: auto;
+}
+
+.wc-density-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.wc-density-table th,
+.wc-density-table td {
+    padding: 8px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.wc-density-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.wc-density-table td:first-child {
+    color: var(--color-text-muted);
+    width: 36px;
+}
+
+.wc-density-empty {
+    color: var(--color-text-muted);
+    font-style: italic;
+    padding: 16px 14px;
+}
+
+/* ============================================================
+   Lorem Ipsum
+   ============================================================ */
+.lorem-controls {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 8px;
+}
+
+.lorem-controls .form-group {
+    margin-bottom: 0;
+}
+
+.lorem-select {
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.lorem-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
+}
+
+/* ============================================================
+   Case Converter
+   ============================================================ */
+.cc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.cc-btn.is-active {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
 }
 
 /* ============================================================

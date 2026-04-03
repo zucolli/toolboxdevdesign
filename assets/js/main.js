@@ -1484,6 +1484,233 @@ document.addEventListener('click', (e) => {
     generate();
 })();
 
+// ── Word Counter ─────────────────────────────────────────────────────────────
+(function () {
+    var input = document.getElementById('wc-input');
+    if (!input) return;
+
+    var elChars        = document.getElementById('wc-chars');
+    var elCharsNoSpace = document.getElementById('wc-chars-no-space');
+    var elWords        = document.getElementById('wc-words');
+    var elLines        = document.getElementById('wc-lines');
+    var elReadTime     = document.getElementById('wc-read-time');
+    var elDensityBody  = document.getElementById('wc-density-body');
+
+    var STOPWORDS = new Set([
+        'de','a','o','que','e','do','da','em','um','para','com','uma','os','no','se','na',
+        'por','mais','as','dos','como','mas','ao','ele','das','tem','à','seu','sua','ou',
+        'ser','quando','muito','há','nos','já','está','eu','também','só','pelo','pela',
+        'até','isso','ela','entre','era','depois','sem','mesmo','aos','seus','quem',
+        'nas','me','esse','eles','estão','você','tinha','foram','essa','num','nem',
+        'suas','meu','às','minha','têm','numa','pelos','pelas','qual','nós','lhe',
+        'deles','essas','esses','pelas','este','fosse','dele','tu','te','vocês','vos',
+        'lhes','meus','minhas','teu','tua','teus','tuas','nosso','nossa','nossos','nossas',
+        'dela','delas','esta','estes','estas','aquele','aquela','aqueles','aquelas',
+        'isto','aquilo','estou','está','estamos','estão','estive','esteve','estivemos',
+        'the','a','an','and','or','but','in','on','at','to','for','of','with','by','is',
+        'are','was','were','be','been','have','has','had','do','does','did','will','would'
+    ]);
+
+    function update() {
+        var text  = input.value;
+        var chars = text.length;
+        var charsNoSpace = text.replace(/\s/g, '').length;
+        var words = text.trim() === '' ? 0 : text.trim().split(/\s+/).filter(function (w) { return w.length > 0; }).length;
+        var lines = text === '' ? 1 : text.split('\n').length;
+        var readSec = Math.round((words / 200) * 60);
+        var readLabel = readSec < 60
+            ? (readSec === 0 ? '< 1 seg' : readSec + ' seg')
+            : Math.round(readSec / 60) + ' min';
+
+        elChars.textContent        = chars.toLocaleString('pt-BR');
+        elCharsNoSpace.textContent = charsNoSpace.toLocaleString('pt-BR');
+        elWords.textContent        = words.toLocaleString('pt-BR');
+        elLines.textContent        = lines.toLocaleString('pt-BR');
+        elReadTime.textContent     = readLabel;
+
+        updateDensity(text, words);
+    }
+
+    function updateDensity(text, totalWords) {
+        if (totalWords === 0) {
+            elDensityBody.innerHTML = '<tr><td colspan="4" class="wc-density-empty">Digite algum texto para ver as palavras mais frequentes.</td></tr>';
+            return;
+        }
+        var raw = text.toLowerCase().replace(/[^a-záàâãéèêíìîóòôõúùûüçñ\s]/gi, ' ').split(/\s+/);
+        var freq = {};
+        raw.forEach(function (w) {
+            if (w.length < 3 || STOPWORDS.has(w)) return;
+            freq[w] = (freq[w] || 0) + 1;
+        });
+        var sorted = Object.keys(freq).sort(function (a, b) { return freq[b] - freq[a]; }).slice(0, 5);
+        if (sorted.length === 0) {
+            elDensityBody.innerHTML = '<tr><td colspan="4" class="wc-density-empty">Nenhuma palavra relevante encontrada.</td></tr>';
+            return;
+        }
+        var rows = sorted.map(function (w, i) {
+            var pct = ((freq[w] / totalWords) * 100).toFixed(1) + '%';
+            return '<tr><td>' + (i + 1) + '</td><td>' + w + '</td><td>' + freq[w] + '</td><td>' + pct + '</td></tr>';
+        });
+        elDensityBody.innerHTML = rows.join('');
+    }
+
+    input.addEventListener('input', update);
+    update();
+})();
+
+// ── Lorem Ipsum Generator ─────────────────────────────────────────────────────
+(function () {
+    var btnGen   = document.getElementById('lorem-btn');
+    if (!btnGen) return;
+
+    var qtyEl    = document.getElementById('lorem-qty');
+    var typeEl   = document.getElementById('lorem-type');
+    var htmlEl   = document.getElementById('lorem-html-tags');
+    var output   = document.getElementById('lorem-output');
+    var wrap     = document.getElementById('lorem-result-wrap');
+    var copyBtn  = document.getElementById('lorem-copy-btn');
+
+    var WORDS = [
+        'lorem','ipsum','dolor','sit','amet','consectetur','adipiscing','elit','sed','do',
+        'eiusmod','tempor','incididunt','ut','labore','et','dolore','magna','aliqua',
+        'enim','ad','minim','veniam','quis','nostrud','exercitation','ullamco','laboris',
+        'nisi','aliquip','ex','ea','commodo','consequat','duis','aute','irure','in',
+        'reprehenderit','voluptate','velit','esse','cillum','fugiat','nulla','pariatur',
+        'excepteur','sint','occaecat','cupidatat','non','proident','sunt','culpa','qui',
+        'officia','deserunt','mollit','anim','id','est','laborum','perspiciatis','unde',
+        'omnis','iste','natus','error','accusantium','doloremque','laudantium','totam',
+        'rem','aperiam','eaque','ipsa','quae','ab','illo','inventore','veritatis'
+    ];
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function sentence() {
+        var len = 8 + Math.floor(Math.random() * 10);
+        var w = shuffle(WORDS).slice(0, len);
+        w[0] = w[0].charAt(0).toUpperCase() + w[0].slice(1);
+        return w.join(' ') + '.';
+    }
+
+    function paragraph() {
+        var count = 3 + Math.floor(Math.random() * 4);
+        var sents = [];
+        for (var i = 0; i < count; i++) sents.push(sentence());
+        return sents.join(' ');
+    }
+
+    function generate() {
+        var qty     = Math.max(1, Math.min(100, parseInt(qtyEl.value, 10) || 1));
+        var type    = typeEl.value;
+        var useHtml = htmlEl.checked;
+        var parts   = [];
+
+        if (type === 'paragraphs') {
+            for (var i = 0; i < qty; i++) {
+                var p = paragraph();
+                parts.push(useHtml ? '<p>' + p + '</p>' : p);
+            }
+            output.value = parts.join(useHtml ? '\n\n' : '\n\n');
+        } else if (type === 'sentences') {
+            for (var i = 0; i < qty; i++) parts.push(sentence());
+            output.value = parts.join(useHtml ? ' ' : ' ');
+        } else if (type === 'words') {
+            var w = [];
+            while (w.length < qty) w = w.concat(shuffle(WORDS));
+            output.value = w.slice(0, qty).join(' ');
+        } else if (type === 'list') {
+            for (var i = 0; i < qty; i++) parts.push(sentence());
+            if (useHtml) {
+                output.value = '<ul>\n' + parts.map(function (s) { return '  <li>' + s + '</li>'; }).join('\n') + '\n</ul>';
+            } else {
+                output.value = parts.map(function (s, idx) { return (idx + 1) + '. ' + s; }).join('\n');
+            }
+        }
+
+        wrap.hidden = false;
+    }
+
+    btnGen.addEventListener('click', generate);
+    copyBtn.addEventListener('click', function () {
+        copyToClipboard(copyBtn, function () { return output.value; });
+    });
+})();
+
+// ── Case Converter ────────────────────────────────────────────────────────────
+(function () {
+    var inputEl = document.getElementById('cc-input');
+    if (!inputEl) return;
+
+    var outputEl   = document.getElementById('cc-output');
+    var resultWrap = document.getElementById('cc-result-wrap');
+    var modeLabel  = document.getElementById('cc-mode-label');
+    var copyBtn    = document.getElementById('cc-copy-btn');
+    var buttons    = document.querySelectorAll('.cc-btn');
+
+    var MODE_LABELS = {
+        upper: 'UPPERCASE', lower: 'lowercase', capitalize: 'Capitalize Case',
+        sentence: 'Sentence case', camel: 'camelCase', pascal: 'PascalCase',
+        snake: 'snake_case', kebab: 'kebab-case', constant: 'CONSTANT_CASE', dot: 'dot.case'
+    };
+
+    function removeAccents(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z0-9\s]/g, '');
+    }
+
+    function toWords(text) {
+        return removeAccents(text).trim().split(/[\s\-_./]+/).filter(function (w) { return w.length > 0; });
+    }
+
+    function convert(text, mode) {
+        switch (mode) {
+            case 'upper':      return text.toUpperCase();
+            case 'lower':      return text.toLowerCase();
+            case 'capitalize': return text.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+            case 'sentence':   return text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, function (c) { return c.toUpperCase(); });
+            case 'camel': {
+                var ws = toWords(text);
+                return ws.map(function (w, i) {
+                    return i === 0 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+                }).join('');
+            }
+            case 'pascal': {
+                return toWords(text).map(function (w) {
+                    return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+                }).join('');
+            }
+            case 'snake':    return toWords(text).join('_').toLowerCase();
+            case 'kebab':    return toWords(text).join('-').toLowerCase();
+            case 'constant': return toWords(text).join('_').toUpperCase();
+            case 'dot':      return toWords(text).join('.').toLowerCase();
+            default:         return text;
+        }
+    }
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var mode   = btn.dataset.mode;
+            var result = convert(inputEl.value, mode);
+
+            outputEl.value      = result;
+            modeLabel.textContent = MODE_LABELS[mode] || mode;
+            resultWrap.hidden   = false;
+
+            buttons.forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+        });
+    });
+
+    copyBtn.addEventListener('click', function () {
+        copyToClipboard(copyBtn, function () { return outputEl.value; });
+    });
+})();
+
 // ── Sidebar collapsible sections ─────────────────────────────────────────────
 (function () {
     document.querySelectorAll('.sidebar-label[data-key]').forEach(function (btn) {

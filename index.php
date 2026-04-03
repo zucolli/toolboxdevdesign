@@ -174,6 +174,21 @@ match ($path) {
         $pageDescription = 'Gere senhas criptograficamente seguras com a Web Crypto API. Configure comprimento, maiúsculas, números e símbolos. 100% client-side.';
         $view            = BASE_PATH . '/views/password-generator.php';
     })(),
+    'word-counter' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Contador de Caracteres e Palavras | Toolbox Dev Design';
+        $pageDescription = 'Conte caracteres, palavras, linhas e tempo de leitura em tempo real. Veja a densidade das palavras mais usadas — ideal para SEO e redação. 100% client-side.';
+        $view            = BASE_PATH . '/views/word-counter.php';
+    })(),
+    'lorem-ipsum' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Lorem Ipsum | Toolbox Dev Design';
+        $pageDescription = 'Gere texto Lorem Ipsum em parágrafos, palavras, frases ou listas HTML. Configure a quantidade e inclua tags automaticamente. Gratuito e 100% no navegador.';
+        $view            = BASE_PATH . '/views/lorem-ipsum.php';
+    })(),
+    'case-converter' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Conversor de Maiúsculas e Minúsculas | Toolbox Dev Design';
+        $pageDescription = 'Converta texto para UPPERCASE, lowercase, camelCase, snake_case, kebab-case e mais formatos. Suporte a acentuação. 100% gratuito e no navegador.';
+        $view            = BASE_PATH . '/views/case-converter.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';

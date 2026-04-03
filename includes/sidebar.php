@@ -81,6 +81,33 @@
     </div>
 
     <div class="sidebar-section">
+        <button class="sidebar-label" data-key="texto">
+            Texto
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="nav-list">
+            <li>
+                <a href="<?= BASE_URL ?>word-counter" class="nav-link <?= ($path === 'word-counter') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    Contador de Palavras
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>lorem-ipsum" class="nav-link <?= ($path === 'lorem-ipsum') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+                    Lorem Ipsum
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>case-converter" class="nav-link <?= ($path === 'case-converter') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                    Case Converter
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
         <button class="sidebar-label" data-key="design">
             Design
             <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
