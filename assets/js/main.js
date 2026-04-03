@@ -2071,3 +2071,233 @@ document.addEventListener('click', (e) => {
         });
     }
 })();
+
+// ── CSV ↔ JSON Converter ──────────────────────────────────────────────────────
+(function () {
+    var inputEl    = document.getElementById('cj-input');
+    if (!inputEl) return;
+    var outputEl   = document.getElementById('cj-output');
+    var direction  = document.getElementById('cj-direction');
+    var copyBtn    = document.getElementById('cj-copy-btn');
+    var clearBtn   = document.getElementById('cj-clear-btn');
+    var errorEl    = document.getElementById('cj-error');
+    var prettyChk  = document.getElementById('cj-pretty');
+    var semicolonChk = document.getElementById('cj-semicolon');
+    var inputLabel = document.getElementById('cj-input-label');
+    var outputLabel= document.getElementById('cj-output-label');
+
+    // Minimal RFC-4180 CSV parser
+    function parseCSV(str, sep) {
+        var rows = [];
+        var row  = [];
+        var field = '';
+        var inQuotes = false;
+        for (var i = 0; i < str.length; i++) {
+            var ch = str[i];
+            if (inQuotes) {
+                if (ch === '"') {
+                    if (str[i + 1] === '"') { field += '"'; i++; }
+                    else { inQuotes = false; }
+                } else {
+                    field += ch;
+                }
+            } else {
+                if (ch === '"') {
+                    inQuotes = true;
+                } else if (ch === sep) {
+                    row.push(field); field = '';
+                } else if (ch === '\n') {
+                    row.push(field); field = '';
+                    rows.push(row); row = [];
+                } else if (ch === '\r') {
+                    // skip
+                } else {
+                    field += ch;
+                }
+            }
+        }
+        row.push(field);
+        if (row.some(function (f) { return f !== ''; })) rows.push(row);
+        return rows;
+    }
+
+    function csvToJson(str, sep) {
+        var rows = parseCSV(str.trim(), sep);
+        if (rows.length < 2) throw new Error('O CSV precisa ter pelo menos um cabeçalho e uma linha de dados.');
+        var headers = rows[0];
+        return rows.slice(1).map(function (row) {
+            var obj = {};
+            headers.forEach(function (h, i) { obj[h] = row[i] !== undefined ? row[i] : ''; });
+            return obj;
+        });
+    }
+
+    function jsonToCsv(str, sep) {
+        var data = JSON.parse(str);
+        if (!Array.isArray(data)) throw new Error('O JSON deve ser um array de objetos.');
+        if (data.length === 0) return '';
+        var headers = Object.keys(data[0]);
+        var escapeField = function (v) {
+            var s = v === null || v === undefined ? '' : String(v);
+            if (s.indexOf(sep) !== -1 || s.indexOf('"') !== -1 || s.indexOf('\n') !== -1) {
+                s = '"' + s.replace(/"/g, '""') + '"';
+            }
+            return s;
+        };
+        var lines = [headers.map(escapeField).join(sep)];
+        data.forEach(function (row) {
+            lines.push(headers.map(function (h) { return escapeField(row[h]); }).join(sep));
+        });
+        return lines.join('\n');
+    }
+
+    function convert() {
+        var sep = semicolonChk.checked ? ';' : ',';
+        var dir = direction.value;
+        var raw = inputEl.value.trim();
+        errorEl.setAttribute('hidden', '');
+        if (!raw) { outputEl.value = ''; return; }
+        try {
+            if (dir === 'csv2json') {
+                var result = csvToJson(raw, sep);
+                outputEl.value = prettyChk.checked
+                    ? JSON.stringify(result, null, 2)
+                    : JSON.stringify(result);
+            } else {
+                outputEl.value = jsonToCsv(raw, sep);
+            }
+        } catch (e) {
+            errorEl.textContent = 'Erro: ' + e.message;
+            errorEl.removeAttribute('hidden');
+            outputEl.value = '';
+        }
+    }
+
+    function updateLabels() {
+        var dir = direction.value;
+        inputLabel.textContent  = dir === 'csv2json' ? 'CSV' : 'JSON';
+        outputLabel.textContent = dir === 'csv2json' ? 'JSON' : 'CSV';
+        inputEl.placeholder = dir === 'csv2json'
+            ? 'Cole o CSV aqui…\n\nExemplo:\nnome,email,idade\nJoão,joao@exemplo.com,30'
+            : 'Cole o JSON aqui…\n\nExemplo:\n[\n  {"nome":"João","email":"joao@exemplo.com"}\n]';
+    }
+
+    direction.addEventListener('change', function () { updateLabels(); convert(); });
+    inputEl.addEventListener('input', convert);
+    prettyChk.addEventListener('change', convert);
+    semicolonChk.addEventListener('change', convert);
+    clearBtn.addEventListener('click', function () {
+        inputEl.value = ''; outputEl.value = '';
+        errorEl.setAttribute('hidden', '');
+    });
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            copyToClipboard(copyBtn, function () { return outputEl.value; });
+        });
+    }
+})();
+
+// ── UUID / GUID Generator ─────────────────────────────────────────────────────
+(function () {
+    var generateBtn = document.getElementById('uuid-generate-btn');
+    if (!generateBtn) return;
+    var qtyInput    = document.getElementById('uuid-qty');
+    var outputEl    = document.getElementById('uuid-output');
+    var resultWrap  = document.getElementById('uuid-result-wrap');
+    var countLabel  = document.getElementById('uuid-count-label');
+    var copyBtn     = document.getElementById('uuid-copy-btn');
+
+    function getFormat() {
+        var checked = document.querySelector('input[name="uuid-fmt"]:checked');
+        return checked ? checked.value : 'hyphenated';
+    }
+
+    function applyFormat(uuid, fmt) {
+        switch (fmt) {
+            case 'plain':    return uuid.replace(/-/g, '');
+            case 'braces':   return '{' + uuid + '}';
+            case 'upper':    return uuid.toUpperCase();
+            default:         return uuid;
+        }
+    }
+
+    function generate() {
+        var qty = Math.min(100, Math.max(1, parseInt(qtyInput.value) || 1));
+        var fmt = getFormat();
+        var uuids = [];
+        for (var i = 0; i < qty; i++) {
+            uuids.push(applyFormat(crypto.randomUUID(), fmt));
+        }
+        outputEl.value = uuids.join('\n');
+        outputEl.rows  = Math.min(qty, 12);
+        countLabel.textContent = qty + (qty === 1 ? ' UUID gerado' : ' UUIDs gerados');
+        resultWrap.removeAttribute('hidden');
+    }
+
+    generateBtn.addEventListener('click', generate);
+    document.querySelectorAll('input[name="uuid-fmt"]').forEach(function (r) {
+        r.addEventListener('change', function () {
+            if (outputEl.value) generate();
+        });
+    });
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            copyToClipboard(copyBtn, function () { return outputEl.value; });
+        });
+    }
+
+    // Gera 1 UUID ao carregar
+    generate();
+})();
+
+// ── SQL Formatter ─────────────────────────────────────────────────────────────
+(function () {
+    var inputEl   = document.getElementById('sf-input');
+    if (!inputEl) return;
+    var outputEl  = document.getElementById('sf-output');
+    var dialectEl = document.getElementById('sf-dialect');
+    var indentEl  = document.getElementById('sf-indent');
+    var upperChk  = document.getElementById('sf-uppercase');
+    var copyBtn   = document.getElementById('sf-copy-btn');
+    var clearBtn  = document.getElementById('sf-clear-btn');
+    var errorEl   = document.getElementById('sf-error');
+
+    function format() {
+        var sql = inputEl.value.trim();
+        errorEl.setAttribute('hidden', '');
+        if (!sql) { outputEl.value = ''; return; }
+
+        if (!window.sqlFormatter) {
+            errorEl.textContent = 'Biblioteca sql-formatter não carregou. Verifique sua conexão e recarregue a página.';
+            errorEl.removeAttribute('hidden');
+            return;
+        }
+
+        try {
+            outputEl.value = window.sqlFormatter.format(sql, {
+                language:  dialectEl.value,
+                indent:    indentEl.value,
+                uppercase: upperChk.checked,
+            });
+        } catch (e) {
+            errorEl.textContent = 'Erro ao formatar: ' + e.message;
+            errorEl.removeAttribute('hidden');
+            outputEl.value = '';
+        }
+    }
+
+    inputEl.addEventListener('input', format);
+    dialectEl.addEventListener('change', format);
+    indentEl.addEventListener('change', format);
+    upperChk.addEventListener('change', format);
+
+    clearBtn.addEventListener('click', function () {
+        inputEl.value = ''; outputEl.value = '';
+        errorEl.setAttribute('hidden', '');
+    });
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            copyToClipboard(copyBtn, function () { return outputEl.value; });
+        });
+    }
+})();

@@ -114,6 +114,33 @@
     </div>
 
     <div class="sidebar-section">
+        <button class="sidebar-label" data-key="dados">
+            Dados
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="nav-list">
+            <li>
+                <a href="<?= BASE_URL ?>csv-json" class="nav-link <?= ($path === 'csv-json') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    CSV ↔ JSON
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>uuid-generator" class="nav-link <?= ($path === 'uuid-generator') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 11h.01M10 11h.01M14 11h.01M18 11h.01"/></svg>
+                    UUID / GUID
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>sql-formatter" class="nav-link <?= ($path === 'sql-formatter') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+                    SQL Formatter
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
         <button class="sidebar-label" data-key="imagens">
             Imagens
             <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>

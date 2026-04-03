@@ -232,6 +232,21 @@ match ($path) {
         $pageDescription = 'Remova espaços extras, linhas vazias e duplicatas de qualquer texto em tempo real. Ideal para limpar conteúdos copiados de PDFs, e-mails e planilhas.';
         $view            = BASE_PATH . '/views/text-cleaner.php';
     })(),
+    'csv-json' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Conversor CSV ↔ JSON | Toolbox Dev Design';
+        $pageDescription = 'Converta CSV para JSON e JSON para CSV instantaneamente no navegador. Suporte a campos com vírgulas e aspas, 100% client-side e gratuito.';
+        $view            = BASE_PATH . '/views/csv-json.php';
+    })(),
+    'uuid-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de UUID / GUID | Toolbox Dev Design';
+        $pageDescription = 'Gere até 100 UUIDs v4 criptograficamente seguros de uma vez, com Web Crypto API. Suporte a múltiplos formatos: hifenado, sem hífens, com chaves e maiúsculas.';
+        $view            = BASE_PATH . '/views/uuid-generator.php';
+    })(),
+    'sql-formatter' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Formatador de SQL | Toolbox Dev Design';
+        $pageDescription = 'Formate e embeleze queries SQL com indentação e palavras-chave em maiúsculas. Suporte a MySQL, PostgreSQL, T-SQL, PL/SQL, BigQuery e mais — 100% no navegador.';
+        $view            = BASE_PATH . '/views/sql-formatter.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';
