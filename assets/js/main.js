@@ -190,7 +190,7 @@ async function generateHash() {
             hash = await sha256Hex(string);
         } else {
             const response = await fetch(
-                '/carloszucolli/toolboxdevdesign/api/generate-hash',
+                '/api/generate-hash',
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -711,7 +711,7 @@ const argon2HashOutput   = document.getElementById('argon2-hash-output');
 const btnCopyArgon2      = document.getElementById('btn-copy-argon2');
 const argon2VerifyResult = document.getElementById('argon2-verify-result');
 
-const BASE = '/carloszucolli/toolboxdevdesign/';
+const BASE = '/';
 
 if (btnArgon2Generate) {
     btnArgon2Generate.addEventListener('click', async () => {
@@ -955,7 +955,7 @@ document.addEventListener('click', (e) => {
     }
 
     function loadKnowledge() {
-        fetch('/carloszucolli/toolboxdevdesign/assets/data/knowledge.json')
+        fetch('/assets/data/knowledge.json')
             .then(function (res) { return res.json(); })
             .then(function (data) {
                 knowledgeData = data;

@@ -2,13 +2,12 @@
 declare(strict_types=1);
 
 define('BASE_PATH', __DIR__);
-define('BASE_URL', '/carloszucolli/toolboxdevdesign/');
+define('BASE_URL', '/');
 
 $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
 
 // Remove base path and query string
 $path = parse_url($requestUri, PHP_URL_PATH);
-$path = str_replace(BASE_URL, '', $path);
 $path = trim($path, '/');
 
 $titulo          = 'Toolbox Dev Design';

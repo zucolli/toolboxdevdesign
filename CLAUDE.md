@@ -14,7 +14,7 @@ Todas as respostas devem ser em **português brasileiro**. Este arquivo deve ser
 ## Deploy / GitHub
 
 - Repositório: `https://github.com/zucolli/toolboxdevdesign.git` (branch `main`)
-- URL de produção: `https://digitallps.com.br/carloszucolli/toolboxdevdesign/`
+- URL de produção: `https://toolboxdevdesign.com.br/`
 
 **Ao finalizar qualquer tarefa que deva ser testada na web, executar o fluxo de deploy abaixo automaticamente (sem usar `Skill()`) antes de avisar o usuário para testar:**
 
@@ -56,7 +56,7 @@ copyToClipboard(btn, getValue)  // reutilizada por todas as ferramentas
 
 **Fetch para APIs PHP:**
 ```js
-fetch('/carloszucolli/toolboxdevdesign/api/nome-endpoint', {
+fetch('/api/nome-endpoint', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ... }),
