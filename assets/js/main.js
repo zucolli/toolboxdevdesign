@@ -1711,6 +1711,158 @@ document.addEventListener('click', (e) => {
     });
 })();
 
+// ── QR Code Generator ────────────────────────────────────────────────────────
+(function () {
+    var inputEl   = document.getElementById('qr-input');
+    var fgEl      = document.getElementById('qr-fg');
+    var bgEl      = document.getElementById('qr-bg');
+    var sizeEl    = document.getElementById('qr-size');
+    var canvas    = document.getElementById('qr-canvas');
+    var placeholder = document.getElementById('qr-placeholder');
+    var actions   = document.getElementById('qr-actions');
+    var downloadBtn = document.getElementById('qr-download');
+    if (!inputEl || !canvas) return;
+
+    var qr = null;
+
+    function renderQR() {
+        var text = inputEl.value.trim();
+        if (!text) {
+            canvas.style.display = 'none';
+            if (placeholder) placeholder.style.display = '';
+            if (actions) actions.style.display = 'none';
+            return;
+        }
+        var size = Math.max(64, Math.min(1024, parseInt(sizeEl.value, 10) || 256));
+        if (!qr) {
+            qr = new QRious({
+                element: canvas,
+                value: text,
+                size: size,
+                foreground: fgEl.value,
+                background: bgEl.value,
+            });
+        } else {
+            qr.value      = text;
+            qr.size       = size;
+            qr.foreground = fgEl.value;
+            qr.background = bgEl.value;
+        }
+        canvas.style.display = 'block';
+        if (placeholder) placeholder.style.display = 'none';
+        if (actions) actions.style.display = 'block';
+    }
+
+    [inputEl, fgEl, bgEl, sizeEl].forEach(function (el) {
+        el.addEventListener('input', renderQR);
+    });
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function () {
+            if (!canvas) return;
+            var link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'qrcode.png';
+            link.click();
+        });
+    }
+})();
+
+// ── Meta Tags Generator ───────────────────────────────────────────────────────
+(function () {
+    var titleEl   = document.getElementById('mt-title');
+    var descEl    = document.getElementById('mt-description');
+    var urlEl     = document.getElementById('mt-url');
+    var imageEl   = document.getElementById('mt-image');
+    var authorEl  = document.getElementById('mt-author');
+    var outputEl  = document.getElementById('mt-output');
+    var copyBtn   = document.getElementById('mt-copy');
+    var titleCount = document.getElementById('mt-title-count');
+    var descCount  = document.getElementById('mt-desc-count');
+    if (!titleEl || !outputEl) return;
+
+    function esc(str) {
+        return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function build() {
+        var title  = titleEl.value.trim();
+        var desc   = descEl.value.trim();
+        var url    = urlEl.value.trim();
+        var image  = imageEl.value.trim();
+        var author = authorEl.value.trim();
+
+        if (titleCount) titleCount.textContent = titleEl.value.length + '/70 caracteres';
+        if (descCount)  descCount.textContent  = descEl.value.length  + '/160 caracteres';
+
+        if (!title && !desc) { outputEl.value = ''; return; }
+
+        var lines = ['<!-- Meta Tags padrão -->'];
+        if (title)  lines.push('<title>' + esc(title) + '</title>');
+        if (desc)   lines.push('<meta name="description" content="' + esc(desc) + '" />');
+        if (author) lines.push('<meta name="author" content="' + esc(author) + '" />');
+        if (url)    lines.push('<link rel="canonical" href="' + esc(url) + '" />');
+
+        lines.push('');
+        lines.push('<!-- Open Graph (Facebook, LinkedIn) -->');
+        lines.push('<meta property="og:type" content="website" />');
+        if (title)  lines.push('<meta property="og:title" content="' + esc(title) + '" />');
+        if (desc)   lines.push('<meta property="og:description" content="' + esc(desc) + '" />');
+        if (url)    lines.push('<meta property="og:url" content="' + esc(url) + '" />');
+        if (image)  lines.push('<meta property="og:image" content="' + esc(image) + '" />');
+
+        lines.push('');
+        lines.push('<!-- Twitter Cards -->');
+        lines.push('<meta name="twitter:card" content="summary_large_image" />');
+        if (title)  lines.push('<meta name="twitter:title" content="' + esc(title) + '" />');
+        if (desc)   lines.push('<meta name="twitter:description" content="' + esc(desc) + '" />');
+        if (image)  lines.push('<meta name="twitter:image" content="' + esc(image) + '" />');
+
+        outputEl.value = lines.join('\n');
+    }
+
+    [titleEl, descEl, urlEl, imageEl, authorEl].forEach(function (el) {
+        el.addEventListener('input', build);
+    });
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            copyToClipboard(copyBtn, function () { return outputEl.value; });
+        });
+    }
+})();
+
+// ── My IP ─────────────────────────────────────────────────────────────────────
+(function () {
+    var ipEl      = document.getElementById('ip-value');
+    var copyBtn   = document.getElementById('ip-copy');
+    var refreshBtn = document.getElementById('ip-refresh');
+    if (!ipEl) return;
+
+    function fetchIP() {
+        ipEl.textContent = 'Carregando…';
+        fetch(BASE + 'api/get-ip', { cache: 'no-store' })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                ipEl.textContent = data.ip || 'Indisponível';
+            })
+            .catch(function () {
+                ipEl.textContent = 'Erro ao obter IP';
+            });
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            copyToClipboard(copyBtn, function () { return ipEl.textContent; });
+        });
+    }
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', fetchIP);
+    }
+
+    fetchIP();
+})();
+
 // ── Sidebar collapsible sections ─────────────────────────────────────────────
 (function () {
     document.querySelectorAll('.sidebar-label[data-key]').forEach(function (btn) {

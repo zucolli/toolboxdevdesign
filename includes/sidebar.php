@@ -144,6 +144,33 @@
     </div>
 
     <div class="sidebar-section">
+        <button class="sidebar-label" data-key="rede">
+            Rede &amp; SEO
+            <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="nav-list">
+            <li>
+                <a href="<?= BASE_URL ?>qr-generator" class="nav-link <?= ($path === 'qr-generator') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/><rect x="14" y="18" width="3" height="3" fill="none" stroke="none"/><path d="M14 14h3v3"/><path d="M17 17h3v3"/></svg>
+                    QR Code
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>meta-tags" class="nav-link <?= ($path === 'meta-tags') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                    Meta Tags SEO
+                </a>
+            </li>
+            <li>
+                <a href="<?= BASE_URL ?>my-ip" class="nav-link <?= ($path === 'my-ip') ? 'active' : '' ?>">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Meu IP
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
         <button class="sidebar-label" data-key="marketing">
             Marketing
             <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>

@@ -1897,6 +1897,74 @@ input[type="number"]:focus {
 }
 
 /* ============================================================
+   QR Generator
+   ============================================================ */
+.qr-options {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+.qr-options .form-group {
+    flex: 1;
+    min-width: 120px;
+}
+.qr-preview-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    margin-top: 20px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+}
+#qr-canvas { display: none; border-radius: var(--radius-sm); }
+.qr-placeholder-text {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   Meta Tags
+   ============================================================ */
+.mt-output {
+    font-family: 'Fira Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+/* ============================================================
+   My IP
+   ============================================================ */
+.ip-display-wrap {
+    text-align: center;
+    padding: 32px 24px 16px;
+}
+.ip-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Fira Mono', 'Menlo', 'Consolas', monospace;
+    color: var(--color-primary);
+    letter-spacing: 0.02em;
+    word-break: break-all;
+}
+.ip-label {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+.ip-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 16px;
+    padding-bottom: 8px;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {

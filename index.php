@@ -16,6 +16,19 @@ $pageDescription = 'Toolbox de ferramentas gratuitas para desenvolvedores e desi
 $view            = null;
 
 // API endpoints (must run before HTML output)
+if ($path === 'api/get-ip') {
+    header('Content-Type: application/json');
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR']
+        ?? $_SERVER['HTTP_X_REAL_IP']
+        ?? $_SERVER['REMOTE_ADDR']
+        ?? 'Desconhecido';
+    if (strpos($ip, ',') !== false) {
+        $ip = trim(explode(',', $ip)[0]);
+    }
+    echo json_encode(['ip' => $ip]);
+    exit;
+}
+
 if ($path === 'api/generate-argon2') {
     header('Content-Type: application/json');
     $body = (string) file_get_contents('php://input');
@@ -188,6 +201,21 @@ match ($path) {
         $titulo          = 'Conversor de Maiúsculas e Minúsculas | Toolbox Dev Design';
         $pageDescription = 'Converta texto para UPPERCASE, lowercase, camelCase, snake_case, kebab-case e mais formatos. Suporte a acentuação. 100% gratuito e no navegador.';
         $view            = BASE_PATH . '/views/case-converter.php';
+    })(),
+    'qr-generator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de QR Code | Toolbox Dev Design';
+        $pageDescription = 'Gere QR Codes personalizados com cores e tamanho configuráveis. Baixe como PNG diretamente no navegador — gratuito e sem cadastro.';
+        $view            = BASE_PATH . '/views/qr-generator.php';
+    })(),
+    'meta-tags' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Gerador de Meta Tags SEO | Toolbox Dev Design';
+        $pageDescription = 'Gere meta tags HTML, Open Graph e Twitter Cards automaticamente. Otimize seu site para buscadores e redes sociais em segundos.';
+        $view            = BASE_PATH . '/views/meta-tags.php';
+    })(),
+    'my-ip' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Meu IP — Qual é meu endereço IP? | Toolbox Dev Design';
+        $pageDescription = 'Descubra seu endereço IP público instantaneamente. Ferramenta simples, sem cadastro e 100% gratuita.';
+        $view            = BASE_PATH . '/views/my-ip.php';
     })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
