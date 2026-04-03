@@ -1,5 +1,3 @@
-<div class="ad-placeholder">Espaço Reservado · AdSense</div>
-
 <div class="card">
     <h1 class="card-title">Gerador de Lorem Ipsum</h1>
     <p class="card-description">Gere texto de preenchimento em latim para maquetes, wireframes e protótipos. Escolha o formato e a quantidade desejada.</p>

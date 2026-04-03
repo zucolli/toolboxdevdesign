@@ -1,5 +1,3 @@
-<div class="ad-placeholder">Espaço Reservado · AdSense</div>
-
 <div class="card">
     <h1 class="card-title">Conversor de Maiúsculas / Minúsculas</h1>
     <p class="card-description">Cole o texto de entrada, selecione um formato e o resultado aparece instantaneamente. Suporte a acentuação e caracteres especiais do português.</p>

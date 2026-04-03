@@ -1,5 +1,3 @@
-<div class="ad-placeholder">Espaço Reservado · AdSense</div>
-
 <div class="card">
     <h1 class="card-title">Contador de Caracteres e Palavras</h1>
     <p class="card-description">Digite ou cole qualquer texto abaixo. As métricas e a densidade de palavras são atualizadas em tempo real.</p>
