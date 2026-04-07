@@ -22,7 +22,31 @@
 
 
 <header class="topbar">
-    <a href="<?= BASE_URL ?>" class="topbar-logo">Toolbox Dev Design</a>
+    <a href="<?= BASE_URL ?>" class="topbar-logo">
+        <span class="logo-icons">
+            <span class="logo-icon logo-icon--toolbox">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18" fill="none">
+                    <path d="M7 8V6a3 3 0 0 1 6 0v2" stroke="#00a6ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="2" y="8" width="16" height="10" rx="2" fill="#00a6ff" fill-opacity="0.18" stroke="#00a6ff" stroke-width="1.8"/>
+                    <line x1="2" y1="13" x2="18" y2="13" stroke="#00a6ff" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <span class="logo-icon logo-icon--dev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18" fill="none">
+                    <path d="M6.5 6.5L2.5 10l4 3.5" stroke="#00d484" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.5 6.5L17.5 10l-4 3.5" stroke="#00d484" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.5 4.5l-3 11" stroke="#00d484" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <span class="logo-icon logo-icon--design">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18" fill="none">
+                    <path d="M13.5 2.5l4 4L7 17H3v-4L13.5 2.5z" fill="#ff6a00" fill-opacity="0.18" stroke="#ff6a00" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M10.5 5.5l4 4" stroke="#ff6a00" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </span>
+        </span>
+        <span class="logo-text">Toolbox Dev Design</span>
+    </a>
 </header>
 
 <div class="layout">

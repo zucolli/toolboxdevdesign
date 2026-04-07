@@ -78,12 +78,39 @@ a:hover { text-decoration: underline; }
 }
 
 .topbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1rem;
     font-weight: 700;
     color: var(--color-text);
     letter-spacing: -0.02em;
 }
 .topbar-logo:hover { text-decoration: none; color: var(--color-primary); }
+
+.logo-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.logo-icon--toolbox { background: rgba(0, 166, 255, 0.12); }
+.logo-icon--dev     { background: rgba(0, 212, 132, 0.12); }
+.logo-icon--design  { background: rgba(255, 106,   0, 0.12); }
+
+.topbar-logo:hover .logo-icon--toolbox { background: rgba(0, 166, 255, 0.22); }
+.topbar-logo:hover .logo-icon--dev     { background: rgba(0, 212, 132, 0.22); }
+.topbar-logo:hover .logo-icon--design  { background: rgba(255, 106,   0, 0.22); }
 
 /* ============================================================
    Layout
