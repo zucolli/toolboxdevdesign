@@ -29,7 +29,7 @@
         <p>Nossas páginas podem conter links para sites externos. Não nos responsabilizamos pelas práticas de privacidade desses sites.</p>
 
         <h2>6. Contato</h2>
-        <p>Para dúvidas sobre esta política, entre em contato pelo <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">WhatsApp da NuAto</a>.</p>
+        <p>Para dúvidas sobre esta política, entre em contato pelo <a href="https://wa.me/5511986440328" target="_blank" rel="noopener noreferrer">WhatsApp da NuAto</a>.</p>
     </article>
 </div>
 

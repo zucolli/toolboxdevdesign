@@ -32,7 +32,7 @@
         <p>Reservamo-nos o direito de atualizar estes termos a qualquer momento. A data de "última atualização" no topo desta página indicará quando ocorreu a revisão mais recente. O uso continuado do serviço após alterações implica aceitação dos novos termos.</p>
 
         <h2>8. Contato</h2>
-        <p>Dúvidas sobre estes termos podem ser enviadas pelo <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">WhatsApp da NuAto</a>.</p>
+        <p>Dúvidas sobre estes termos podem ser enviadas pelo <a href="https://wa.me/5511986440328" target="_blank" rel="noopener noreferrer">WhatsApp da NuAto</a>.</p>
     </article>
 </div>
 
