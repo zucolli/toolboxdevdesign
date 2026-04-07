@@ -253,6 +253,21 @@ match ($path) {
         $pageDescription = 'Formate e embeleze queries SQL com indentação e palavras-chave em maiúsculas. Suporte a MySQL, PostgreSQL, T-SQL, PL/SQL, BigQuery e mais — 100% no navegador.';
         $view            = BASE_PATH . '/views/sql-formatter.php';
     })(),
+    'sobre' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Sobre | Toolbox Dev Design';
+        $pageDescription = 'Conheça a Toolbox Dev Design, suíte gratuita de ferramentas para desenvolvedores e designers, criada por Carlos Zucolli e mantida pela NuAto Comunicação.';
+        $view            = BASE_PATH . '/views/sobre.php';
+    })(),
+    'privacidade' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Política de Privacidade | Toolbox Dev Design';
+        $pageDescription = 'Política de privacidade da Toolbox Dev Design: uso de cookies, Google Analytics, Google AdSense e conformidade com a LGPD.';
+        $view            = BASE_PATH . '/views/privacidade.php';
+    })(),
+    'termos' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Termos de Uso | Toolbox Dev Design';
+        $pageDescription = 'Termos de uso da Toolbox Dev Design: isenção de garantias e limitação de responsabilidade pelo uso das ferramentas.';
+        $view            = BASE_PATH . '/views/termos.php';
+    })(),
     default => (function () use (&$titulo, &$pageDescription, &$view) {
         http_response_code(404);
         $titulo          = 'Página não encontrada | Toolbox Dev Design';

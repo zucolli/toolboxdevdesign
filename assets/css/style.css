@@ -2387,6 +2387,24 @@ body.page-home .content {
     color: var(--color-text-muted);
 }
 
+.footer-links {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
 /* ============================================================
    Responsive
    ============================================================ */
