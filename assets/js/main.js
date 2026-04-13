@@ -2347,3 +2347,117 @@ document.addEventListener('click', (e) => {
         }
     });
 })();
+
+/* ============================================================
+   A/B Test Calculator
+   ============================================================ */
+(function () {
+    var btnCalc     = document.getElementById('btn-ab-calc');
+    if (!btnCalc) return;
+
+    var visitCtrl   = document.getElementById('ab-visitors-ctrl');
+    var convCtrl    = document.getElementById('ab-conv-ctrl');
+    var visitVar    = document.getElementById('ab-visitors-var');
+    var convVar     = document.getElementById('ab-conv-var');
+    var confidence  = document.getElementById('ab-confidence');
+    var errorEl     = document.getElementById('ab-error');
+    var resultsEl   = document.getElementById('ab-results');
+    var verdictEl   = document.getElementById('ab-verdict');
+    var valCrA      = document.getElementById('ab-val-cra');
+    var valCrB      = document.getElementById('ab-val-crb');
+    var valZ        = document.getElementById('ab-val-z');
+    var valP        = document.getElementById('ab-val-p');
+    var verdictText = document.getElementById('ab-verdict-text');
+
+    function erf(x) {
+        var t = 1 / (1 + 0.3275911 * Math.abs(x));
+        var poly = t * (0.254829592 + t * (-0.284496736 + t * (1.421413741 + t * (-1.453152027 + t * 1.061405429))));
+        var result = 1 - poly * Math.exp(-x * x);
+        return x >= 0 ? result : -result;
+    }
+
+    function normalCDF(z) {
+        return 0.5 * (1 + erf(z / Math.SQRT2));
+    }
+
+    function showError(msg) {
+        errorEl.textContent = msg;
+        requestAnimationFrame(function () {
+            errorEl.classList.add('is-visible');
+        });
+        resultsEl.classList.remove('is-visible');
+        verdictEl.classList.remove('is-visible');
+        verdictEl.classList.remove('ab-verdict--significant', 'ab-verdict--not-significant');
+    }
+
+    function clearError() {
+        errorEl.classList.remove('is-visible');
+    }
+
+    btnCalc.addEventListener('click', function () {
+        var n1   = parseInt(visitCtrl.value, 10);
+        var c1   = parseInt(convCtrl.value, 10);
+        var n2   = parseInt(visitVar.value, 10);
+        var c2   = parseInt(convVar.value, 10);
+        var conf = parseFloat(confidence.value);
+
+        if (isNaN(n1) || isNaN(c1) || isNaN(n2) || isNaN(c2)) {
+            showError('Preencha todos os campos com valores inteiros.');
+            return;
+        }
+        if (n1 <= 0 || n2 <= 0) {
+            showError('O número de visitantes deve ser maior que zero.');
+            return;
+        }
+        if (c1 < 0 || c2 < 0) {
+            showError('O número de conversões não pode ser negativo.');
+            return;
+        }
+        if (c1 > n1) {
+            showError('As conversões do Controle não podem ser maiores que os visitantes.');
+            return;
+        }
+        if (c2 > n2) {
+            showError('As conversões da Variação não podem ser maiores que os visitantes.');
+            return;
+        }
+
+        clearError();
+
+        var cr1 = c1 / n1;
+        var cr2 = c2 / n2;
+        var pp  = (c1 + c2) / (n1 + n2);
+        var sep = Math.sqrt(pp * (1 - pp) * (1 / n1 + 1 / n2));
+
+        var z, pvalue;
+        if (sep === 0) {
+            z      = 0;
+            pvalue = 1;
+        } else {
+            z      = (cr2 - cr1) / sep;
+            pvalue = 2 * (1 - normalCDF(Math.abs(z)));
+        }
+
+        valCrA.textContent = (cr1 * 100).toFixed(2) + '%';
+        valCrB.textContent = (cr2 * 100).toFixed(2) + '%';
+        valZ.textContent   = z.toFixed(2);
+        valP.textContent   = pvalue.toFixed(4);
+
+        var alpha       = 1 - conf;
+        var significant = pvalue < alpha;
+
+        verdictEl.classList.remove('ab-verdict--significant', 'ab-verdict--not-significant');
+        if (significant) {
+            verdictEl.classList.add('ab-verdict--significant');
+            verdictText.textContent = '✓ O teste A/B é estatisticamente significativo para o nível de confiança selecionado.';
+        } else {
+            verdictEl.classList.add('ab-verdict--not-significant');
+            verdictText.textContent = '✗ O teste A/B NÃO é estatisticamente significativo para o nível de confiança selecionado. Colete mais dados.';
+        }
+
+        requestAnimationFrame(function () {
+            resultsEl.classList.add('is-visible');
+            verdictEl.classList.add('is-visible');
+        });
+    });
+})();
