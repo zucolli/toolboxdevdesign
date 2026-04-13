@@ -3,6 +3,14 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /
 
+# Forçar HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Forçar não-www
+RewriteCond %{HTTP_HOST} ^www\.toolboxdevdesign\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://toolboxdevdesign.com.br/$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [L]
