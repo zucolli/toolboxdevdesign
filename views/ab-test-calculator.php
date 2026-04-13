@@ -29,7 +29,7 @@
 
     <div class="form-group ab-confidence-row">
         <label class="form-label" for="ab-confidence">Nível de Confiança</label>
-        <select id="ab-confidence">
+        <select id="ab-confidence" class="lorem-select">
             <option value="0.90">90%</option>
             <option value="0.95" selected>95%</option>
             <option value="0.99">99%</option>
