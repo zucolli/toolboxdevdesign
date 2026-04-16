@@ -37,6 +37,17 @@
 
     <h3>Quando usar e quando evitar</h3>
     <p>Base64 é útil para ícones pequenos, logos e imagens críticas acima da dobra que precisam ser carregadas sem latência. Evite para imagens grandes: a codificação Base64 aumenta o tamanho do arquivo em ~33%, podendo prejudicar o carregamento da página em vez de otimizá-la.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Conversor de Imagem para Base64?</h3>
+        <p>O Conversor de Imagem para Base64 é uma ferramenta que transforma arquivos de imagem (PNG, JPG, WebP, SVG) em código Base64 Data URL. Data URLs permitem incorporar imagens diretamente em CSS, HTML ou JSON sem necessidade de requisição HTTP separada. Isso reduz requisições e pode melhorar performance. Tudo executado 100% no navegador — suas imagens nunca são enviadas a servidor.</p>
+
+        <h3>Como usar o Conversor de Imagem para Base64?</h3>
+        <p>Carregue uma imagem clicando no campo de upload ou arrastando (drag-drop). Selecione o formato: PNG, JPG, WebP ou SVG. A ferramenta converte instantaneamente para Base64 Data URL (formato data:image/png;base64,...). Copie o resultado completo para usar em CSS background-image, img src, ou JSON. Útil para emojis, ícones e imagens pequenas.</p>
+
+        <h3>Casos de uso práticos do Conversor de Imagem para Base64</h3>
+        <p>Desenvolvedores frontend usam Data URLs para incorporar ícones e imagens em CSS, eliminando requisições extras ao servidor. Isso melhora performance e reduz latência. Email marketing frequentemente usa Data URLs para imagens pequenas para garantir compatibilidade com clientes de email. PWAs e aplicações que precisam funcionar offline também usam Data URLs. Essa ferramenta simplifica a conversão.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

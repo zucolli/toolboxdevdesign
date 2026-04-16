@@ -52,6 +52,17 @@
 
     <h3>Como usar esta ferramenta</h3>
     <p>Escolha o tipo de gradiente, selecione as duas cores e ajuste o ângulo (apenas para Linear). O preview atualiza instantaneamente. Clique em "Copiar" para levar o CSS para o seu projeto — já com prefixo cross-browser incluído.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de CSS Gradient?</h3>
+        <p>O Gerador de CSS Gradient é uma ferramenta visual para criar gradientes CSS lineares e radiais com preview em tempo real. Gradientes adicionam sofisticação visual a backgrounds, botões e elementos decorativos. A ferramenta permite selecionar múltiplas cores, ajustar ângulo (para lineares), raio e posição (para radiais), gerando código CSS pronto para usar. Tudo sem necessidade de conhecimento prévio de sintaxe CSS.</p>
+
+        <h3>Como usar o Gerador de CSS Gradient?</h3>
+        <p>Selecione o tipo de gradiente (linear ou radial) e adicione cores clicando em um seletor visual. Ajuste a posição de cada cor (color stops) usando sliders. Para gradientes lineares, configure o ângulo de direção. Para radiais, configure tamanho e posição. Visualize o resultado em tempo real em um elemento de exemplo. Copie o código CSS gerado para usar em seu projeto.</p>
+
+        <h3>Casos de uso práticos do Gerador de CSS Gradient</h3>
+        <p>Gradientes CSS modernos são essenciais em web design. Desde backgrounds atraentes até botões com efeitos hover, gradientes criam maior impacto visual comparado a cores sólidas. Profissionais usam gradientes em hero sections, CTAs (call-to-action), overlays de imagem e efeitos de loading. A ferramenta economiza tempo comparado a pesquisar sintaxe CSS ou usar editores online alternativos.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

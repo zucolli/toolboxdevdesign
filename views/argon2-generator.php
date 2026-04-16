@@ -72,6 +72,17 @@
 
     <h3>Como funciona?</h3>
     <p>Na aba "Gerar Hash": insira a senha e clique em "Gerar Argon2id". O hash é criado no servidor PHP e retornado via API — nunca armazenado. Na aba "Verificar Hash": insira a senha em texto claro e o hash armazenado; o servidor verifica a correspondência usando <code>password_verify()</code> sem precisar conhecer a senha original.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador Argon2id?</h3>
+        <p>O Gerador Argon2id é uma ferramenta profissional para desenvolvedores que desejam implementar o padrão ouro atual em segurança de senhas. Argon2id é o algoritmo vencedor da competição Password Hashing Competition de 2015, sendo recomendado por especialistas em segurança como substituinte superior ao Bcrypt para armazenamento de senhas. Ele é resistente a ataques de GPU e oferece proteção superior contra força bruta.</p>
+
+        <h3>Como usar o Gerador Argon2id?</h3>
+        <p>Para usar o Gerador Argon2id, digite ou cole a senha desejada no campo de entrada. Clique em "Gerar Hash" e o algoritmo Argon2id (executado pelo backend PHP) gera um hash seguro com salt aleatório. A ferramenta também oferece verificação de hash: insira a senha original e o hash anterior para confirmar se correspondem. Cada hash é único mesmo para a mesma senha.</p>
+
+        <h3>Casos de uso práticos do Gerador Argon2id</h3>
+        <p>Argon2id é recomendado por organizações de segurança como OWASP e NIST para novas aplicações. É particularmente eficaz contra ataques de força bruta porque consome memória significativa e tempo de processamento. Projetos Node.js, Python, PHP e Java modernos adotam Argon2 como padrão. Implementar Argon2id em sua aplicação web demonstra compromisso sério com segurança de dados de usuários.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

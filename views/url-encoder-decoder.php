@@ -63,6 +63,17 @@
 
     <h3>Como funciona?</h3>
     <p>Digite no quadro da esquerda para codificar automaticamente. Digite no quadro da direita para decodificar. A conversão é bidirecional e acontece em tempo real, caractere a caractere. Se uma string encoded estiver malformada (por ex: <code>%2</code> incompleto), uma mensagem de erro aparece abaixo do campo.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o URL Encoder / Decoder?</h3>
+        <p>O URL Encoder / Decoder é uma ferramenta essencial para desenvolvedores web que trabalham com URLs, APIs REST e query strings. Ela converte caracteres especiais (acentos, espaços, símbolos) em formato percent-encoded (como %20 para espaço), permitindo que URLs contenham qualquer tipo de dado. O encoding garante que a URL seja válida e interpretada corretamente por servidores web e navegadores.</p>
+
+        <h3>Como usar o URL Encoder / Decoder?</h3>
+        <p>Use a ferramenta digitando ou colando o texto/URL que deseja codificar ou decodificar. A conversão acontece em tempo real: o texto é automaticamente convertido para formato URL-safe (encoding) ou de volta para formato legível (decoding). A ferramenta mantém sincronização bidirecional, permitindo editar ambos os campos e ver as alterações refletidas instantaneamente.</p>
+
+        <h3>Casos de uso práticos do URL Encoder / Decoder</h3>
+        <p>URL encoding é crítico ao trabalhar com APIs, parâmetros de query string, e-mails e formulários web. Quando você submete um formulário com caracteres especiais, o navegador automaticamente codifica a URL. Conhecer e usar um URL encoder adequado ajuda a depurar APIs, compreender URLs complexas e evitar erros de transmissão de dados em aplicações web.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

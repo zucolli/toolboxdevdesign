@@ -43,6 +43,17 @@
 
     <h3>Acentuação e caracteres especiais</h3>
     <p>Nos formatos de código (camelCase, snake_case, kebab-case etc.), acentos e caracteres especiais são removidos e substituídos por equivalentes ASCII. Nos formatos de texto (UPPERCASE, Capitalize etc.) a acentuação é preservada usando os métodos nativos <code>toUpperCase()</code> e <code>toLowerCase()</code> do JavaScript, que respeitam o Unicode.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Conversor de Maiúsculas e Minúsculas?</h3>
+        <p>O Conversor de Maiúsculas e Minúsculas é uma ferramenta versátil para desenvolvedores, redatores e profissionais de dados que precisam converter texto entre diferentes formatações. A ferramenta suporta múltiplos formatos: UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, PascalCase e dot.case. Conversão em tempo real permite visualizar resultados instantaneamente enquanto digita.</p>
+
+        <h3>Como usar o Conversor de Maiúsculas e Minúsculas?</h3>
+        <p>Cole ou digite o texto no campo de entrada. Selecione o formato desejado nos botões disponíveis. A ferramenta converte e exibe instantaneamente o resultado no campo de saída. Suporte completo a acentuação e caracteres especiais do português. Copie qualquer resultado e use em seu código, documento ou texto. Conversão é caso-sensível: entrada lowercase diferencia de UPPERCASE.</p>
+
+        <h3>Casos de uso práticos do Conversor de Maiúsculas e Minúsculas</h3>
+        <p>Desenvolvedores usam conversores constantemente: snake_case para variáveis em Python/SQL, camelCase em JavaScript, PascalCase em nomes de classes, UPPERCASE em constantes. Redatores usam conversão para padronizar Título de Seções ou criar nomes de arquivos. Profissionais de dados usam para normalizar valores em datasets. Ter uma ferramenta que converte entre todos os formatos economiza tempo e evita erros manuais.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

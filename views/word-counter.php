@@ -69,6 +69,17 @@
 
     <h3>Usos comuns</h3>
     <p>Ideal para redatores que precisam respeitar limites de caracteres em meta descriptions (até 160 caracteres), títulos SEO (até 60 caracteres), posts de redes sociais ou campos de formulário com restrição de tamanho.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Contador de Caracteres e Palavras?</h3>
+        <p>O Contador de Caracteres e Palavras é uma ferramenta essencial para redatores, profissionais de SEO e copywriters que precisam monitorar comprimento e densidade de palavras em textos. A ferramenta conta em tempo real: número de caracteres (com e sem espaços), palavras, linhas, tempo estimado de leitura e frequência de palavras mais utilizadas. Essas métricas são críticas para otimização de conteúdo e SEO.</p>
+
+        <h3>Como usar o Contador de Caracteres e Palavras?</h3>
+        <p>Cole ou digite seu texto no campo de entrada. A ferramenta exibe instantaneamente todas as métricas: caracteres totais, caracteres sem espaços, número de palavras, número de linhas, e tempo de leitura estimado (baseado em velocidade média de leitura). Visualize um gráfico de densidades das palavras mais frequentes, ajudando a identificar repetição excessiva de palavras-chave.</p>
+
+        <h3>Casos de uso práticos do Contador de Caracteres e Palavras</h3>
+        <p>Profissionais de SEO usam contadores de palavra para otimizar conteúdo. Google rewards conteúdo detalhado (2000+ palavras) mas penaliza keyword stuffing (repetição excessiva). Copywriters precisam contar palavras para atender requisitos de comprimento. Redatores de redes sociais monitoram caracteres para caber em limites de plataforma. Publicadores que acompanham tempo de leitura criam melhor experiência de usuário.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

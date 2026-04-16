@@ -67,6 +67,17 @@ https://meusite.com.br/produto/camiseta"></textarea>
 
     <h3>Como funciona</h3>
     <p>Preencha os campos obrigatórios (Source, Medium, Campaign) e cole suas URLs no campo de entrada. URLs que já possuem query string recebem os parâmetros via <code>&amp;</code>; URLs sem query string recebem via <code>?</code>. Linhas em branco e URLs malformadas são descartadas e contabilizadas no resumo.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de UTM em Massa?</h3>
+        <p>O Gerador de UTM em Massa é uma ferramenta que economiza horas de trabalho manual para profissionais de marketing que gerenciam múltiplas campanhas. Ao invés de gerar UTMs uma por uma, você pode adicionar parâmetros UTM a dezenas de URLs simultaneamente. Isso é especialmente útil em campanhas de e-mail marketing, redes de afiliados e estratégias de tráfego pago onde você precisa rastrear múltiplos destinos.</p>
+
+        <h3>Como usar o Gerador de UTM em Massa?</h3>
+        <p>Use a ferramenta listando múltiplas URLs (uma por linha) e configurando os parâmetros UTM: source (origem), medium (meio) e campaign (campanha). Opcionalmente, adicione term e content para segmentação granular. Clique em "Gerar" e a ferramenta retorna todas as URLs com UTM adicionados e codificados corretamente. Você pode copiar o resultado completo ou baixar como arquivo de texto.</p>
+
+        <h3>Casos de uso práticos do Gerador de UTM em Massa</h3>
+        <p>Campanha de e-mail marketing com 50 destinos diferentes exigiria 50 UTMs feitos manualmente — tarefa chata e propensa a erros. Profissionais de marketing usam geradores de UTM em massa para agilizar workflow, reduzir tempo de setup e garantir consistência nos parâmetros. Analytics de campanhas grandes é impossível sem UTMs, então essa ferramenta é crítica para qualquer operação de marketing escalada.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

@@ -75,6 +75,17 @@
 
     <h3>Como funcionar?</h3>
     <p>Preencha a URL de destino e os três campos obrigatórios: <strong>Source</strong> (quem enviou o tráfego, ex: google), <strong>Medium</strong> (o tipo de mídia, ex: cpc) e <strong>Campaign</strong> (o nome da campanha). Os campos Term e Content são opcionais e servem para distinguir anúncios dentro da mesma campanha.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de UTMs?</h3>
+        <p>O Gerador de UTMs é uma ferramenta indispensável para profissionais de marketing digital que utilizam Google Analytics 4 para rastrear campanhas. UTM (Urchin Tracking Module) são parâmetros adicionados às URLs que permitem identificar a origem, meio e conteúdo do tráfego. Com uma ferramenta de geração de UTMs, você cria links rastreáveis com apenas alguns cliques, sem risco de erros de digitação.</p>
+
+        <h3>Como usar o Gerador de UTMs?</h3>
+        <p>Para utilizar o Gerador de UTMs, insira a URL base, o nome da campanha (utm_campaign), a fonte (utm_source) como "facebook" ou "email", e o meio (utm_medium) como "cpc" ou "organic". Opcionalmente, adicione termo-chave (utm_term) e conteúdo (utm_content) para segmentação mais granular. A ferramenta gera automaticamente a URL completa com todos os parâmetros UTM encodados corretamente.</p>
+
+        <h3>Casos de uso práticos do Gerador de UTMs</h3>
+        <p>UTMs são essenciais para qualquer estratégia de marketing baseada em dados. Você pode rastrear performance de anúncios pagos, e-mail marketing, posts em redes sociais e campanhas específicas com precisão. Os dados coletados permitem calcular ROI por canal, otimizar orçamento de publicidade e identificar qual campanha gera melhor retorno, resultando em decisões estratégicas mais informadas.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

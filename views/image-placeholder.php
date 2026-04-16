@@ -62,6 +62,17 @@
 
     <h3>Usando o Data URL diretamente no código</h3>
     <p>O botão "Copiar Data URL" copia a imagem codificada em Base64, pronta para usar como valor de <code>src</code> em qualquer tag <code>&lt;img&gt;</code> ou como <code>background-image</code> no CSS — sem precisar hospedar o arquivo em nenhum lugar.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de Placeholder de Imagem?</h3>
+        <p>O Gerador de Placeholder de Imagem é uma ferramenta para designers e desenvolvedores que precisam gerar imagens temporárias para mockups e prototipagem. Ao invés de buscar imagens ou usar URLs de placeholder online, você gera localmente usando HTML5 Canvas API. Você customiza dimensões exatas, cores, texto e estilo, obtendo placeholder profissional pronto para usar em wireframes e mockups.</p>
+
+        <h3>Como usar o Gerador de Placeholder de Imagem?</h3>
+        <p>Configure os parâmetros: largura e altura em pixels (ex: 800x600), cor de fundo, cor do texto, tamanho da fonte e o texto a exibir (ex: "Imagem Placeholder"). A ferramenta gera instantaneamente a imagem via Canvas API. Você pode copiar o HTML gerado ou baixar como PNG. A imagem é gerada localmente — perfeita para projetos offline e sem dependência de URLs externas.</p>
+
+        <h3>Casos de uso práticos do Gerador de Placeholder de Imagem</h3>
+        <p>Designers usam placeholders para estruturar layouts sem imagens finais. Desenvolvedores frontend usam para testar responsividade. Equipes que precisam compartilhar mockups rapidamente geram placeholders customizados. Ao fazer apresentações de design, placeholders permitem comunicar layout e estrutura sem distração de imagens variadas. Essa ferramenta torna processo mais rápido que buscar e redimensionar imagens.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

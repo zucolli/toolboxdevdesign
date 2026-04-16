@@ -42,6 +42,17 @@
 
     <h3>Como funciona?</h3>
     <p>Cole ou escreva qualquer texto no campo acima. A ferramenta normaliza o texto em tempo real: converte para minúsculas, remove acentos via NFD, elimina caracteres não alfanuméricos e substitui espaços consecutivos por um único hífen. O resultado aparece imediatamente no campo "Slug gerado".</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de Slugs?</h3>
+        <p>O Gerador de Slugs é uma ferramenta essencial para desenvolvedores, proprietários de sites e profissionais de marketing que precisam criar URLs amigáveis e otimizadas para SEO. Slugs são versões limpas e URL-safe de textos, removendo acentuação, espaços especiais e caracteres inválidos, transformando qualquer título em um formato ideal para uso em URLs. Um bom slug melhora significativamente a experiência do usuário e a indexação em motores de busca.</p>
+
+        <h3>Como usar o Gerador de Slugs?</h3>
+        <p>Para usar o Gerador de Slugs, basta digitar ou colar o texto desejado no campo de entrada. A ferramenta converte instantaneamente o texto removendo automaticamente acentos, espaços, caracteres especiais e transformando para minúsculas. Você pode também visualizar a slug em tempo real enquanto digita, permitindo ajustes rápidos. O resultado é exibido em um campo de cópia rápida, facilitando a inserção em seus projetos.</p>
+
+        <h3>Casos de uso práticos do Gerador de Slugs</h3>
+        <p>Slugs otimizadas são amplamente utilizadas em sistemas de CMS como WordPress, geradores de sites estáticos (Next.js, Hugo), plataformas de e-commerce e blogs. Uma URL com slug clara e descritiva, como "/blog/como-usar-slug-generator", comunica melhor o conteúdo ao usuário e aos motores de busca, melhorando ranqueamento em buscas e experiência geral do site. Essa prática é fundamental para qualquer estratégia de SEO moderna.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

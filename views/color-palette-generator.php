@@ -54,6 +54,17 @@
 
     <h3>Como funciona?</h3>
     <p>Escolha uma cor base com o seletor ou digitando o código HEX, selecione o tipo de harmonia e a paleta de 5 cores é gerada instantaneamente. Clique em qualquer swatch para copiar o código HEX para a área de transferência.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de Paleta de Cores?</h3>
+        <p>O Gerador de Paleta de Cores é uma ferramenta poderosa para designers, desenvolvedores web e profissionais de criatividade que precisam gerar combinações de cores harmoniosas. A partir de uma cor base, a ferramenta gera automaticamente paletas utilizando teorias de design consolidadas como harmonia analógica, cores complementares, triádicas e monocromáticas. Usar paletas harmônicas melhora significativamente a coesão visual de qualquer projeto.</p>
+
+        <h3>Como usar o Gerador de Paleta de Cores?</h3>
+        <p>Para usar o Gerador, insira a cor base usando um seletor visual ou código hexadecimal. Escolha o tipo de harmonia desejado: analógica (cores vizinhas), complementar (cores opostas), triádica (três cores equidistantes) ou monocromática (variações da mesma cor). A ferramenta gera instantaneamente a paleta completa com todos os códigos hexadecimais, RGB e nomes de cores, prontos para copiar e usar.</p>
+
+        <h3>Casos de uso práticos do Gerador de Paleta de Cores</h3>
+        <p>Paletas de cores bem escolhidas são fundamentais em web design, branding e interfaces gráficas. Um designer profissional utiliza harmonia de cores para evocar emoções, guiar atenção do usuário e criar identidades visuais memoráveis. Seja para design de website, logotipo, aplicativo ou material de marketing, uma paleta coerente e harmoniosa diferencia projetos amadores de profissionais.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

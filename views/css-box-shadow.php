@@ -69,6 +69,17 @@
 
     <h3>Como usar esta ferramenta</h3>
     <p>Ajuste os sliders para personalizar a sombra em tempo real. Use o checkbox "inset" para criar sombras internas. Controle a transparência com o slider de opacidade. Quando estiver satisfeito, clique em "Copiar" para obter o CSS pronto — já com prefixo cross-browser incluído.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de CSS Box Shadow?</h3>
+        <p>O Gerador de CSS Box Shadow é uma ferramenta visual para designers e frontend developers que criam interfaces modernas. Sombras CSS (box-shadow) adicionam profundidade, hierarquia visual e elegância aos projetos web. Em vez de escrever manualmente valores de offset, blur e spread, a ferramenta oferece sliders interativos para visualizar em tempo real como a sombra ficará, gerando o código CSS pronto para copiar.</p>
+
+        <h3>Como usar o Gerador de CSS Box Shadow?</h3>
+        <p>Use a ferramenta arrastando sliders para ajustar: offset horizontal e vertical, blur radius, spread radius e cor da sombra. Visualize em tempo real como a sombra será aplicada a um elemento de exemplo. Você pode gerar múltiplas camadas de sombra (comma-separated) para efeitos mais sofisticados. O código CSS é gerado automaticamente e pode ser copiado para seu arquivo de estilo.</p>
+
+        <h3>Casos de uso práticos do Gerador de CSS Box Shadow</h3>
+        <p>Box shadows profissionais são utilizadas em design systems modernos para criar cartas (cards), botões, modais e overlays. Material Design do Google utiliza extensivamente box-shadow para comunicar elevação (elevation) dos elementos. Designers de UI/UX usam essa ferramenta para iterar rapidamente sobre sombras e garantir consistência visual em todo projeto.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

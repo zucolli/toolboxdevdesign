@@ -56,6 +56,17 @@
 
     <h3>Casos de uso comuns</h3>
     <p>Limpeza de textos copiados de PDFs escaneados, normalização de dados antes de importar para planilhas ou bancos de dados, preparação de conteúdo para sistemas de IA, e remoção de duplicatas em listas copiadas de e-mails ou planilhas.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Limpador de Texto?</h3>
+        <p>O Limpador de Texto é uma ferramenta essencial para profissionais que recebem textos de fontes variadas (PDFs, e-mails, planilhas, páginas web) que frequentemente contêm formatação, espaços extras, linhas vazias e duplicatas. A ferramenta remove automaticamente esses "detritos" de forma eficiente, deixando apenas o texto limpo e bem formatado pronto para reuso. Ideal para limpeza de dados e normalização de conteúdo.</p>
+
+        <h3>Como usar o Limpador de Texto?</h3>
+        <p>Cole o texto desejado no campo de entrada. Selecione as operações de limpeza desejadas: remover espaços extras, remover linhas vazias, remover caracteres de controle, converter para minúsculas ou MAIÚSCULAS. Ou use "Limpeza automática" para aplicar todas as operações de uma vez. Visualize o resultado em tempo real. Copie o texto limpo para usar em documentos, bancos de dados ou aplicações.</p>
+
+        <h3>Casos de uso práticos do Limpador de Texto</h3>
+        <p>Profissionais de dados usam limpadores de texto para normalizar datasets antes de análise. Redatores usam para limpar textos copiados de PDFs ou sites. Equipes de suporte usam para padronizar logs e mensagens. Desenvolvedores usam para processar input de usuários. Qualquer pessoa que trabalha com volume grande de texto precisa de uma ferramenta que automatize limpeza e formatação.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

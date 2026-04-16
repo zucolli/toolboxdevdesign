@@ -54,6 +54,17 @@
 
     <h3>Como interpretar</h3>
     <p>Um ROAS abaixo de 1x indica que a campanha nem pagou a mídia. Um ROI negativo significa prejuízo operacional. O ROAS ideal varia por setor — e-commerce de moda costuma exigir ROAS mínimo de 3x, enquanto serviços com alta margem podem ser rentáveis com ROAS de 1,5x.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Calculadora de ROI e ROAS?</h3>
+        <p>A Calculadora de ROI e ROAS é uma ferramenta profissional para especialistas em marketing que precisam mensurar o retorno de suas campanhas de publicidade. ROI (Return on Investment) e ROAS (Return on Ad Spend) são métricas críticas para avaliar a eficiência de investimentos em marketing. Uma ferramenta que calcula essas métricas instantaneamente permite tomar decisões rápidas sobre alocação de orçamento e otimização de campanhas.</p>
+
+        <h3>Como usar o Calculadora de ROI e ROAS?</h3>
+        <p>Para usar a Calculadora, insira o investimento total gasto em publicidade (em reais), a receita gerada pela campanha e opcionalmente o custo do produto. A ferramenta calcula instantaneamente ROI percentual (quanto você ganhou em relação ao investimento), ROAS (quanto você ganhou para cada real gasto) e lucro líquido. Todos os cálculos são em tempo real, permitindo simular diferentes cenários rapidamente.</p>
+
+        <h3>Casos de uso práticos do Calculadora de ROI e ROAS</h3>
+        <p>Marketing moderno é data-driven. Proprietários de e-commerce e agências de marketing vivem à base de ROI e ROAS — são as métricas que justificam orçamento e demonstram valor ao negócio. Anúncios que não geram ROAS de pelo menos 3-4x são considerados ineficientes. Profissionais que dominam análise de ROI conseguem alocar orçamento de forma mais inteligente, maximizando lucro e crescimento.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

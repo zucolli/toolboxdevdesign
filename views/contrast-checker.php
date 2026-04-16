@@ -65,6 +65,17 @@
 
     <h3>Como funciona?</h3>
     <p>Selecione a cor de fundo e a cor do texto usando os seletores ou digitando o código HEX. A razão de contraste é calculada em tempo real e exibida junto com quatro badges indicando aprovação ou reprovação em cada critério WCAG. Use as badges para guiar suas decisões de design.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Calculadora de Contraste WCAG?</h3>
+        <p>A Calculadora de Contraste WCAG é uma ferramenta profissional para designers e desenvolvedores web que desejam garantir a acessibilidade de seus projetos. Ela avalia o contraste de cores conforme os critérios de acessibilidade web WCAG 2.1 AA e AAA, determinando se a combinação de cores escolhida permite leitura adequada para pessoas com baixa visão ou daltonismo. Um bom contraste é fundamental para tornar seu site acessível a todos.</p>
+
+        <h3>Como usar o Calculadora de Contraste WCAG?</h3>
+        <p>Use a ferramenta selecionando a cor do texto e a cor do fundo nos campos de entrada, ou digitando códigos hexadecimais diretamente. A calculadora exibe instantaneamente a razão de contraste (contrast ratio) e indica se a combinação atende aos critérios AA (4.5:1 para texto normal) ou AAA (7:1 para texto normal). Você também recebe recomendações de ajustes se a combinação não passar nos testes.</p>
+
+        <h3>Casos de uso práticos do Calculadora de Contraste WCAG</h3>
+        <p>Conformidade com WCAG é essencial em projetos comerciais e governamentais, frequentemente exigida por lei em muitos países. Além da conformidade legal, melhorar contraste beneficia todos os usuários em ambientes com luz solar intensa ou em dispositivos com telas de baixa qualidade. Investir em acessibilidade aumenta o alcance do seu produto e demonstra responsabilidade corporativa.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

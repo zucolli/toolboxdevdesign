@@ -99,6 +99,17 @@
 
     <h3>Como funciona?</h3>
     <p>Arraste um arquivo <code>.svg</code>, clique na dropzone para escolher um arquivo, ou cole o código SVG diretamente na textarea. Clique em "Otimizar SVG" para processar. A ferramenta remove metadados de editores, namespaces desnecessários, IDs órfãos (não referenciados em nenhum <code>fill</code>, <code>stroke</code> ou <code>use</code>) e arredonda coordenadas de path para 2 casas decimais. Todo o processamento acontece 100% no navegador.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Otimizador de SVG?</h3>
+        <p>O Otimizador de SVG é uma ferramenta fundamental para designers e desenvolvedores web que trabalham com gráficos vetoriais. SVGs exportados de ferramentas como Figma, Adobe Illustrator ou Inkscape costumam conter metadados desnecessários, IDs não utilizados, comentários e espaçamento que aumentam o tamanho do arquivo. O otimizador remove automaticamente esses dados redundantes, reduzindo o tamanho do arquivo em até 50%, mantendo a qualidade visual intacta.</p>
+
+        <h3>Como usar o Otimizador de SVG?</h3>
+        <p>Para usar o Otimizador de SVG, copie o código SVG completo e cole no campo de entrada, ou faça upload de um arquivo .svg. A ferramenta executa otimização completa no navegador: remove namespaces e metadados de editores, limpa IDs não referenciados, arredonda coordenadas para 2 casas decimais, comprime paths e remove comentários. O SVG otimizado é exibido imediatamente, pronto para copiar e usar.</p>
+
+        <h3>Casos de uso práticos do Otimizador de SVG</h3>
+        <p>SVGs otimizadas melhoram significativamente a performance web. Um SVG reduzido carrega mais rápido, consome menos banda e melhora Core Web Vitals. Desenvolvedores Node.js e ferramentas de build como Webpack, Vite e Next.js frequentemente integram otimizadores de SVG na pipeline de desenvolvimento. Para aplicações web que utilizam muitos ícones SVG ou gráficos, otimização é essencial para manter performance aceitável.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

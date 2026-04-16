@@ -60,6 +60,17 @@
 
     <h3>Como funciona?</h3>
     <p>Digite ou cole qualquer texto no campo acima. O SHA-512 é calculado via Web Crypto API (<code>crypto.subtle.digest</code>) diretamente no navegador, sem comunicação com servidor. O CRC32 é implementado em JavaScript puro usando uma tabela de lookup polinomial. Ambos os resultados são atualizados em tempo real a cada tecla digitada.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador SHA-512 e CRC32?</h3>
+        <p>O Gerador SHA-512 e CRC32 é uma ferramenta de hashing dual que oferece duas formas diferentes de validação de integridade de dados. SHA-512 é um algoritmo criptográfico forte, ideal para aplicações de segurança e assinaturas digitais. CRC32 é um checksum rápido, perfeito para detectar corrupção acidental de dados durante transferências de arquivo. Ambas executam 100% no navegador, sem enviar dados ao servidor.</p>
+
+        <h3>Como usar o Gerador SHA-512 e CRC32?</h3>
+        <p>Use a ferramenta digitando o texto ou colando conteúdo no campo de entrada. Clique em "Gerar Hashes" para obter instantaneamente o SHA-512 (64 caracteres hexadecimais) e CRC32 (8 caracteres hexadecimais). Ambos são calculados pela Web Crypto API do navegador em tempo real, com sincronização bidirecional entre entrada e hashes. Copie cada resultado conforme necessário para seu projeto.</p>
+
+        <h3>Casos de uso práticos do Gerador SHA-512 e CRC32</h3>
+        <p>SHA-512 é amplamente usado em aplicações de blockchain, assinaturas digitais e verificação de integridade crítica. CRC32, mais leve, é ideal para verificações rápidas de arquivos baixados, transferências FTP e validação de dados em tempo real. Developers Linux/Unix frequentemente usam CRC32 para validação de backups, enquanto criptógrafos e aplicações de blockchain dependem de SHA-512 para segurança máxima.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

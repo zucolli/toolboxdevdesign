@@ -74,6 +74,17 @@
 
     <h3>Opções de formatação</h3>
     <p><strong>Indentação</strong> — escolha entre 2 espaços, 4 espaços ou tab para se alinhar ao estilo do seu projeto. <strong>Palavras-chave em maiúsculas</strong> — convenção amplamente adotada que diferencia visualmente os comandos SQL dos identificadores e valores.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Formatador de SQL?</h3>
+        <p>O Formatador de SQL é uma ferramenta essencial para desenvolvedores backend, DBAs e analistas que escrevem queries SQL. SQL mal formatado é difícil de ler, depurar e manter. A ferramenta formata automaticamente queries com indentação apropriada, palavras-chave em maiúsculas, alinhamento de cláusulas e quebras de linha. Suporta múltiplos dialetos: MySQL, PostgreSQL, T-SQL, PL/SQL, BigQuery e SQLite.</p>
+
+        <h3>Como usar o Formatador de SQL?</h3>
+        <p>Cole sua query SQL no campo de entrada. Selecione o dialeto do seu banco de dados se desejar (ou deixe em auto-detect). Clique em "Formatar" e a query é embelezada com indentação clara, keywords em UPPERCASE, e cláusulas alinhadas. Você pode also minificar para compactar queries e reduzir tamanho. Copie o resultado formatado para seu editor SQL ou aplicação.</p>
+
+        <h3>Casos de uso práticos do Formatador de SQL</h3>
+        <p>Queries SQL complexas com múltiplas JOINs, CTEs e WHEREs são praticamente ilegíveis sem formatação apropriada. Equipes de desenvolvimento usam formatadores para padronizar estilo de código. Performance debugging é mais fácil com queries bem formatadas. Analysts que compartilham queries com colegas enviam formatadas para legibilidade. Qualquer profissional que trabalha com SQL regularmente beneficia dessa ferramenta.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

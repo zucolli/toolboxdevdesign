@@ -98,6 +98,17 @@
 
     <h3>Direta / Varejo</h3>
     <p>Para anúncios de resposta imediata em e-commerce e redes sociais. Vai direto ao ponto: produto, benefício, oferta e CTA — sem rodeios. Funciona bem em posts de feed, stories e Google Shopping.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de Copy para Ofertas?</h3>
+        <p>O Gerador de Copy para Ofertas é uma ferramenta criativa para profissionais de marketing, copywriters e proprietários de negócios que precisam criar textos persuasivos sem contratar IA paga. A ferramenta utiliza fórmulas de copywriting consolidadas como AIDA (Atenção, Interesse, Desejo, Ação), PAS (Problema, Agitação, Solução) e BAB (Antes, Depois, Bridge) para estruturar mensagens que convertem. Copywriting efetivo pode aumentar conversão em 40-300% dependendo do produto.</p>
+
+        <h3>Como usar o Gerador de Copy para Ofertas?</h3>
+        <p>Use a ferramenta selecionando a fórmula desejada (AIDA, PAS ou BAB) e preenchendo os campos específicos como seu produto, público-alvo e benefício principal. A ferramenta gera instantaneamente um texto persuasivo estruturado seguindo a fórmula escolhida. Você pode editar e ajustar conforme necessário, mantendo a estrutura psicológica que melhora persuasão. O resultado é um copy pronto para publicar ou adaptar.</p>
+
+        <h3>Casos de uso práticos do Gerador de Copy para Ofertas</h3>
+        <p>Copywriting profissional é utilizado em posts de redes sociais, anúncios pagos, páginas de vendas e e-mail marketing. Empresas que dominam copywriting conseguem taxas de conversão 2-3x maiores que concorrentes. Agências de marketing cobram premium por textos bem estruturados. Aproveitar fórmulas de copywriting comprovadas científicamente é uma vantagem estratégica essencial em qualquer campanha digital moderna.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

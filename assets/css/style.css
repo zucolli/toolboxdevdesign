@@ -2404,6 +2404,39 @@ body.page-home .content {
 }
 
 /* ============================================================
+   Tool SEO Content
+   ============================================================ */
+.tool-seo-content {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    border-radius: 8px;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.tool-seo-content h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.tool-seo-content h3:first-child {
+    margin-top: 0;
+}
+
+.tool-seo-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {

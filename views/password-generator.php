@@ -56,6 +56,17 @@
 
     <h3>Como interpretar a força</h3>
     <p><strong>Fraca:</strong> menos de 12 caracteres ou menos de 2 tipos de caracteres. <strong>Média:</strong> 12–15 caracteres com variedade moderada. <strong>Forte:</strong> 16+ caracteres com todos os tipos ativos — ideal para senhas de contas críticas.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de Senhas Fortes?</h3>
+        <p>O Gerador de Senhas Fortes é uma ferramenta profissional para criar senhas criptograficamente seguras usando a Web Crypto API. Senhas fracas são a vulnerabilidade número 1 em segurança digital. A ferramenta permite configurar comprimento, inclusão de maiúsculas, números e símbolos especiais, garantindo senhas que resistem a ataques de força bruta. Tudo executado 100% no navegador, sem enviar dados ao servidor.</p>
+
+        <h3>Como usar o Gerador de Senhas Fortes?</h3>
+        <p>Configure os parâmetros: comprimento mínimo (recomendado 12+ caracteres), incluir MAIÚSCULAS, minúsculas, números e símbolos especiais. Clique em "Gerar Senha" e a ferramenta cria uma senha criptograficamente aleatória conforme os critérios. Você pode gerar múltiplas senhas rapidamente. Copie a senha escolhida e use para criar sua conta, alterar senha ou armazenar em seu gerenciador de senhas.</p>
+
+        <h3>Casos de uso práticos do Gerador de Senhas Fortes</h3>
+        <p>Senhas fortes são críticas em qualquer contexto: contas de banco, email, redes sociais, produtos digitais. Hackers usam força bruta contra senhas fracas. Geradores de senha profissional garantem entropia máxima — impossível de ser adivinhada por humanos. Especialistas em cibersegurança recomendam usar geradores de senha e armazenar em gerenciadores (Bitwarden, 1Password) ao invés de reutilizar senhas fracas.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

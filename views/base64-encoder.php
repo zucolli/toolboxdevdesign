@@ -63,6 +63,17 @@
 
     <h3>UTF-8 e acentuação</h3>
     <p>A função nativa <code>btoa()</code> do JavaScript não aceita caracteres fora do Latin-1. Esta ferramenta usa <code>btoa(unescape(encodeURIComponent(str)))</code> para garantir suporte completo a acentos e emojis. Ao decodificar, aplica o processo inverso com <code>decodeURIComponent(escape(atob(str)))</code>.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Base64 Encoder / Decoder?</h3>
+        <p>O Base64 Encoder / Decoder é uma ferramenta essencial para desenvolvedores que trabalham com codificação de dados. Base64 é um esquema de codificação que converte dados binários em formato texto usando 64 caracteres seguros, permitindo transmissão de dados complexos via texto plano (HTTP, email, JSON). A ferramenta suporta UTF-8 completo com acentuação, fazendo encoding/decoding perfeito de textos em português.</p>
+
+        <h3>Como usar o Base64 Encoder / Decoder?</h3>
+        <p>Para usar a ferramenta, digite ou cole o texto que deseja codificar. A ferramenta executa encoding em tempo real, exibindo a versão Base64 no outro campo. Você pode trabalhar em ambas as direções: codificar texto para Base64 ou decodificar Base64 para texto legível. Two-way binding permite editar ambos os campos e ver sincronização automática, ideal para debugging e conversão rápida.</p>
+
+        <h3>Casos de uso práticos do Base64 Encoder / Decoder</h3>
+        <p>Base64 é usado para encapsular dados em URLs (Data URIs para imagens), enviar credenciais em requisições HTTP (Authorization header), armazenar dados complexos em cookies, e transmitir ficheiros binários em JSON. Developers de API REST, mobile e backend trabalham com Base64 constantemente. Conhecer e usar um encoder profissional é essencial para qualquer pessoa que trabalhe com integração de sistemas ou transmissão de dados.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

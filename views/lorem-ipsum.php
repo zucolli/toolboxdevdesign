@@ -53,6 +53,17 @@
 
     <h3>Incluir tags HTML</h3>
     <p>Quando marcado, o resultado é encapsulado em tags semânticas (<code>&lt;p&gt;</code>, <code>&lt;ul&gt;&lt;li&gt;</code>), permitindo colar diretamente em editores HTML ou sistemas de template. Desmarcado, o texto é gerado puro, ideal para campos de texto simples.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Gerador de Lorem Ipsum?</h3>
+        <p>O Gerador de Lorem Ipsum é uma ferramenta padrão em design mockups e desenvolvimento web. Lorem Ipsum é um texto placeholder em pseudo-latim usado para demonstrar layout e visual de um projeto sem distração do conteúdo real. Designers de UI/UX, desenvolvedores frontend e stakeholders usam Lorem Ipsum para avaliar espaçamento, tipografia e composição visual antes que conteúdo real esteja disponível.</p>
+
+        <h3>Como usar o Gerador de Lorem Ipsum?</h3>
+        <p>Use o Gerador selecionando a unidade: parágrafos, palavras, frases ou listas HTML. Configure a quantidade (1-100+). Opcionalmente, marque para incluir tags HTML (< p>, <li>) ao redor de cada unidade. Clique em "Gerar" e receba o Lorem Ipsum conforme especificado. Copie e cole em seu arquivo HTML, email, documento ou ferramenta de design para visualizar layout imediatamente.</p>
+
+        <h3>Casos de uso práticos do Gerador de Lorem Ipsum</h3>
+        <p>Lorem Ipsum é utilizado universalmente: mockups de site, emails, apresentações, prototipagem em Figma/Adobe XD, e testes A/B de layout. Qualquer designer profissional ou desenvolvedor precisa ter acesso rápido a um gerador de Lorem. Usar conteúdo real em estágios iniciais de design pode enviesar decisões de layout. Lorem Ipsum permite design objetivo focado apenas em estrutura e visual.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

@@ -24,6 +24,17 @@
 
     <h3>IP público vs. IP local</h3>
     <p>O endereço exibido aqui é o seu <strong>IP público</strong> — o que a internet vê. Seu IP local (ex.: 192.168.x.x) é o endereço dentro da sua rede doméstica e não é visível externamente.</p>
+
+    <section class="tool-seo-content">
+        <h3>O que é o Meu IP?</h3>
+        <p>Ferramenta simples e direta que exibe seu endereço IP público instantaneamente. Seu IP público é visível para qualquer site que você acessa e pode ser utilizado para geolocalização, troubleshooting de rede, testes de conectividade e verificação de VPN. A ferramenta detecta seu IP automaticamente consultando um endpoint de API seguro e exibe o resultado sem necessidade de clique.</p>
+
+        <h3>Como usar o Meu IP?</h3>
+        <p>Simplesmente acesse a página e seu IP público será exibido automaticamente. Copie o IP ou note o valor. Você pode usar essa ferramenta para verificar: se seu IP mudou, se sua VPN está funcionando (IP deve ser diferente do normal), ou para troubleshooting de conectividade com suporte técnico. Rápido, sem cadastro, 100% gratuito.</p>
+
+        <h3>Casos de uso práticos do Meu IP</h3>
+        <p>Profissionais de rede, admins de sistema e usuários de VPN consultam IP público frequentemente. Ao lidar com whitelist de IP, suporte técnico, ou testes de conectividade, saber seu IP público é essencial. Profissionais de segurança e penetration testers usam para mapear IP antes de testes. Qualquer pessoa que trabalha com rede ou IT precisa de acesso rápido a essa informação.</p>
+    </section>
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>
