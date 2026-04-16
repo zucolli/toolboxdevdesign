@@ -2436,6 +2436,19 @@ body.page-home .content {
     text-align: justify;
 }
 
+@media (prefers-color-scheme: dark) {
+    .tool-seo-content {
+        background-color: var(--color-bg-secondary);
+        border-top-color: var(--color-border);
+        color: var(--color-text);
+    }
+
+    .tool-seo-content h3 {
+        color: var(--color-text);
+        border-bottom-color: var(--color-border);
+    }
+}
+
 /* ============================================================
    A/B Test Calculator
    ============================================================ */
