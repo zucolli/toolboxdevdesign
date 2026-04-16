@@ -1,7 +1,7 @@
 <div class="home-wrap">
 
     <div class="home-hero">
-        <h1 class="home-hero-title">32 Ferramentas Gratuitas para Dev &amp; Design</h1>
+        <h1 class="home-hero-title">33 Ferramentas Gratuitas para Dev &amp; Design</h1>
         <p class="home-hero-desc">Slug generators, hashes, paletas de cores, UTMs e muito mais — tudo no navegador, sem cadastro, 100% gratuito.</p>
     </div>
 
@@ -321,6 +321,16 @@
                 <div class="tool-card-body">
                     <div class="tool-card-title">WhatsApp Link</div>
                     <div class="tool-card-desc">Gere links wa.me com mensagem pré-definida e encode automático</div>
+                </div>
+            </a>
+
+            <a href="<?= BASE_URL ?>ab-test-calculator" class="tool-card">
+                <div class="tool-card-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div class="tool-card-body">
+                    <div class="tool-card-title">Calculadora de Teste A/B</div>
+                    <div class="tool-card-desc">Calcule significância estatística com Z-test bicaudal, Z-score e P-value</div>
                 </div>
             </a>
 

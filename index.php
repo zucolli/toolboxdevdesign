@@ -253,6 +253,11 @@ match ($path) {
         $pageDescription = 'Formate e embeleze queries SQL com indentação e palavras-chave em maiúsculas. Suporte a MySQL, PostgreSQL, T-SQL, PL/SQL, BigQuery e mais — 100% no navegador.';
         $view            = BASE_PATH . '/views/sql-formatter.php';
     })(),
+    'ab-test-calculator' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Calculadora de Teste A/B | Toolbox Dev Design';
+        $pageDescription = 'Calcule a significância estatística do seu teste A/B com Z-test bicaudal. Informe visitantes e conversões de cada grupo e obtenha Z-score, P-value e resultado instantaneamente.';
+        $view            = BASE_PATH . '/views/ab-test-calculator.php';
+    })(),
     'sobre' => (function () use (&$titulo, &$pageDescription, &$view) {
         $titulo          = 'Sobre | Toolbox Dev Design';
         $pageDescription = 'Conheça a Toolbox Dev Design, suíte gratuita de ferramentas para desenvolvedores e designers, criada por Carlos Zucolli e mantida pela NuAto Comunicação.';
