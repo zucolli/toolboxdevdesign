@@ -90,3 +90,21 @@
 </article>
 
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>
+
+<section class="tool-seo-content">
+    <h3>Por que fazer testes A/B?</h3>
+    <p>Testes A/B são fundamentais para otimizar qualquer estratégia digital. Ao invés de fazer suposições, você coleta dados reais sobre o comportamento dos usuários. Uma pequena melhoria de 1% na taxa de conversão pode significar milhares de reais em receita adicional para um site de alto tráfego.</p>
+
+    <h3>Importância da significância estatística</h3>
+    <p>Muitas empresas cometem o erro de interromper um teste muito cedo, quando a diferença ainda pode ser resultado do acaso. A significância estatística garante que você só declare vitória quando há evidência suficiente. Um teste não significativo não é um resultado ruim — é apenas um sinal para coletar mais dados ou ajustar a abordagem.</p>
+
+    <h3>Quando usar 90%, 95% ou 99% de confiança?</h3>
+    <p><strong>90% de confiança</strong> é adequado para testes rápidos com pouca margem de erro financeiro. <strong>95% de confiança</strong> é o padrão da indústria, balanceando rigor estatístico com praticidade. <strong>99% de confiança</strong> é ideal para decisões críticas onde o risco de um erro é muito alto, como mudanças em produtos core ou processos financeiros.</p>
+
+    <h3>Exemplos práticos</h3>
+    <p><strong>Cenário 1:</strong> Um site de e-commerce testa o texto de um botão CTA. Com 5.000 visitantes por grupo e 95% de confiança, ele obtém um resultado significativo com apenas 2% mais cliques. A mudança é implementada globalmente, gerando milhões em receita extra.</p>
+    <p><strong>Cenário 2:</strong> Uma SaaS testa uma nova cópia de preço. Após 3.000 visitantes por grupo, o resultado não é significativo (P-value = 0.12). A equipe coleta mais dados antes de fazer qualquer mudança, evitando uma decisão baseada em ruído aleatório.</p>
+
+    <h3>Armadilhas comuns em testes A/B</h3>
+    <p><strong>Parar cedo demais:</strong> Interromper o teste assim que um resultado "parece bom" aumenta o risco de falsos positivos. <strong>Testar múltiplas variáveis:</strong> Mudar várias coisas simultaneamente dificulta identificar qual mudança causou o efeito. <strong>Ignorar fatores externos:</strong> Uma campanha de marketing ou sazonalidade pode influenciar os resultados — sempre considere o contexto.</p>
+</section>
