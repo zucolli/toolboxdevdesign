@@ -19,10 +19,12 @@ Todas as respostas devem ser em **português brasileiro**. Este arquivo deve ser
 **Ao finalizar qualquer tarefa que deva ser testada na web, executar o fluxo de deploy abaixo automaticamente (sem usar `Skill()`) antes de avisar o usuário para testar:**
 
 ```
-git add <arquivos modificados>
+git add <arquivos modificados> CLAUDE.md docs/
 git commit -m "tipo: descrição resumida"
 git push
 ```
+
+> **Regra:** Sempre incluir `CLAUDE.md` e todos os arquivos em `docs/` no commit, mesmo que não tenham sido alterados na tarefa. A pasta `docs/` é o repositório de fichas e contextos gerados pela parceria Gemini + CC.
 
 > **Nota técnica:** A skill `/commit-push` (`.claude/skills/commit-push.md`) só funciona quando o **usuário** digita `/commit-push` no prompt. O CC **não consegue** invocá-la via `Skill("commit-push")` — isso sempre resulta em "Unknown skill". Portanto, execute os comandos git diretamente via `Bash`.
 
@@ -87,6 +89,17 @@ Design tokens em `:root` (cores, radius, fontes). Classes utilitárias consolida
 Adicionar `.is-visible` via `requestAnimationFrame()` no JS.
 
 **`input[type="url"]`** deve ser incluído nos seletores CSS junto com `input[type="text"]` — ambos precisam dos mesmos estilos de formulário.
+
+## Parceria Gemini + Claude Code
+
+**Dinâmica de trabalho:** O Gemini 3.1 Pro atua como arquiteto estratégico — analisa o site, propõe melhorias estruturais, define padrões e gera **fichas de execução** detalhadas. O CC recebe essas fichas e as implementa com precisão cirúrgica no código.
+
+**Como extrair o máximo dessa parceria:**
+- **Fichas bem estruturadas** = CC executa sem ambiguidade. Peça ao Gemini para especificar: arquivos a modificar, comportamento esperado, classes CSS a usar/criar, e se há API PHP envolvida.
+- **Gemini decide o QUÊ e o PORQUÊ** — arquitetura, UX, SEO, priorização de features.
+- **CC decide o COMO** — implementação fiel aos padrões do projeto (JS síncrono, front controller, design tokens existentes).
+- Quando a ficha envolver decisão arquitetural que conflite com padrões atuais do `.md`, CC sinaliza antes de executar.
+- Fichas podem referenciar este `.md` para garantir que o Gemini conheça as restrições técnicas do projeto.
 
 ## Lições aprendidas
 
