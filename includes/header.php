@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($titulo ?? 'Toolbox Dev Design') ?></title>
     <meta name="description" content="<?= htmlspecialchars($pageDescription ?? 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.') ?>">
-    <link rel="canonical" href="<?= 'https://toolboxdevdesign.com.br' . htmlspecialchars(strtok($_SERVER['REQUEST_URI'] ?? '/', '?')) ?>">
+    <link rel="canonical" href="<?= 'https://toolboxdevdesign.com.br' . htmlspecialchars(rtrim(strtok($_SERVER['REQUEST_URI'] ?? '/', '?'), '/') ?: '/') ?>">
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzBmMTcyYSIvPjxyZWN0IHg9IjQiIHk9IjEwIiB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgcng9IjIiIGZpbGw9IiMwMGE2ZmYiLz48cmVjdCB4PSIxMi41IiB5PSIxMCIgd2lkdGg9IjciIGhlaWdodD0iMTIiIHJ4PSIyIiBmaWxsPSIjMDBkNDg0Ii8+PHJlY3QgeD0iMjEiIHk9IjEwIiB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgcng9IjIiIGZpbGw9IiNmZjZhMDAiLz48L3N2Zz4=">
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
     <!-- Google AdSense -->
