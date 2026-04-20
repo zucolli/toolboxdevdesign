@@ -88,8 +88,8 @@ if ($path === 'api/generate-hash') {
 
 match ($path) {
     '' => (function () use (&$titulo, &$pageDescription, &$view, &$bodyClass) {
-        $titulo          = 'Toolbox Dev Design — 32 Ferramentas Gratuitas para Dev & Design';
-        $pageDescription = '32 ferramentas gratuitas para desenvolvedores, designers e profissionais de marketing. Sem cadastro, 100% no navegador.';
+        $titulo          = 'Toolbox Dev Design — 33 Ferramentas Gratuitas para Dev & Design';
+        $pageDescription = '33 ferramentas gratuitas para desenvolvedores, designers e profissionais de marketing. Sem cadastro, 100% no navegador.';
         $view            = BASE_PATH . '/views/home.php';
         $bodyClass       = 'page-home';
     })(),
