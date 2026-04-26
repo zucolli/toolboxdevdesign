@@ -55,4 +55,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Nunca use apenas o nome do produto como slug. Use nome + categoria (ex: <code>tinta-fosca-paredes-branco-neve</code>). Slugs descritivas de 4 a 6 palavras ranqueiam significativamente melhor em buscas de cauda longa — essencial para páginas de produto em e-commerce de materiais de construção e varejo onde o cliente busca com especificidade técnica.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

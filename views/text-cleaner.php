@@ -69,4 +69,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao importar textos de descrição de produto de sistemas de ERP legados para plataformas de e-commerce, sempre passe pelo limpador antes. Espaços duplos, quebras de linha invisíveis e caracteres de controle causam bugs visuais em fichas técnicas e podem silenciosamente quebrar o parse de feeds de produto — problemas que só aparecem depois que o catálogo vai ao ar.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

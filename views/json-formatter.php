@@ -57,4 +57,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao integrar feeds de produto em JSON entre plataformas de e-commerce e Google Merchant Center, formate e valide o JSON antes de enviar. Um único campo com vírgula faltando ou uma chave mal formada pode silenciosamente recusar 5.000 SKUs no feed — e o produto simplesmente some dos resultados de Shopping sem nenhum alerta óbvio.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

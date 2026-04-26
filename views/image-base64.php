@@ -50,4 +50,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao criar e-mails de campanha para grandes atacadistas com bases de 100k+ contatos, converter logotipos e ícones pequenos para Base64 e embutir no HTML elimina dependência de CDN externo. Isso garante renderização correta mesmo em clientes de e-mail corporativos com política de bloqueio de imagens externas — problema frequente em redes de varejistas com TI restritiva.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

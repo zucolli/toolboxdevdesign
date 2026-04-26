@@ -76,4 +76,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao criar links de rastreio com múltiplos parâmetros <code>utm_</code>, nunca encode a URL inteira — encode apenas os valores de cada parâmetro individualmente. Um erro aqui faz o GA4 registrar a URL completa como parâmetro em vez de rota, poluindo seus relatórios de campanha com dados completamente inúteis e impossíveis de corrigir retroativamente.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

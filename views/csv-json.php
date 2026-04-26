@@ -73,4 +73,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em operações de varejo de médio e grande porte, dados de performance de campanha vivem em planilhas Excel. Converter o CSV do relatório para JSON antes de importar no sistema analítico mantém histórico estruturado e permite cruzamento entre Google Ads, Meta e e-mail em uma única fonte de verdade — sem depender de integrações pagas de BI.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

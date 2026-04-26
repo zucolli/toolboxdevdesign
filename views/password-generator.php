@@ -69,4 +69,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em agências que gerenciam múltiplas contas de clientes varejistas, senhas compartilhadas são o principal vetor de risco. Gere uma senha única de 24+ caracteres para cada integração de plataforma (Google Ads, Meta, RD Station) e armazene em cofre de senhas. Jamais reutilize senhas entre clientes — o comprometimento de uma conta pode se propagar para toda a carteira.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

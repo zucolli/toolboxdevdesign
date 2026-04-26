@@ -67,4 +67,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao criar paletas para campanhas sazonais (Black Friday, Natal, Dia das Mães), gere variações complementares da cor-âncora da marca em vez de paletas genéricas. Manter a identidade cromática do cliente com ajustes de saturação e brilho acelera aprovação dos materiais — especialmente em redes com comitês de identidade visual rígidos como grandes varejistas de home center.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

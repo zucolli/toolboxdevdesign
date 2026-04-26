@@ -66,4 +66,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao criar mockups de e-mail marketing ou landing pages para varejistas, use Lorem Ipsum apenas nos blocos de texto editorial. Nas áreas de preço, CTA e headline, insira o texto real — mesmo que provisório. Clientes de varejo tomam decisões visuais olhando para preço e oferta, não para o layout em si, e texto real acelera a aprovação.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

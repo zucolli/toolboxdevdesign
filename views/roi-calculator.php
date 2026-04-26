@@ -67,4 +67,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em campanhas para grandes varejistas, o ROAS mínimo aceitável varia por categoria: materiais de construção (margem baixa) exige ROAS de 8× ou mais para ser lucrativo; moda e decoração (margem alta) pode ser positivo com ROAS de 3×. Calcule sempre o ROAS de break-even antes de apresentar resultados — ele é mais honesto do que o ROAS bruto e evita discussões difíceis com o cliente.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

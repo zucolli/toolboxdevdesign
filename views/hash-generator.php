@@ -84,4 +84,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Nunca armazene senhas com MD5. Em sistemas corporativos, mesmo que seja apenas um acesso de painel de campanha, o vazamento de um hash MD5 pode comprometer toda a rede em minutos. Use sempre Bcrypt com cost ≥ 12 para qualquer senha que precise ser verificada servidor a servidor — o custo computacional extra é a proteção contra força bruta.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

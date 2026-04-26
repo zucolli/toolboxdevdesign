@@ -37,4 +37,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Antes de configurar whitelist de IP em plataformas de campanhas, ERPs de clientes varejistas ou painéis de analytics, sempre confirme o IP atual da máquina ou do servidor usando esta ferramenta. Um IP desatualizado na whitelist barra toda a equipe de um acesso crítico exatamente no momento em que mais precisam — como no dia de lançamento de uma campanha.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

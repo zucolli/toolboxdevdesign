@@ -112,5 +112,10 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em e-mails de campanha para grandes redes varejistas, ícones e logotipos em SVG otimizados reduzem o peso do e-mail em até 60%. Isso impacta diretamente a taxa de entrega: provedores como Gmail e Outlook penalizam e-mails acima de 100 KB, aumentando a chance de cair no spam — especialmente crítico em disparos para bases de centenas de milhares de contatos.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>
 

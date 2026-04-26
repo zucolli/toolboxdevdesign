@@ -111,4 +111,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em campanhas de varejo, a fórmula PAS (Problema–Agitação–Solução) funciona melhor para produtos de necessidade (tinta, cimento, ferramentas), enquanto AIDA converte mais em produtos de desejo (design, decoração). Para copy de tabloide digital, concentre o 'A' da Atenção no preço em destaque — em varejo físico e online, o preço é o gatilho de conversão número 1.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

@@ -108,3 +108,8 @@
     <h3>Armadilhas comuns em testes A/B</h3>
     <p><strong>Parar cedo demais:</strong> Interromper o teste assim que um resultado "parece bom" aumenta o risco de falsos positivos. <strong>Testar múltiplas variáveis:</strong> Mudar várias coisas simultaneamente dificulta identificar qual mudança causou o efeito. <strong>Ignorar fatores externos:</strong> Uma campanha de marketing ou sazonalidade pode influenciar os resultados — sempre considere o contexto.</p>
 </section>
+
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Nunca tome decisões com menos de 7 dias de teste, pois o comportamento do consumidor de fim de semana é drasticamente diferente do dia de semana. Em varejo, quinta e sexta têm padrões de compra completamente distintos de segunda e terça — encerrar o teste antes de cobrir os dois ciclos invalida a significância estatística.</p>
+</aside>

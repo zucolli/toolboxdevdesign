@@ -58,4 +58,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em tabloides digitais impressos para redes varejistas — encartes de supermercado, materiais de PDV — sempre incorpore UTMs na URL do QR Code antes de gerar. Isso transforma material impresso em dado rastreável: você saberá exatamente quantos clientes escanearam o encarte e o que compraram online depois, conectando o mundo físico ao digital com precisão.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

@@ -82,4 +82,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Antes de lançar qualquer campanha de mídia paga para grandes varejistas, use o parser para auditar todas as URLs de destino. Uma landing page com parâmetros UTM quebrados ou um redirecionamento inesperado pode desperdiçar dezenas de milhares de reais em verba sem gerar nenhum dado de retorno. Auditoria de URL é a primeira checklist antes de qualquer go-live.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

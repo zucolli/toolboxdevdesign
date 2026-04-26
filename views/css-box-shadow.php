@@ -82,4 +82,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em landing pages de produto para varejo, sombras sutis (<code>0 2px 8px rgba(0,0,0,0.08)</code>) em cards de preço aumentam a percepção de qualidade e credibilidade. Evite sombras muito escuras — elas remetem a design datado e podem elevar a taxa de rejeição, especialmente em e-commerce de materiais de construção onde o público compara múltiplas ofertas em abas paralelas.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

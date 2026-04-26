@@ -76,4 +76,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao criar banners HTML5 para campanhas de display em redes varejistas com ambientes corporativos, embutir logotipos e badges pequenos via Base64 diretamente no HTML elimina dependência de CDN externo. Isso garante que o criativo seja exibido mesmo em redes com política de bloqueio de domínios de terceiros — problema comum em filiais de grandes atacadistas.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

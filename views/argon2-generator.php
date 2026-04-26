@@ -85,4 +85,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em sistemas de cupom ou cashback para grandes redes varejistas, onde tokens são gerados por lote, o Argon2id garante que mesmo com acesso ao banco de dados, o atacante não consiga reverter os tokens em tempo hábil. Para campanhas de alto volume com prêmios de alto valor, a segurança do token é tão crítica quanto a segurança do produto.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

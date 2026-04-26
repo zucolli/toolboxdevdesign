@@ -63,4 +63,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em e-commerce de varejo, a meta description da página de produto é mais importante que o título para conversão orgânica. Inclua preço, marca e disponibilidade (ex: <em>Piso Vinílico XYZ — R$ 49,90/m² · Em estoque · Entrega para todo Brasil</em>). Essa informação no snippet aumenta o CTR de forma significativa comparado a meta descriptions genéricas copiadas do ERP.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

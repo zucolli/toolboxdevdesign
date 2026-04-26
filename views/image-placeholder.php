@@ -75,4 +75,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Ao apresentar wireframes de e-commerce para aprovação de clientes varejistas, use placeholders com as dimensões exatas dos seus formatos padrão de banner (ex: <code>1200×628</code> para Facebook/LinkedIn, <code>300×250</code> para Display). Apresentar o layout com proporções corretas elimina retrabalho e alinha expectativa visual antes da produção criativa.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

@@ -65,4 +65,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Gradientes suaves em botões de CTA aumentam taxa de clique em comparação com cores sólidas planas — efeito especialmente marcante em campanhas de varejo online. Use gradiente do tom primário para um tom 10–15% mais escuro. Evite gradientes muito dramáticos em banners de tabloide digital, onde o preço precisa ser o protagonista visual sem competição.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

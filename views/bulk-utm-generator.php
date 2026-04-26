@@ -80,4 +80,9 @@ https://meusite.com.br/produto/camiseta"></textarea>
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Quando você roda campanhas para múltiplos PDVs ou filiais, use <code>utm_source</code> com o código da loja (ex: <code>loja_sp_mooca</code>). Dessa forma, o relatório no GA4 mostra qual ponto de venda tem melhor performance digital — dado valioso para justificar a distribuição de verba entre unidades em reuniões de planejamento de mídia.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

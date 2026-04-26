@@ -73,4 +73,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Use CRC32 para validar a integridade de arquivos de tabloide digital (PDFs, ZIPs de imagens de campanha) antes de fazer upload nas plataformas de distribuição. Uma única imagem corrompida pode invalidar toda uma campanha de encarte. CRC32 é rápido o suficiente para rodar em pipeline de automação antes do envio.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

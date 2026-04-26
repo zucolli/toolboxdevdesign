@@ -87,4 +87,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Antes de rodar qualquer query de atualização em massa em banco de e-commerce (ex: <code>UPDATE produtos SET preco = preco * 0.9</code>), formate e revise o SQL completo com atenção ao <code>WHERE</code>. Um filtro faltando em uma query de desconto pode zerar a margem de todo o catálogo em segundos. Formatação é a primeira linha de defesa contra desastres silenciosos.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

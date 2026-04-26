@@ -56,4 +56,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em feeds de produto para Google Merchant Center, títulos em <em>Title Case</em> têm CTR comprovadamente maior do que em UPPERCASE ou minúsculas. Padronize nomes de produto antes de subir o feed — especialmente em catálogos de materiais de construção onde SKUs chegam do ERP em caixa alta e precisam ser humanizados para converter em buscas orgânicas.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

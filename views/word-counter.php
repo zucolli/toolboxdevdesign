@@ -82,4 +82,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Para páginas de categoria e fichas técnicas em e-commerce, a faixa ideal é de 300 a 500 palavras de texto editorial, excluindo listagens de produto. Abaixo disso, o Google pode tratar como thin content e deprioritizar a indexação. Acima de 800 palavras na ficha técnica, o texto compete com o botão de compra pela atenção do usuário — equilíbrio é a chave para converter e ranquear.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

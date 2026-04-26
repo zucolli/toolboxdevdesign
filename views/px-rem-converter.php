@@ -58,4 +58,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em landing pages de varejo para dispositivos móveis, usar REM em vez de PX garante que usuários com fonte aumentada no celular — hábito comum em donos de pequenas lojas com mais de 50 anos, um público-alvo relevante para materiais de construção e atacado — vejam preços e CTAs em tamanho legível. Acessibilidade é conversão.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

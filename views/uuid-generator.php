@@ -75,4 +75,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em sistemas de cupom ou sorteio para campanhas de varejo, gere UUIDs v4 para cada participante em vez de IDs sequenciais. IDs sequenciais são previsíveis: um usuário mal-intencionado pode tentar <code>cupom_1001</code>, <code>cupom_1002</code> e assim por diante. UUIDs criptograficamente gerados tornam força bruta inviável mesmo em campanhas de milhões de participantes.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

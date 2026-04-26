@@ -88,4 +88,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>No varejo, use sempre o parâmetro <code>utm_content</code> para identificar se o clique veio do preço ou da foto do produto no seu tabloide digital. Em campanhas de Black Friday com múltiplos criativos simultâneos, esse parâmetro revela qual elemento visual realmente converte — e essa informação vale mais do que qualquer teste de suposição.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

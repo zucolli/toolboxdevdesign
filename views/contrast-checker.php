@@ -78,4 +78,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Em tabloides digitais para grandes redes varejistas, o preço é o elemento mais crítico de legibilidade. Sempre valide contraste mínimo AA (4,5:1) entre a cor do preço e o fundo. Telas de tablet em PDVs sob iluminação fluorescente exigem contraste ainda maior — designers experientes miram em AAA (7:1) para garantir legibilidade em qualquer ambiente de loja, de atacado ao varejo especializado.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>

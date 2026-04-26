@@ -57,4 +57,9 @@
     </section>
 </article>
 
+<aside class="expert-insight">
+    <p class="expert-insight-label">💡 Dica NuAto</p>
+    <p>Pré-configure a mensagem do link WhatsApp com contexto completo: nome do produto, campanha e origem (ex: <em>Vim pelo anúncio do Piso Vinílico no Instagram</em>). Isso elimina o atrito inicial da conversa e reduz significativamente o tempo de qualificação do atendente — crítico em operações de alto volume como atacadistas e redes varejistas com dezenas de atendentes simultâneos.</p>
+</aside>
+
 <div class="ad-placeholder">Espaço Reservado · AdSense</div>
