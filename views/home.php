@@ -6,7 +6,7 @@
     </div>
 
     <div class="home-editorial">
-        <p>A Toolbox Dev Design não é apenas uma coleção de scripts. É o ecossistema de produtividade desenvolvido pela <strong>NuAto Comunicação</strong> para atender as demandas críticas do varejo brasileiro. Com décadas de experiência em campanhas de alto volume para redes como <strong>Giga Atacado</strong> e <strong>Telhanorte</strong>, entendemos que a precisão técnica é o que separa o lucro do prejuízo. Todas as ferramentas aqui listadas rodam 100% no seu navegador (<em>client-side</em>), garantindo que seus dados estratégicos nunca saiam da sua máquina. Segurança, velocidade e a expertise de quem vive o varejo na prática.</p>
+        <p>A Toolbox Dev Design não é apenas uma coleção de scripts. É o ecossistema de produtividade desenvolvido pela <strong>NuAto Comunicação</strong> para atender as demandas críticas do varejo brasileiro. Nossas ferramentas foram forjadas no dia a dia de quem gerencia a comunicação de <strong>líderes do setor de Home Center, gigantes do Atacarejo e grandes Cooperativas de Consumo</strong> — operações de faturamento bilionário que exigem erro zero em milhares de SKUs semanais e rastreabilidade total em campanhas de alto volume. Todas as ferramentas rodam 100% no seu navegador (<em>client-side</em>), garantindo que seus dados estratégicos nunca saiam da sua máquina. Segurança, velocidade e a expertise de quem vive o varejo na prática.</p>
     </div>
 
     <div class="home-search-wrap">

@@ -12,10 +12,15 @@
         <h2>Por que criamos isso?</h2>
         <p>No dia a dia de agência, percebemos que muitas tarefas repetitivas — gerar slugs, criar UTMs, verificar contraste de cores, formatar JSON — consumiam tempo desnecessário. Criamos esta toolbox para resolver esses problemas de forma simples, rápida e gratuita, e disponibilizamos para toda a comunidade.</p>
 
-        <h2>Nossos Clientes e Experiência</h2>
-        <p>As ferramentas desta Toolbox não nasceram em laboratório — elas foram forjadas na prática de uma agência que atende algumas das maiores redes varejistas do Brasil. A NuAto tem no portfólio contas como <strong>Giga Atacado</strong>, <strong>Telhanorte</strong>, <strong>Coop</strong> e <strong>Obramax</strong>: ambientes de alto volume, com campanhas simultâneas em múltiplos canais, centenas de SKUs ativos e exigência de erro zero na rastreabilidade.</p>
-
-        <p>Trabalhar com essas contas nos ensinou que a diferença entre uma campanha bem executada e uma com dados contaminados está nos detalhes: um parâmetro UTM com encoding errado, um slug inconsistente em URLs de produto, um hash fraco em integrações de sistema. Cada ferramenta desta Toolbox foi validada nesse contexto — usada por nossa equipe antes de ser disponibilizada publicamente.</p>
+        <h2>Cases de Sucesso por Segmento</h2>
+        <p>As ferramentas desta Toolbox não nasceram em laboratório — elas foram forjadas no dia a dia de uma agência que gerencia a comunicação de <strong>líderes do varejo nacional</strong>. O portfólio da NuAto inclui operações de faturamento bilionário, entre elas:</p>
+        <ul style="margin: 16px 0 16px 24px; line-height: 1.8;">
+            <li><strong>Uma das maiores redes de Atacarejo do estado de São Paulo</strong> — campanhas simultâneas em múltiplos canais, centenas de SKUs semanais, exigência de erro zero em rastreabilidade.</li>
+            <li><strong>Líder nacional no segmento de Materiais de Construção e Home Center</strong> — comunicação de alto volume com controle rigoroso de identidade visual e performance digital.</li>
+            <li><strong>Uma das maiores Cooperativas de Consumo da América Latina</strong> — integração entre canais físicos e digitais com rastreabilidade de campanhas em escala regional.</li>
+            <li><strong>Gigante do Atacado de Construção com foco em volume e logística pesada</strong> — operações de mídia com gestão de catálogos extensos e feeds de produto automatizados.</li>
+        </ul>
+        <p>Trabalhar com essas operações nos ensinou que a diferença entre uma campanha bem executada e uma com dados contaminados está nos detalhes: um parâmetro UTM com encoding errado, um slug inconsistente em URLs de produto, um hash fraco em integrações de sistema. Cada ferramenta desta Toolbox foi validada nesse contexto — usada pela nossa equipe antes de ser disponibilizada publicamente.</p>
 
         <h2>O Diferencial: Validado em Alto Volume</h2>
         <p>Quando você usa o <strong>Gerador de UTMs em Massa</strong> aqui, está usando a mesma lógica que processa centenas de links rastreados por campanha em tabloides digitais de grandes redes. Quando usa a <strong>Calculadora de Teste A/B</strong>, está acessando a metodologia estatística que orientou decisões de criativo para bases de clientes de centenas de milhares de pessoas. E quando usa o <strong>Gerador de QR Code</strong>, está usando o mesmo motor que equipou materiais de PDV para lojas físicas espalhadas pelo Brasil.</p>
