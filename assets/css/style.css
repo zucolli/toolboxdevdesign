@@ -2264,6 +2264,21 @@ body.page-home .content {
     line-height: 1.6;
 }
 
+.home-editorial {
+    margin-bottom: 32px;
+    padding: 20px 24px;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.97rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+}
+
+.home-editorial strong {
+    color: var(--color-text);
+}
+
 .home-search-wrap {
     margin-bottom: 48px;
 }

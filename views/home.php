@@ -5,6 +5,10 @@
         <p class="home-hero-desc">Slug generators, hashes, paletas de cores, UTMs e muito mais — tudo no navegador, sem cadastro, 100% gratuito.</p>
     </div>
 
+    <div class="home-editorial">
+        <p>A Toolbox Dev Design não é apenas uma coleção de scripts. É o ecossistema de produtividade desenvolvido pela <strong>NuAto Comunicação</strong> para atender as demandas críticas do varejo brasileiro. Com décadas de experiência em campanhas de alto volume para redes como <strong>Giga Atacado</strong> e <strong>Telhanorte</strong>, entendemos que a precisão técnica é o que separa o lucro do prejuízo. Todas as ferramentas aqui listadas rodam 100% no seu navegador (<em>client-side</em>), garantindo que seus dados estratégicos nunca saiam da sua máquina. Segurança, velocidade e a expertise de quem vive o varejo na prática.</p>
+    </div>
+
     <div class="home-search-wrap">
         <div class="home-search-inner">
             <svg class="home-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
