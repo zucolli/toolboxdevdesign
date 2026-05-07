@@ -3246,9 +3246,42 @@ body.page-home .content {
     background: var(--color-bg-secondary);
 }
 
-@media (max-width: 600px) {
-    .topbar-nav-link { padding: 5px 8px; font-size: 0.78rem; }
-    .topbar-nav-link--kb { display: none; }
+/* Mobile topbar: 2 linhas — logo | nav */
+@media (max-width: 640px) {
+    :root { --topbar-height: 88px; }
+
+    .topbar { height: auto; }
+
+    .topbar-inner {
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 8px 16px;
+        align-items: center;
+    }
+
+    .topbar-logo {
+        flex: 1 1 auto;
+        padding: 4px 0;
+    }
+
+    .topbar-search { display: none; }
+
+    .topbar-nav {
+        flex: 0 0 100%;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+        gap: 2px;
+        padding: 4px 0;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .topbar-nav-link {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    .topbar-nav-link--kb { display: inline-flex; }
 }
 
 /* Breadcrumb */
@@ -3434,13 +3467,35 @@ body.page-home .content {
         padding: 16px;
         gap: 16px;
     }
+    /* NuAto + knowledge card lado a lado em tablet */
     .sidebar-right .knowledge-card,
-    .sidebar-right .nuato-promo-card,
-    .sidebar-right .sidebar-widget {
-        flex: 1 1 280px;
+    .sidebar-right .nuato-promo-card {
+        flex: 1 1 260px;
     }
-    .ads-slot--vertical {
-        flex: 1 1 100%;
+    /* Widget "Ferramentas em Destaque": lista horizontal compacta */
+    .sidebar-right .sidebar-widget {
+        flex: 0 0 100%;
+    }
+    .sidebar-featured-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .sidebar-featured-list li a {
+        padding: 4px 10px;
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: 99px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    .sidebar-featured-list li a:hover {
+        background: var(--color-border);
+    }
+    /* AdSense sempre em linha própria */
+    .ads-slot--vertical,
+    .ads-slot--sidebar {
+        flex: 0 0 100%;
         min-height: 90px;
     }
     .topbar-search { display: none; }
