@@ -1170,6 +1170,7 @@ input[type="number"]:focus {
     gap: 10px;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 }
 .nuato-promo-card::before {
     content: '';
@@ -1262,6 +1263,7 @@ input[type="number"]:focus {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex-shrink: 0;
 }
 
 .knowledge-card-header {
@@ -1370,6 +1372,7 @@ input[type="number"]:focus {
     border-radius: var(--radius-lg);
     padding: 16px;
     box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
 }
 
 .sidebar-widget-title {
