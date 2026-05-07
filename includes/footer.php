@@ -1,3 +1,4 @@
+<div class="ads-slot ads-slot--bottom" id="ads-bottom"></div>
 </main>
 <?php require BASE_PATH . '/includes/sidebar-right.php'; ?>
 </div><!-- /.layout -->

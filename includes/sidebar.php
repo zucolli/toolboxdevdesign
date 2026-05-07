@@ -231,27 +231,9 @@
         </button>
         <ul class="nav-list">
             <li>
-                <a href="<?= BASE_URL ?>artigos" class="nav-link <?= ($path === 'artigos') ? 'active' : '' ?>">
+                <a href="<?= BASE_URL ?>artigos" class="nav-link <?= (str_starts_with($path, 'artigos')) ? 'active' : '' ?>">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                    Todos os Artigos
-                </a>
-            </li>
-            <li>
-                <a href="<?= BASE_URL ?>artigos/utm-varejo-alto-volume" class="nav-link <?= ($path === 'artigos/utm-varejo-alto-volume') ? 'active' : '' ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                    UTM para Varejo
-                </a>
-            </li>
-            <li>
-                <a href="<?= BASE_URL ?>artigos/matematica-testes-ab" class="nav-link <?= ($path === 'artigos/matematica-testes-ab') ? 'active' : '' ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                    Matemática do Teste A/B
-                </a>
-            </li>
-            <li>
-                <a href="<?= BASE_URL ?>artigos/privacidade-client-side-lgpd" class="nav-link <?= ($path === 'artigos/privacidade-client-side-lgpd') ? 'active' : '' ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Privacidade e LGPD
+                    Artigos
                 </a>
             </li>
         </ul>
@@ -305,3 +287,7 @@
 </nav>
 
 <main class="content">
+<?php if ($path !== '') : ?>
+<div class="ads-slot ads-slot--top" id="ads-top"></div>
+<?php require BASE_PATH . '/includes/breadcrumbs.php'; ?>
+<?php endif; ?>

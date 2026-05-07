@@ -3109,6 +3109,99 @@ body.page-home .content {
     margin-top: 12px;
 }
 
+/* Topbar nav */
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+}
+
+.topbar-nav-link {
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+}
+
+.topbar-nav-link:hover {
+    color: var(--color-text);
+    background: var(--color-bg-secondary);
+    text-decoration: none;
+}
+
+.topbar-nav-link.active {
+    color: var(--color-primary);
+    background: var(--color-bg-secondary);
+}
+
+@media (max-width: 600px) {
+    .topbar-nav-link { padding: 5px 8px; font-size: 0.78rem; }
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.breadcrumb-item {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.breadcrumb-item:hover { color: var(--color-primary); text-decoration: none; }
+
+.breadcrumb-item--current {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.breadcrumb-sep { color: var(--color-border); }
+
+/* AdSense slots */
+.ads-slot {
+    width: 100%;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--color-border);
+}
+
+.ads-slot--top    { min-height: 90px;  margin-bottom: 16px; }
+.ads-slot--bottom { min-height: 90px;  margin-top: 32px; }
+.ads-slot--sidebar { min-height: 250px; margin-bottom: 16px; }
+
+/* Tool grid — cards sem footer (ferramentas são simples) */
+.tool-card .kb-card-desc {
+    -webkit-line-clamp: 2;
+}
+
+/* Badges para categorias de ferramentas */
+.kb-badge--dev {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.kb-badge--rede {
+    background: #f0fdf4;
+    color: #166534;
+}
+
+@media (prefers-color-scheme: dark) {
+    .kb-badge--dev  { background: rgba(14,165,233,.18); color: #7dd3fc; }
+    .kb-badge--rede { background: rgba(34,197,94,.18); color: #86efac; }
+}
+
 /* ============================================================
    Footer
    ============================================================ */

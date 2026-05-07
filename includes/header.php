@@ -48,6 +48,11 @@
         </span>
         <span class="logo-text">Toolbox Dev Design</span>
     </a>
+    <nav class="topbar-nav" aria-label="Navegação principal">
+        <a href="<?= BASE_URL ?>ferramentas" class="topbar-nav-link <?= ($path === 'ferramentas') ? 'active' : '' ?>">Ferramentas</a>
+        <a href="<?= BASE_URL ?>artigos" class="topbar-nav-link <?= (str_starts_with($path, 'artigos')) ? 'active' : '' ?>">Base de Conhecimento</a>
+        <a href="<?= BASE_URL ?>sobre" class="topbar-nav-link <?= ($path === 'sobre') ? 'active' : '' ?>">Sobre</a>
+    </nav>
 </header>
 
 <div class="layout">

@@ -258,6 +258,11 @@ match ($path) {
         $pageDescription = 'Calcule a significância estatística do seu teste A/B com Z-test bicaudal. Informe visitantes e conversões de cada grupo e obtenha Z-score, P-value e resultado instantaneamente.';
         $view            = BASE_PATH . '/views/ab-test-calculator.php';
     })(),
+    'ferramentas' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Ferramentas | Toolbox Dev Design';
+        $pageDescription = '33 ferramentas gratuitas para desenvolvedores, designers e profissionais de marketing. Sem cadastro, 100% no navegador.';
+        $view            = BASE_PATH . '/views/ferramentas.php';
+    })(),
     'artigos' => (function () use (&$titulo, &$pageDescription, &$view) {
         $titulo          = 'Base de Conhecimento | Toolbox Dev Design';
         $pageDescription = 'Artigos de profundidade sobre marketing digital, analytics, testes A/B e privacidade LGPD — escritos por Carlos Zucolli, NuAto Comunicação.';
