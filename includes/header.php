@@ -6,7 +6,19 @@
     <title><?= htmlspecialchars($titulo ?? 'Toolbox Dev Design') ?></title>
     <meta name="description" content="<?= htmlspecialchars($pageDescription ?? 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.') ?>">
     <link rel="canonical" href="<?= 'https://toolboxdevdesign.com.br' . htmlspecialchars(rtrim(strtok($_SERVER['REQUEST_URI'] ?? '/', '?'), '/') ?: '/') ?>">
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzBmMTcyYSIvPjxyZWN0IHg9IjQiIHk9IjEwIiB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgcng9IjIiIGZpbGw9IiMwMGE2ZmYiLz48cmVjdCB4PSIxMi41IiB5PSIxMCIgd2lkdGg9IjciIGhlaWdodD0iMTIiIHJ4PSIyIiBmaWxsPSIjMDBkNDg0Ii8+PHJlY3QgeD0iMjEiIHk9IjEwIiB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgcng9IjIiIGZpbGw9IiNmZjZhMDAiLz48L3N2Zz4=">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Toolbox Dev Design">
+    <meta property="og:title" content="<?= htmlspecialchars($titulo ?? 'Toolbox Dev Design') ?>">
+    <meta property="og:description" content="<?= htmlspecialchars($pageDescription ?? 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.') ?>">
+    <meta property="og:url" content="<?= 'https://toolboxdevdesign.com.br' . htmlspecialchars(rtrim(strtok($_SERVER['REQUEST_URI'] ?? '/', '?'), '/') ?: '/') ?>">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<?= htmlspecialchars($titulo ?? 'Toolbox Dev Design') ?>">
+    <meta name="twitter:description" content="<?= htmlspecialchars($pageDescription ?? 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.') ?>">
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4547393612131472" crossorigin="anonymous"></script>

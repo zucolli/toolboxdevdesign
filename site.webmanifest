@@ -1,0 +1,12 @@
+{
+  "name": "Toolbox Dev Design",
+  "short_name": "Toolbox",
+  "description": "33 ferramentas gratuitas para desenvolvedores e designers",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0070f3",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
