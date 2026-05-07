@@ -3215,32 +3215,22 @@ body.page-home .content {
     padding: 6px 12px;
     border-radius: var(--radius-md);
     font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
+    font-weight: 600;
+    color: var(--color-text);
     text-decoration: none;
-    transition: color 0.15s, background 0.15s;
+    border: 1px solid var(--color-border);
+    transition: color 0.15s, background 0.15s, border-color 0.15s;
     white-space: nowrap;
 }
 
 .topbar-nav-link:hover {
-    color: var(--color-text);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
     background: var(--color-bg-secondary);
     text-decoration: none;
 }
 
 .topbar-nav-link.active {
-    color: var(--color-primary);
-    background: var(--color-bg-secondary);
-}
-
-.topbar-nav-link--kb {
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-    font-weight: 600;
-}
-
-.topbar-nav-link--kb:hover,
-.topbar-nav-link--kb.active {
     border-color: var(--color-primary);
     color: var(--color-primary);
     background: var(--color-bg-secondary);
@@ -3260,7 +3250,8 @@ body.page-home .content {
     }
 
     .topbar-logo {
-        flex: 1 1 auto;
+        flex: 0 0 100%;
+        justify-content: center;
         padding: 4px 0;
     }
 
@@ -3396,9 +3387,25 @@ body.page-home .content {
     .seq-nav-item--next { align-items: flex-start; text-align: left; }
 }
 
-/* Tool grid — cards sem footer (ferramentas são simples) */
+/* Tool grid */
 .tool-card .kb-card-desc {
     -webkit-line-clamp: 2;
+}
+
+/* CTA sutil — visível sempre, inclusive mobile sem hover */
+.tool-card::after {
+    content: 'Usar ferramenta →';
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-primary);
+    opacity: 0.65;
+    transition: opacity 0.15s;
+}
+
+.tool-card:hover::after {
+    opacity: 1;
 }
 
 /* Badges para categorias de ferramentas */
@@ -3559,9 +3566,10 @@ body.page-home .content {
         overflow-x: hidden;
     }
 
-    /* Reseta flex herdado do breakpoint 1024px (flex: 1 1 280px vira min-width/height indevido) */
+    /* Reseta flex herdado dos breakpoints maiores */
     .sidebar-right .knowledge-card,
-    .sidebar-right .nuato-promo-card {
+    .sidebar-right .nuato-promo-card,
+    .sidebar-right .sidebar-widget {
         flex: none;
         width: 100%;
         max-width: 100%;
@@ -3569,6 +3577,21 @@ body.page-home .content {
         height: auto;
         margin-top: 0;
         box-sizing: border-box;
+    }
+
+    .sidebar-featured-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .sidebar-featured-list li a {
+        padding: 4px 10px;
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: 99px;
+        font-size: 0.8rem;
+        white-space: nowrap;
     }
 
     /* Reordenação mobile: pílulas → NuAto → anúncio (último antes do rodapé) */
