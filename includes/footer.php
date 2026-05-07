@@ -1,5 +1,4 @@
-<?php require BASE_PATH . '/includes/nav-sequential.php'; ?>
-<div class="ads-slot ads-slot--bottom" id="ads-bottom"></div>
+<div class="ads-slot ads-slot--bottom" id="ads-bottom"><span class="ads-slot-label">Espaço Publicitário</span></div>
 </main>
 <?php require BASE_PATH . '/includes/sidebar-right.php'; ?>
 </div><!-- /.layout -->

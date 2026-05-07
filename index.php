@@ -315,4 +315,5 @@ if ($view && file_exists($view)) {
     echo '<div class="card"><h1>404</h1><p>Página não encontrada.</p></div>';
 }
 
+require BASE_PATH . '/components/contextual-nav.php';
 require BASE_PATH . '/includes/footer.php';

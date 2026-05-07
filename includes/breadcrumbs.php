@@ -1,4 +1,14 @@
 <?php
+$_bc_tool_slugs = [
+    'slug-generator', 'hash-generator', 'argon2-generator', 'sha512-crc32-generator',
+    'svg-optimizer', 'url-encoder-decoder', 'url-parser', 'json-formatter', 'base64-encoder',
+    'px-rem-converter', 'csv-json', 'uuid-generator', 'sql-formatter', 'image-base64',
+    'password-generator', 'contrast-checker', 'color-palette-generator', 'css-box-shadow',
+    'css-gradient', 'image-placeholder', 'utm-builder', 'bulk-utm-generator', 'roi-calculator',
+    'whatsapp-link', 'copy-generator', 'ab-test-calculator', 'word-counter', 'lorem-ipsum',
+    'case-converter', 'text-cleaner', 'qr-generator', 'meta-tags', 'my-ip',
+];
+
 $_bc_labels = [
     'ferramentas'                      => 'Ferramentas',
     'artigos'                          => 'Base de Conhecimento',
@@ -46,8 +56,14 @@ $_bc_labels = [
 $_bc_segments = array_values(array_filter(explode('/', $path)));
 if (empty($_bc_segments)) return;
 
-$_bc_crumbs   = [['label' => 'Início', 'url' => BASE_URL, 'active' => false]];
-$_bc_accum    = '';
+$_bc_crumbs = [['label' => 'Início', 'url' => BASE_URL, 'active' => false]];
+
+// Inject intermediate "Ferramentas" crumb for tool pages
+if (count($_bc_segments) === 1 && in_array($_bc_segments[0], $_bc_tool_slugs, true)) {
+    $_bc_crumbs[] = ['label' => 'Ferramentas', 'url' => BASE_URL . 'ferramentas', 'active' => false];
+}
+
+$_bc_accum = '';
 
 foreach ($_bc_segments as $_i => $_seg) {
     $_bc_accum .= ($_bc_accum ? '/' : '') . $_seg;

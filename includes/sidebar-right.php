@@ -1,5 +1,5 @@
 <aside class="sidebar-right">
-    <div class="ads-slot ads-slot--sidebar" id="ads-sidebar" aria-label="Espaço publicitário"></div>
+    <div class="ads-slot ads-slot--sidebar" id="ads-sidebar"><span class="ads-slot-label">Publicidade</span></div>
 
     <aside class="knowledge-card" id="knowledge-card" aria-label="Pílula de conhecimento">
         <div class="knowledge-card-header">

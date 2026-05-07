@@ -288,6 +288,6 @@
 
 <main class="content">
 <?php if ($path !== '') : ?>
-<div class="ads-slot ads-slot--top" id="ads-top"></div>
+<div class="ads-slot ads-slot--top" id="ads-top"><span class="ads-slot-label">Espaço Publicitário</span></div>
 <?php require BASE_PATH . '/includes/breadcrumbs.php'; ?>
 <?php endif; ?>
