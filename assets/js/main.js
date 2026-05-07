@@ -2461,3 +2461,51 @@ document.addEventListener('click', (e) => {
         });
     });
 })();
+
+// KB Index — filtro por categoria + busca
+(function () {
+    var grid = document.getElementById('kb-grid');
+    if (!grid) return;
+
+    var cards     = Array.prototype.slice.call(grid.querySelectorAll('.kb-card'));
+    var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.kb-filter-btn'));
+    var searchInput = document.getElementById('kb-search');
+    var emptyEl   = document.getElementById('kb-empty');
+    var activeFilter = 'todos';
+
+    function applyFilters() {
+        var query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        var visible = 0;
+
+        cards.forEach(function (card) {
+            var cats   = (card.getAttribute('data-category') || '').split(' ');
+            var title  = (card.getAttribute('data-title') || card.querySelector('.kb-card-title').textContent).toLowerCase();
+            var desc   = (card.querySelector('.kb-card-desc') ? card.querySelector('.kb-card-desc').textContent : '').toLowerCase();
+
+            var catMatch  = activeFilter === 'todos' || cats.indexOf(activeFilter) !== -1;
+            var textMatch = !query || title.indexOf(query) !== -1 || desc.indexOf(query) !== -1;
+
+            if (catMatch && textMatch) {
+                card.classList.remove('is-hidden');
+                visible++;
+            } else {
+                card.classList.add('is-hidden');
+            }
+        });
+
+        if (emptyEl) emptyEl.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            activeFilter = btn.getAttribute('data-filter');
+            applyFilters();
+        });
+    });
+
+    if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+    }
+})();
