@@ -1,14 +1,4 @@
 <aside class="sidebar-right">
-    <div class="ads-slot ads-slot--sidebar" id="ads-sidebar"><span class="ads-slot-label">Publicidade</span></div>
-
-    <aside class="knowledge-card" id="knowledge-card" aria-label="Pílula de conhecimento">
-        <div class="knowledge-card-header">
-            <span class="badge-type" id="knowledge-type">Dica Prática</span>
-        </div>
-        <h4 class="knowledge-title" id="knowledge-title"></h4>
-        <p class="knowledge-content" id="knowledge-content"></p>
-        <button class="knowledge-btn" id="btn-random-knowledge" type="button">🎲 Ver outra</button>
-    </aside>
 
     <section class="nuato-promo-card" aria-label="NuAto Comunicação">
         <span class="nuato-badge">Oferecido por</span>
@@ -45,4 +35,30 @@
             Falar com um Especialista
         </a>
     </section>
+
+    <section class="sidebar-widget" aria-label="Ferramentas em Destaque">
+        <h4 class="sidebar-widget-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Ferramentas em Destaque
+        </h4>
+        <ul class="sidebar-featured-list">
+            <li><a href="/ferramentas/utm-builder">Gerador de UTMs</a></li>
+            <li><a href="/ferramentas/hash-generator">Gerador de Hashes</a></li>
+            <li><a href="/ferramentas/slug-generator">Gerador de Slugs</a></li>
+            <li><a href="/ferramentas/json-formatter">JSON Formatter</a></li>
+            <li><a href="/ferramentas/contrast-checker">Contraste WCAG</a></li>
+        </ul>
+    </section>
+
+    <aside class="knowledge-card" id="knowledge-card" aria-label="Pílula de conhecimento">
+        <div class="knowledge-card-header">
+            <span class="badge-type" id="knowledge-type">Dica Prática</span>
+        </div>
+        <h4 class="knowledge-title" id="knowledge-title"></h4>
+        <p class="knowledge-content" id="knowledge-content"></p>
+        <button class="knowledge-btn" id="btn-random-knowledge" type="button">🎲 Ver outra</button>
+    </aside>
+
+    <div class="ads-slot ads-slot--sidebar ads-slot--vertical" id="ads-sidebar"><span class="ads-slot-label">Publicidade</span></div>
+
 </aside>

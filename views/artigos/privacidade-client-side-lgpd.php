@@ -89,19 +89,19 @@
     <aside class="article-related">
         <p class="article-related-title">Ferramentas relacionadas</p>
         <div class="article-related-tools">
-            <a href="<?= BASE_URL ?>hash-generator" class="article-related-tool">
+            <a href="<?= BASE_URL ?>ferramentas/hash-generator" class="article-related-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 Gerador de Hashes — Bcrypt e MD5 100% no navegador, sem transmissão
             </a>
-            <a href="<?= BASE_URL ?>password-generator" class="article-related-tool">
+            <a href="<?= BASE_URL ?>ferramentas/password-generator" class="article-related-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg>
                 Gerador de Senhas — Web Crypto API, zero transmissão de dados
             </a>
-            <a href="<?= BASE_URL ?>sha512-crc32-generator" class="article-related-tool">
+            <a href="<?= BASE_URL ?>ferramentas/sha512-crc32-generator" class="article-related-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 SHA-512 / CRC32 — verificação de integridade de arquivos client-side
             </a>
-            <a href="<?= BASE_URL ?>json-formatter" class="article-related-tool">
+            <a href="<?= BASE_URL ?>ferramentas/json-formatter" class="article-related-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
                 JSON Formatter — formate JSONs com dados sensíveis sem risco de vazamento
             </a>

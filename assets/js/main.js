@@ -2508,4 +2508,27 @@ document.addEventListener('click', (e) => {
     if (searchInput) {
         searchInput.addEventListener('input', applyFilters);
     }
+
+    // Auto-fill from URL ?q= param (topbar search redirect)
+    var urlQ = new URLSearchParams(window.location.search).get('q');
+    if (urlQ && searchInput) {
+        searchInput.value = urlQ;
+        applyFilters();
+    }
+})();
+
+// Topbar search: on ferramentas page, focus kb-search instead of submitting form
+(function () {
+    var form = document.querySelector('.topbar-search');
+    if (!form) return;
+    var kbInput = document.getElementById('kb-search');
+    if (!kbInput) return;
+    var topInput = document.getElementById('topbar-search-input');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        kbInput.value = topInput ? topInput.value : '';
+        kbInput.dispatchEvent(new Event('input'));
+        kbInput.focus();
+        kbInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
 })();

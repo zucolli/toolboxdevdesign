@@ -95,15 +95,15 @@
     <aside class="article-related">
         <p class="article-related-title">Ferramentas relacionadas</p>
         <div class="article-related-tools">
-            <a href="<?= BASE_URL ?>utm-builder" class="article-related-tool">
+            <a href="<?= BASE_URL ?>ferramentas/utm-builder" class="article-related-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                 Gerador de UTMs — crie uma URL rastreada por vez com validação
             </a>
-            <a href="<?= BASE_URL ?>bulk-utm-generator" class="article-related-tool">
+            <a href="<?= BASE_URL ?>ferramentas/bulk-utm-generator" class="article-related-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/><line x1="5" y1="19" x2="5" y2="19.01"/></svg>
                 UTM em Massa — aplique parâmetros a dezenas de URLs de uma vez
             </a>
-            <a href="<?= BASE_URL ?>slug-generator" class="article-related-tool">
+            <a href="<?= BASE_URL ?>ferramentas/slug-generator" class="article-related-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                 Gerador de Slugs — converta nomes de campanha em snake_case limpo
             </a>

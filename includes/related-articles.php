@@ -31,8 +31,11 @@ $_kb_articles = [
     ],
 ];
 
-$_related = array_filter($_kb_articles, function ($a) use ($relatedTool) {
-    return in_array($relatedTool, $a['tools'], true);
+// Strip ferramentas/ prefix for matching
+$_relatedSlug = preg_replace('#^ferramentas/#', '', $relatedTool);
+
+$_related = array_filter($_kb_articles, function ($a) use ($_relatedSlug) {
+    return in_array($_relatedSlug, $a['tools'], true);
 });
 
 // Fallback: se não há match exato, pega os 2 primeiros

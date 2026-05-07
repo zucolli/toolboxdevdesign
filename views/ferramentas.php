@@ -70,7 +70,7 @@ $_cat_labels = [
 
     <div class="kb-grid tool-grid" id="kb-grid">
         <?php foreach ($_tools as $_t) : ?>
-        <a href="<?= BASE_URL . htmlspecialchars($_t['slug']) ?>" class="kb-card tool-card" data-category="<?= htmlspecialchars($_t['cat']) ?>" data-title="<?= htmlspecialchars($_t['name']) ?>">
+        <a href="<?= BASE_URL . 'ferramentas/' . htmlspecialchars($_t['slug']) ?>" class="kb-card tool-card" data-category="<?= htmlspecialchars($_t['cat']) ?>" data-title="<?= htmlspecialchars($_t['name']) ?>">
             <span class="kb-badge kb-badge--<?= htmlspecialchars($_t['cat']) ?>"><?= htmlspecialchars($_cat_labels[$_t['cat']]) ?></span>
             <h2 class="kb-card-title"><?= htmlspecialchars($_t['name']) ?></h2>
             <p class="kb-card-desc"><?= htmlspecialchars($_t['desc']) ?></p>
