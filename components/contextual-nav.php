@@ -67,9 +67,16 @@ $_ctx_categories = [
 ];
 
 $_ctx_articles = [
-    ['slug' => 'artigos/utm-varejo-alto-volume',      'name' => 'UTM para Varejo de Alto Volume'],
-    ['slug' => 'artigos/matematica-testes-ab',         'name' => 'A Matemática dos Testes A/B'],
-    ['slug' => 'artigos/privacidade-client-side-lgpd', 'name' => 'Privacidade Client-Side e LGPD'],
+    ['slug' => 'artigos/utm-varejo-alto-volume',         'name' => 'UTM para Varejo de Alto Volume'],
+    ['slug' => 'artigos/matematica-testes-ab',            'name' => 'A Matemática dos Testes A/B'],
+    ['slug' => 'artigos/privacidade-client-side-lgpd',    'name' => 'Privacidade Client-Side e LGPD'],
+    ['slug' => 'artigos/psicologia-cores-varejo',         'name' => 'Psicologia das Cores no Varejo'],
+    ['slug' => 'artigos/seguranca-client-side-hash',      'name' => 'Segurança Client-Side e Hash'],
+    ['slug' => 'artigos/seo-ecommerce-construcao-urls',   'name' => 'SEO para E-commerce de Construção'],
+    ['slug' => 'artigos/atribuicao-vendas-ga4-utm',       'name' => 'Atribuição de Vendas no GA4'],
+    ['slug' => 'artigos/acessibilidade-wcag-negocio',     'name' => 'WCAG como Estratégia de Negócio'],
+    ['slug' => 'artigos/varejo-phygital-integracao-pdv',  'name' => 'Varejo Phygital e PDV'],
+    ['slug' => 'artigos/core-web-vitals-varejo',          'name' => 'Core Web Vitals para Varejistas'],
 ];
 
 $_ctx_is_tool    = false;

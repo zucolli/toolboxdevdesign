@@ -306,6 +306,41 @@ match ($path) {
         $pageDescription = 'Por que processar dados no navegador é a única garantia de 100% de conformidade com a LGPD. O risco oculto das ferramentas online server-side e como a arquitetura client-side elimina esse risco.';
         $view            = BASE_PATH . '/views/artigos/privacidade-client-side-lgpd.php';
     })(),
+    'artigos/psicologia-cores-varejo' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'A Psicologia das Cores no Varejo | Toolbox Dev Design';
+        $pageDescription = 'Como paletas cromáticas harmônicas impactam o ticket médio e a percepção de valor. Os quatro tipos de harmonia, temperatura de cor e saturação aplicados ao design de varejo.';
+        $view            = BASE_PATH . '/views/artigos/psicologia-cores-varejo.php';
+    })(),
+    'artigos/seguranca-client-side-hash' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Segurança Client-Side: Geradores de Hash no Servidor | Toolbox Dev Design';
+        $pageDescription = 'Por que desenvolvedores sêniores não usam geradores de hash que processam no servidor. Web Crypto API, superfície de ataque e o que pode (e não pode) ser feito client-side.';
+        $view            = BASE_PATH . '/views/artigos/seguranca-client-side-hash.php';
+    })(),
+    'artigos/seo-ecommerce-construcao-urls' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'SEO para E-commerce de Construção: URLs para 50.000 SKUs | Toolbox Dev Design';
+        $pageDescription = 'Guia de estrutura de URLs amigáveis para catálogos de materiais de construção de grande porte. Hierarquia, slugs, crawl budget e gerenciamento de variações.';
+        $view            = BASE_PATH . '/views/artigos/seo-ecommerce-construcao-urls.php';
+    })(),
+    'artigos/atribuicao-vendas-ga4-utm' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Atribuição de Vendas no GA4: UTM em Massa para Atacarejo | Toolbox Dev Design';
+        $pageDescription = 'Como o UTM em massa salva o ROI do atacarejo. Modelos de atribuição do GA4, taxonomia de campanha multi-loja e integração com WhatsApp Business.';
+        $view            = BASE_PATH . '/views/artigos/atribuicao-vendas-ga4-utm.php';
+    })(),
+    'artigos/acessibilidade-wcag-negocio' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Acessibilidade Digital WCAG como Estratégia de Negócio | Toolbox Dev Design';
+        $pageDescription = 'WCAG além do compliance: contraste, navegação por teclado e alt text como alavancas de SEO, qualidade de código e expansão de mercado.';
+        $view            = BASE_PATH . '/views/artigos/acessibilidade-wcag-negocio.php';
+    })(),
+    'artigos/varejo-phygital-integracao-pdv' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Varejo Phygital: Integração entre PDV Físico e Digital | Toolbox Dev Design';
+        $pageDescription = 'A integração real entre ponto de venda físico e digital em operações de alto volume: estoque em tempo real, Click & Collect, atribuição phygital e dados de loja como insumo de segmentação.';
+        $view            = BASE_PATH . '/views/artigos/varejo-phygital-integracao-pdv.php';
+    })(),
+    'artigos/core-web-vitals-varejo' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Core Web Vitals para Varejistas: Velocidade e Conversão | Toolbox Dev Design';
+        $pageDescription = 'Como LCP, INP e CLS impactam diretamente o faturamento de e-commerce. Dados de ROI por décimo de segundo, otimização de imagens e gestão de scripts de terceiros.';
+        $view            = BASE_PATH . '/views/artigos/core-web-vitals-varejo.php';
+    })(),
 
     // ── Páginas estáticas ────────────────────────────────────────────────────
     'sobre' => (function () use (&$titulo, &$pageDescription, &$view) {

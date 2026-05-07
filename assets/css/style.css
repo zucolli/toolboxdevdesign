@@ -2978,12 +2978,27 @@ body.page-home .content {
     background: #fef3c7;
     color: #92400e;
 }
+.kb-badge--design {
+    background: #fce7f3;
+    color: #9d174d;
+}
+.kb-badge--seo {
+    background: #d1fae5;
+    color: #065f46;
+}
+.kb-badge--performance {
+    background: #ede9fe;
+    color: #4c1d95;
+}
 
 @media (prefers-color-scheme: dark) {
     .kb-badge--marketing    { background: rgba(59,130,246,.18); color: #93c5fd; }
     .kb-badge--desenvolvimento { background: rgba(16,185,129,.18); color: #6ee7b7; }
     .kb-badge--privacidade  { background: rgba(139,92,246,.18); color: #c4b5fd; }
     .kb-badge--varejo       { background: rgba(245,158,11,.18); color: #fcd34d; }
+    .kb-badge--design       { background: rgba(236,72,153,.18); color: #f9a8d4; }
+    .kb-badge--seo          { background: rgba(16,185,129,.18); color: #a7f3d0; }
+    .kb-badge--performance  { background: rgba(139,92,246,.18); color: #ddd6fe; }
 }
 
 .kb-card-title {
