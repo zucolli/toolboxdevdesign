@@ -3139,8 +3139,22 @@ body.page-home .content {
     background: var(--color-bg-secondary);
 }
 
+.topbar-nav-link--kb {
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.topbar-nav-link--kb:hover,
+.topbar-nav-link--kb.active {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-bg-secondary);
+}
+
 @media (max-width: 600px) {
     .topbar-nav-link { padding: 5px 8px; font-size: 0.78rem; }
+    .topbar-nav-link--kb { display: none; }
 }
 
 /* Breadcrumb */
@@ -3175,11 +3189,85 @@ body.page-home .content {
     background: var(--color-bg-secondary);
     border-radius: var(--radius-md);
     border: 1px dashed var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ads-slot::after {
+    content: 'Espaço Publicitário';
+    font-size: 0.7rem;
+    font-family: var(--font-sans);
+    color: var(--color-border);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    pointer-events: none;
 }
 
 .ads-slot--top    { min-height: 90px;  margin-bottom: 16px; }
-.ads-slot--bottom { min-height: 90px;  margin-top: 32px; }
-.ads-slot--sidebar { min-height: 250px; margin-bottom: 16px; }
+.ads-slot--bottom { min-height: 250px; margin-top: 32px; }
+.ads-slot--sidebar { min-height: 600px; margin-bottom: 16px; }
+
+/* Sequential navigation */
+.seq-nav {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+}
+
+.seq-nav-inner {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.seq-nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 18px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--color-text);
+    flex: 1;
+    max-width: 48%;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.seq-nav-item:hover {
+    border-color: var(--color-primary);
+    background: var(--color-surface);
+    text-decoration: none;
+}
+
+.seq-nav-item--next {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.seq-nav-dir {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
+}
+
+.seq-nav-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--color-text);
+}
+
+@media (max-width: 560px) {
+    .seq-nav-inner   { flex-direction: column; }
+    .seq-nav-item    { max-width: 100%; }
+    .seq-nav-item--next { align-items: flex-start; text-align: left; }
+}
 
 /* Tool grid — cards sem footer (ferramentas são simples) */
 .tool-card .kb-card-desc {
