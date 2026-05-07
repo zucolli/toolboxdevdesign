@@ -15,10 +15,14 @@
     <meta property="og:title" content="<?= htmlspecialchars($titulo ?? 'Toolbox Dev Design') ?>">
     <meta property="og:description" content="<?= htmlspecialchars($pageDescription ?? 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.') ?>">
     <meta property="og:url" content="<?= 'https://toolboxdevdesign.com.br' . htmlspecialchars(rtrim(strtok($_SERVER['REQUEST_URI'] ?? '/', '?'), '/') ?: '/') ?>">
+    <meta property="og:image" content="https://toolboxdevdesign.com.br/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= htmlspecialchars($titulo ?? 'Toolbox Dev Design') ?>">
     <meta name="twitter:description" content="<?= htmlspecialchars($pageDescription ?? 'Toolbox de ferramentas gratuitas para desenvolvedores e designers web.') ?>">
+    <meta name="twitter:image" content="https://toolboxdevdesign.com.br/assets/img/og-image.png">
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4547393612131472" crossorigin="anonymous"></script>
