@@ -258,6 +258,26 @@ match ($path) {
         $pageDescription = 'Calcule a significância estatística do seu teste A/B com Z-test bicaudal. Informe visitantes e conversões de cada grupo e obtenha Z-score, P-value e resultado instantaneamente.';
         $view            = BASE_PATH . '/views/ab-test-calculator.php';
     })(),
+    'artigos' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Base de Conhecimento | Toolbox Dev Design';
+        $pageDescription = 'Artigos de profundidade sobre marketing digital, analytics, testes A/B e privacidade LGPD — escritos por Carlos Zucolli, NuAto Comunicação.';
+        $view            = BASE_PATH . '/views/artigos/index.php';
+    })(),
+    'artigos/utm-varejo-alto-volume' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Estratégia de UTM para Varejo de Alto Volume | Toolbox Dev Design';
+        $pageDescription = 'Como grandes redes de varejo organizam dados de campanha com taxonomia UTM estruturada. Padrões de nomenclatura, hierarquia semântica e geração em lote para rastreabilidade total.';
+        $view            = BASE_PATH . '/views/artigos/utm-varejo-alto-volume.php';
+    })(),
+    'artigos/matematica-testes-ab' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'A Matemática por Trás dos Testes A/B | Toolbox Dev Design';
+        $pageDescription = 'Entenda P-value, Z-score e significância estatística sem fórmulas. O que um Diretor de Marketing precisa saber antes de escalar uma variante de teste A/B.';
+        $view            = BASE_PATH . '/views/artigos/matematica-testes-ab.php';
+    })(),
+    'artigos/privacidade-client-side-lgpd' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Privacidade Client-Side e LGPD | Toolbox Dev Design';
+        $pageDescription = 'Por que processar dados no navegador é a única garantia de 100% de conformidade com a LGPD. O risco oculto das ferramentas online server-side e como a arquitetura client-side elimina esse risco.';
+        $view            = BASE_PATH . '/views/artigos/privacidade-client-side-lgpd.php';
+    })(),
     'sobre' => (function () use (&$titulo, &$pageDescription, &$view) {
         $titulo          = 'Sobre | Toolbox Dev Design';
         $pageDescription = 'Conheça a Toolbox Dev Design, suíte gratuita de ferramentas para desenvolvedores e designers, criada por Carlos Zucolli e mantida pela NuAto Comunicação.';

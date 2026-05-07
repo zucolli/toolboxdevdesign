@@ -371,6 +371,36 @@
         </div>
     </section>
 
+
+    <!-- ===== Últimos Artigos ===== -->
+    <section class="home-artigos">
+        <div class="home-artigos-header">
+            <h2 class="home-artigos-title">Artigos de Especialista</h2>
+            <a href="<?= BASE_URL ?>artigos" class="home-artigos-link">Ver todos →</a>
+        </div>
+        <div class="home-artigos-grid">
+
+            <a href="<?= BASE_URL ?>artigos/utm-varejo-alto-volume" class="home-artigo-card">
+                <p class="home-artigo-eyebrow">Marketing &amp; Analytics</p>
+                <h3 class="home-artigo-title">Estratégia de UTM para Varejo de Alto Volume</h3>
+                <p class="home-artigo-meta">6 min de leitura</p>
+            </a>
+
+            <a href="<?= BASE_URL ?>artigos/matematica-testes-ab" class="home-artigo-card">
+                <p class="home-artigo-eyebrow">Otimização &amp; CRO</p>
+                <h3 class="home-artigo-title">A Matemática por Trás dos Testes A/B</h3>
+                <p class="home-artigo-meta">7 min de leitura</p>
+            </a>
+
+            <a href="<?= BASE_URL ?>artigos/privacidade-client-side-lgpd" class="home-artigo-card">
+                <p class="home-artigo-eyebrow">Privacidade &amp; LGPD</p>
+                <h3 class="home-artigo-title">Privacidade Client-Side e Conformidade com a LGPD</h3>
+                <p class="home-artigo-meta">6 min de leitura</p>
+            </a>
+
+        </div>
+    </section>
+
 </div>
 
 <article class="tool-content" style="margin-top: 48px;">
