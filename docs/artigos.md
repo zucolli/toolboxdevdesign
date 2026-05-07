@@ -1,6 +1,6 @@
 # Módulo Artigos (Base de Conhecimento)
 
-**Status:** 🟢 Documentado em 2026-05-07  
+**Status:** 🟢 Atualizado em 2026-05-07 (v4.0 — layout centralizado)  
 **Framework:** PHP 8+ (front controller único — `index.php`)  
 **URL(s):**
 - `/artigos` — listagem KB
@@ -20,15 +20,16 @@ Nenhum. Módulo 100% estático — sem tabelas, sem queries.
 
 | Arquivo | Tipo | Responsabilidade |
 |---------|------|-----------------|
-| `index.php` (linhas 261–280) | Roteador | 4 `case` no `match ($path)` definem `$titulo`, `$pageDescription` e `$view` para cada rota |
+| `index.php` | Roteador | 4 `case` no `match ($path)` definem `$titulo`, `$pageDescription` e `$view` para cada rota |
 | `views/artigos/index.php` | View — KB listing | Grid de cards com os 3 artigos disponíveis |
 | `views/artigos/utm-varejo-alto-volume.php` | View — Artigo 1 | ~950 palavras sobre taxonomia UTM para varejo de alto volume |
 | `views/artigos/matematica-testes-ab.php` | View — Artigo 2 | ~950 palavras sobre P-value, Z-score e significância estatística |
 | `views/artigos/privacidade-client-side-lgpd.php` | View — Artigo 3 | ~950 palavras sobre client-side processing e LGPD |
-| `includes/sidebar.php` (linhas 228–271) | Nav | Seção "Base de Conhecimento" com `data-key="kb"` e 4 links |
-| `views/home.php` (linhas 376–401) | Seção home | Grid `.home-artigos` com 3 cards linkando aos artigos |
-| `assets/css/style.css` (linhas 2626–2860) | CSS | Todas as classes de artigos, KB e home-artigos |
-| `sitemap.xml` | SEO | 4 novas URLs com `priority` 0.8–0.9 e `lastmod` 2026-05-07 |
+| `views/home.php` | Seção home | Grid `.home-artigos` com 3 cards linkando aos artigos |
+| `assets/css/style.css` | CSS | Todas as classes de artigos, KB e home-artigos |
+| `sitemap.xml` | SEO | 4 URLs com `priority` 0.8–0.9 |
+| `includes/breadcrumbs.php` | Componente | Breadcrumb automático: `Início > Base de Conhecimento > [Título]` |
+| `components/contextual-nav.php` | Componente | Prev/Next entre artigos (array `$_ctx_articles`) |
 
 ---
 
@@ -83,24 +84,15 @@ Cada artigo segue o mesmo template HTML (sem arquivo PHP compartilhado — cada 
 
 ---
 
-## Sidebar — Seção KB
-
-```php
-// includes/sidebar.php — data-key="kb"
-// Active state: ($path === 'artigos/slug-do-artigo')
-// 4 links: artigos (index) + 3 artigos
-```
-
----
-
-## Fluxo Principal
+## Fluxo Principal (v4.0 — sem sidebar-left)
 
 1. Usuário acessa `/artigos/utm-varejo-alto-volume`
 2. `.htaccess` → `index.php`
 3. `$path = 'artigos/utm-varejo-alto-volume'`
 4. `match($path)` → define `$titulo`, `$pageDescription`, `$view`
-5. `header.php` + `sidebar.php` (com active state no link correto) + view + `footer.php`
+5. `header.php` (topbar: "Base de Conhecimento" com `.active`) + `sidebar.php` (abre main + breadcrumbs) + view + `contextual-nav.php` + `footer.php`
 6. View renderiza `.article-wrap` com conteúdo estático
+7. Links para ferramentas relacionadas usam `/ferramentas/{slug}` (atualizado em v4.0)
 
 ---
 
@@ -115,10 +107,11 @@ Cada artigo segue o mesmo template HTML (sem arquivo PHP compartilhado — cada 
    })(),
    ```
 2. **`views/artigos/meu-novo-slug.php`** — copiar estrutura de qualquer artigo existente
-3. **`includes/sidebar.php`** — novo `<li>` na seção `data-key="kb"`
+3. **`components/contextual-nav.php`** — adicionar `['slug' => 'artigos/meu-novo-slug', 'name' => 'Título']` no array `$_ctx_articles`
 4. **`views/artigos/index.php`** — novo `.kb-card` na listagem
 5. **`views/home.php`** — atualizar grid (se quiser mostrar na home)
 6. **`sitemap.xml`** — nova entrada `<url>`
+7. **`includes/breadcrumbs.php`** — adicionar `'meu-novo-slug' => 'Label'` em `$_bc_labels`
 
 > Nenhum CSS novo necessário — todas as classes já existem.
 
@@ -139,8 +132,14 @@ Cada artigo segue o mesmo template HTML (sem arquivo PHP compartilhado — cada 
 
 ---
 
+## Decisões Técnicas
+
+- **v4.0 (2026-05-07):** sidebar-left eliminada. Links de ferramentas nos artigos migrados para `/ferramentas/{slug}`. Breadcrumbs automáticos implementados via `includes/breadcrumbs.php`. Prev/Next via `components/contextual-nav.php`.
+
+---
+
 ## Pendências / Próximos Passos
 
 - Adicionar `<article>` schema markup (JSON-LD) para E-E-A-T
 - Considerar data de publicação visível nos cards do KB listing
-- Avaliar breadcrumb `Home > Artigos > Título` para navegação e SEO
+- ~~Avaliar breadcrumb~~ ✅ Implementado em v4.0

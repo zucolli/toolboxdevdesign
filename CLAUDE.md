@@ -33,14 +33,19 @@ git push
 **Front Controller único** — `index.php` é o único ponto de entrada. Ele:
 1. Executa os endpoints de API no topo (antes de qualquer output HTML), cada um com `exit` obrigatório
 2. Roteia views via `match ($path)` com IIFEs que definem `$titulo` e `$view`
-3. Inclui layout: `header.php` → `sidebar.php` → view → `footer.php`
+3. Inclui layout: `header.php` → `sidebar.php` (abre `<main>` + breadcrumbs) → view → `contextual-nav.php` → `footer.php`
 
-**Adicionar uma nova ferramenta exige sempre 4 etapas:**
-1. `index.php` — novo `case` no `match` (e novo bloco de API antes do `match`, se necessário)
-2. `includes/sidebar.php` — novo `<li>` com link e SVG icon inline
-3. `views/nome-da-ferramenta.php` — markup da ferramenta
-4. `assets/js/main.js` — lógica JS no final do arquivo (sem módulos, sem bundler)
-5. `assets/css/style.css` — estilos novos inseridos antes do bloco `Footer`
+**Layout v4.0 (2026-05-07):** grid 2-col (`1fr 300px`), `max-width: 1200px`, centrado. Sidebar-left eliminada. Topbar com `.topbar-inner` centrado + busca. Sidebar-right: NuAto card → widget Ferramentas em Destaque → Fato Curioso → slot AdSense 600px.
+
+**URLs das ferramentas:** `/ferramentas/{slug}`. Slugs antigos `/{slug}` fazem 301 via array `$_tool_slugs` em `index.php`.
+
+**Adicionar uma nova ferramenta exige sempre estas etapas:**
+1. `index.php` — novo `case 'ferramentas/{slug}'` no `match` + bloco 301 no array `$_tool_slugs` + novo bloco de API antes do `match` (se necessário)
+2. `views/nome-da-ferramenta.php` — markup da ferramenta
+3. `assets/js/main.js` — lógica JS no final do arquivo (sem módulos, sem bundler)
+4. `assets/css/style.css` — estilos novos inseridos antes do bloco `Footer`
+5. `components/contextual-nav.php` — adicionar `['slug' => 'ferramentas/{slug}', 'name' => '...']` na categoria correta em `$_ctx_categories`
+6. `includes/breadcrumbs.php` — adicionar `'{slug}' => 'Label'` em `$_bc_labels`
 
 **Endpoints de API PHP** recebem JSON via `php://input`, retornam JSON, encerram com `exit`. Padrão atual:
 - `POST /api/generate-hash` — Bcrypt (cost 12) ou MD5
