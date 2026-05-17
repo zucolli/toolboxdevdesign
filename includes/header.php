@@ -66,7 +66,7 @@
         </a>
         <nav class="topbar-nav" aria-label="Navegação principal">
             <a href="<?= BASE_URL ?>ferramentas" class="topbar-nav-link <?= ($path === 'ferramentas' || str_starts_with($path, 'ferramentas/')) ? 'active' : '' ?>">Ferramentas</a>
-            <a href="<?= BASE_URL ?>artigos" class="topbar-nav-link topbar-nav-link--kb <?= (str_starts_with($path, 'artigos')) ? 'active' : '' ?>">Base de Conhecimento</a>
+            <a href="<?= BASE_URL ?>base-de-conhecimento" class="topbar-nav-link topbar-nav-link--kb <?= ($path === 'base-de-conhecimento' || str_starts_with($path, 'artigos')) ? 'active' : '' ?>">Base de Conhecimento</a>
             <a href="<?= BASE_URL ?>sobre" class="topbar-nav-link <?= ($path === 'sobre') ? 'active' : '' ?>">Sobre</a>
         </nav>
         <form class="topbar-search" action="/ferramentas" method="get" role="search">

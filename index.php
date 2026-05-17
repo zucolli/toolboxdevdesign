@@ -103,6 +103,11 @@ if (in_array($path, $_tool_slugs, true)) {
     exit;
 }
 
+if ($path === 'artigos') {
+    header('Location: /base-de-conhecimento', true, 301);
+    exit;
+}
+
 // ── Artigos novos (dinâmico — fallthrough para o match se slug não estiver no meta) ──
 if (str_starts_with($path, 'artigos/')) {
     $artigoSlug  = preg_replace('/[^a-z0-9\-]/', '', substr($path, 8));
