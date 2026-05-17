@@ -65,6 +65,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Gradientes CSS para Hotsite de Black Friday de Grande Varejista</h3>
+    <p>Um varejista de médio porte especializado em cama, mesa e banho com e-commerce próprio precisava de um hotsite de Black Friday desenvolvido e publicado em 72 horas após aprovação do briefing — prazo comum em varejo sazonal, onde a janela entre decisão e execução é comprimida pela pressão competitiva. O briefing visual aprovado pela diretoria de marketing pedia uma identidade visual intensa com fundo escuro, elementos de urgência em vermelho e destaque para os produtos premium no hero. O desenvolvimento front-end era feito internamente, e o desafio era gerar os valores CSS exatos de gradiente já na especificação técnica, sem ciclos de aprovação de protótipo.</p>
+    <p>Utilizamos o gerador de CSS Gradient para criar e validar os três gradientes principais do hotsite em tempo real durante a reunião de briefing técnico. O gradiente radial do hero — <code>radial-gradient(ellipse at center, #1a1a2e 0%, #000000 100%)</code> — foi ajustado ao vivo com o gestor de e-commerce presente para garantir que a sensação de "foco no produto central" estava correta antes de qualquer linha de código ser escrita. Os badges de desconto usaram um linear-gradient em vermelho com leve direção diagonal (<code>135deg</code>) para criar sensação de profundidade sem competir com o preço exibido em fonte bold branca. Um terceiro gradiente foi aplicado no rodapé para criar transição suave entre o conteúdo e a área de garantias.</p>
+    <p>Com os três valores de gradiente definidos e aprovados antes da fase de desenvolvimento, o hotsite foi codificado, testado e publicado em exatamente 2 horas após o início da implementação — não nas 72 horas inicialmente previstas para aprovações iterativas. A consistência visual entre o mockup aprovado e o resultado final foi de 100% nos gradientes, eliminando os dois ciclos usuais de revisão de cor que normalmente consomem um dia inteiro. A diretora de marketing comentou que foi "a primeira vez que o que aprovamos foi exatamente o que foi ao ar".</p>
+    <ul>
+        <li>3 gradientes definidos e aprovados em reunião de briefing (20 minutos)</li>
+        <li>Hero: <code>radial-gradient</code> com sensação de foco no produto central</li>
+        <li>Badges: <code>linear-gradient 135deg</code> vermelho para profundidade</li>
+        <li>Hotsite desenvolvido e publicado em 2 horas após aprovação (vs. 72h previstas)</li>
+    </ul>
+    <p>Em projetos de varejo sazonal onde o prazo entre briefing e publicação é medido em horas, ter uma ferramenta que gera e valida CSS ao vivo na reunião de aprovação elimina ciclos inteiros de revisão. Gradiente certo desde a primeira vez é questão de processo, não de sorte.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Gradientes suaves em botões de CTA aumentam taxa de clique em comparação com cores sólidas planas — efeito especialmente marcante em campanhas de varejo online. Use gradiente do tom primário para um tom 10–15% mais escuro. Evite gradientes muito dramáticos em banners de tabloide digital, onde o preço precisa ser o protagonista visual sem competição.</p>

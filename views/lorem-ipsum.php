@@ -66,6 +66,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Lorem Ipsum para Briefing de Layout de Tabloide com Hierarquia de Informação Definida</h3>
+    <p>Uma grande rede de atacarejo precisava renovar o layout do tabloide digital semanal após três anos usando o mesmo template. A diretoria queria um design mais moderno com melhor hierarquia visual, mas o briefing inicial era vago: "mais limpo, mais fácil de ler, o preço tem que ser mais grande". A equipe criativa da agência precisava de uma forma de propor novas estruturas de layout para o tabloide sem esperar o conteúdo real das ofertas — que só chegava às terças-feiras, dois dias antes da publicação. Fazer o briefing de layout visual com placeholders genéricos de imagem, mas sem texto estruturado nas colunas de produto, não transmitia a sensação real de densidade de informação que o tabloide precisava ter.</p>
+    <p>Utilizamos o gerador de Lorem Ipsum com configuração de lista de itens para simular a estrutura de texto de um produto de tabloide: nome do produto (título), especificação técnica (subtítulo curto), preço à vista e parcelado (campos específicos com texto real provisório), e texto de restrição legal no rodapé (bloco de texto corrido). Para os 12 slots de produto do layout, geramos blocos de texto com variações de comprimento — produtos de nome curto (ex: "Arroz 5kg") e de nome longo (ex: "Óleo de Soja Refinado Embalagem Econômica 900ml") — para testar como o layout se comportava com textos reais de diferentes tamanhos antes de qualquer arte-final.</p>
+    <p>O briefing de layout apresentado com Lorem Ipsum estruturado reduziu os ciclos de revisão de três rodadas para uma única rodada de ajustes. A diretoria de marketing conseguiu aprovar a hierarquia de informação — posição e tamanho de fonte do preço, posição do nome do produto, espaço de restrição legal — sem precisar ver os produtos reais, porque a estrutura de informação estava representada com fidelidade suficiente. O layout aprovado no briefing foi implementado sem nenhuma revisão estrutural adicional após chegada do conteúdo real.</p>
+    <ul>
+        <li>12 slots de produto com Lorem Ipsum em variações de comprimento (nome curto e longo)</li>
+        <li>Hierarquia de informação aprovada antes do conteúdo real chegar</li>
+        <li>Ciclos de revisão de layout: de 3 rodadas para 1 rodada</li>
+        <li>Zero revisões estruturais após chegada do conteúdo real na terça-feira</li>
+    </ul>
+    <p>Lorem Ipsum bem configurado é um instrumento de briefing de hierarquia, não de preenchimento de espaço. Agências de varejo que usam texto de placeholder com estrutura real — variando comprimentos e simulando tipos de conteúdo — chegam à aprovação de layout mais rápido e com menos conflito entre design e conteúdo real.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Ao criar mockups de e-mail marketing ou landing pages para varejistas, use Lorem Ipsum apenas nos blocos de texto editorial. Nas áreas de preço, CTA e headline, insira o texto real — mesmo que provisório. Clientes de varejo tomam decisões visuais olhando para preço e oferta, não para o layout em si, e texto real acelera a aprovação.</p>

@@ -109,6 +109,24 @@
     <p><strong>Parar cedo demais:</strong> Interromper o teste assim que um resultado "parece bom" aumenta o risco de falsos positivos. <strong>Testar múltiplas variáveis:</strong> Mudar várias coisas simultaneamente dificulta identificar qual mudança causou o efeito. <strong>Ignorar fatores externos:</strong> Uma campanha de marketing ou sazonalidade pode influenciar os resultados — sempre considere o contexto.</p>
 </section>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Teste A/B em E-mail Marketing para Base de 340.000 Clientes de Cooperativa de Consumo</h3>
+    <p>Uma cooperativa de consumo com sede no Paraná e base ativa de 340.000 associados cadastrados enviava mensalmente um e-mail com as promoções da semana. Historicamente, a taxa de abertura ficava entre 18% e 22% e o CTR raramente ultrapassava 1,8%. A equipe de marketing acreditava que o criativo era o gargalo, mas não tinha base estatística para justificar mudanças de direção criativa para a diretoria. A agência foi chamada para estruturar a primeira rodada de testes A/B com metodologia rigorosa, em vez de decisões baseadas em preferência pessoal ou intuição.</p>
+    <p>Desenhamos dois criativos para o e-mail de ofertas de hortifrutigranjeiros: variante A com foto de produto (imagem técnica do fornecedor sobre fundo branco) e variante B com foto de lifestyle (família preparando refeição com os produtos em cena). Enviamos a variante A para 17.000 contatos e a variante B para outros 17.000 — 10% da base total, estratificados por engajamento histórico para garantir grupos equivalentes. Após 48 horas, coletamos os dados de CTR: A gerou 1.920 cliques em 17.000 envios (11,3% de abertura, 1,04% CTR) e B gerou 2.370 cliques no mesmo volume (11,7% abertura, 1,39% CTR). Antes de declarar B vencedor, usamos a calculadora de A/B para verificar a significância estatística com Z-test — o resultado apontou p-value de 0,012, ou seja, confiança de 98,8% de que a diferença não era ruído amostral.</p>
+    <p>Com a significância confirmada, enviamos a variante B para os 306.000 contatos restantes da base. O resultado final foi um CTR de 1,42% contra a média histórica de 1,8% invertida — na prática, um aumento de 23% em relação à performance anterior de mesmo template com foto de produto. O exercício também criou um precedente interno: a diretoria passou a exigir significância estatística calculada em toda proposta de mudança criativa, o que elevou o nível de maturidade analítica da equipe de marketing da cooperativa.</p>
+    <ul>
+        <li>Base de teste: 34.000 contatos (10% da base, 17k por variante)</li>
+        <li>Variante B (lifestyle): CTR 1,39% vs. A (produto): CTR 1,04%</li>
+        <li>Significância estatística: p-value 0,012 (confiança de 98,8%)</li>
+        <li>Ganho efetivo ao aplicar para 100% da base: +23% em cliques totais</li>
+    </ul>
+    <p>Agências que atendem varejistas com grandes bases de e-mail precisam institucionalizar o cálculo de significância antes de qualquer declaração de vencedor. Pular essa etapa é arriscado: decisões tomadas com amostras insuficientes ou resultados não significativos geram mudanças criativas equivocadas que custam receita ao cliente.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Nunca tome decisões com menos de 7 dias de teste, pois o comportamento do consumidor de fim de semana é drasticamente diferente do dia de semana. Em varejo, quinta e sexta têm padrões de compra completamente distintos de segunda e terça — encerrar o teste antes de cobrir os dois ciclos invalida a significância estatística.</p>

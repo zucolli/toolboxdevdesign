@@ -111,6 +111,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Geração de Variações de Subject de E-mail para Grande Varejista de Eletrodomésticos</h3>
+    <p>Uma rede varejista de eletrodomésticos com atuação em quatro estados precisava aumentar a taxa de abertura de e-mail marketing em campanhas sazonais — especificamente nas datas de Dia das Mães e Volta às Aulas, onde a concorrência por atenção na caixa de entrada é maior do que em qualquer outro período. A taxa de abertura histórica ficava em torno de 19,4%, mas em datas comemorativas caía para 15% porque o subject "promocional" se confundia visualmente com dezenas de outras comunicações. A equipe de CRM não tinha recursos para contratar um copywriter dedicado e dependia de um briefing semanal para a agência, o que criava um gargalo de 48 horas entre a aprovação de campanha e a saída do e-mail.</p>
+    <p>A NuAto introduziu o gerador de copy no fluxo de trabalho do analista de CRM do cliente como ferramenta de aceleração de briefing. Para cada campanha, o analista usa o gerador para produzir entre 8 e 12 variações de subject line em diferentes abordagens — urgência, benefício direto, curiosidade, social proof — em menos de cinco minutos. Dessas variações, ele seleciona 3 finalistas e as envia ao gestor de marketing para escolha rápida sem necessidade de reunião. As 3 selecionadas são então divididas em um teste A/B/C com 10% da base (aproximadamente 28.000 contatos), e o vencedor é enviado para os 252.000 restantes após 4 horas de apuração.</p>
+    <p>Em seis semanas de uso do fluxo com o gerador, a taxa de abertura nas campanhas sazonais subiu de 15% para 21,3% — um ganho de 42% em relação ao período anterior. O tempo de briefing de subject line caiu de 48 horas para menos de 2 horas. O analista relatou que o principal ganho não foi de velocidade, mas de coragem criativa: com o gerador propondo variações inesperadas, ele passou a testar subjects que jamais teria submetido ao gestor por receio de rejeição, e justamente esses foram os de maior abertura.</p>
+    <ul>
+        <li>8 a 12 variações de subject geradas por campanha em menos de 5 minutos</li>
+        <li>Taxa de abertura sazonal: de 15% para 21,3% (+42%)</li>
+        <li>Tempo de briefing de subject: de 48 horas para menos de 2 horas</li>
+        <li>Teste A/B/C com 10% da base antes de envio para 100%</li>
+    </ul>
+    <p>Toda agência que produz e-mail marketing em escala para varejistas deve incorporar geração de variações de copy no fluxo de criação. A velocidade de produção não é o único ganho — a diversidade de abordagens testáveis é o que sustenta crescimento consistente de métricas de e-mail ao longo do tempo.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em campanhas de varejo, a fórmula PAS (Problema–Agitação–Solução) funciona melhor para produtos de necessidade (tinta, cimento, ferramentas), enquanto AIDA converte mais em produtos de desejo (design, decoração). Para copy de tabloide digital, concentre o 'A' da Atenção no preço em destaque — em varejo físico e online, o preço é o gatilho de conversão número 1.</p>

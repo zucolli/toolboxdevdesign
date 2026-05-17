@@ -56,6 +56,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Padronização de Nomenclatura de Campanhas em Múltiplos Canais de Grande Rede Varejista</h3>
+    <p>Uma grande rede varejista com operação em seis estados rodava campanhas simultâneas em Google Ads, Meta Ads, e-mail marketing e tabloide digital para a mesma data sazonal — Dia das Mães — com nomenclatura completamente inconsistente entre canais. O Google Ads nomeava a campanha como "Black Friday" na plataforma, o Meta Ads usava "black friday", a planilha de controle de tabloide registrava "BLACK FRIDAY" e o sistema de e-mail marketing tinha "Dia das Maes 2024". Quando o analista de dados tentou consolidar os resultados no GA4 para apresentar o ROI total da data comemorativa, encontrou quatro linhas separadas de fonte de dados que representavam a mesma campanha — impossibilitando qualquer análise de performance consolidada sem limpeza manual.</p>
+    <p>A NuAto criou um protocolo de nomenclatura de campanha a partir de um padrão definido em documento interno e implementado com o Case Converter como ferramenta de aplicação prática. A regra estabelecida foi: <strong>kebab-case para parâmetros UTM</strong> (ex: <code>dia-das-maes-2024</code>) e <strong>Title Case para nomes de campanha nas plataformas</strong> (ex: <code>Dia Das Maes 2024</code>) — consistente entre Google Ads, Meta Ads e sistema de e-mail. Para a migração das campanhas existentes, o analista de mídia converteu todos os nomes usando o Case Converter, campo por campo, evitando erros de digitação na conversão manual. A ferramenta foi especialmente útil nos nomes de UTM, onde um hífen no lugar errado gera uma linha separada no relatório.</p>
+    <p>Após três meses de uso do protocolo de nomenclatura padronizada, os relatórios de atribuição no GA4 passaram a consolidar corretamente por campanha — eliminando completamente as linhas duplicadas que antes somavam 18% do total de linhas no relatório de aquisição. A equipe de análise de dados reduziu em 4 horas semanais o tempo dedicado a limpeza e normalização de dados de campanha, tempo que passou a ser investido em análise efetiva. A diretoria passou a receber relatórios de performance de data comemorativa consolidados em uma página, em vez de quatro planilhas separadas por canal.</p>
+    <ul>
+        <li>Protocolo definido: kebab-case para UTMs, Title Case para plataformas de mídia</li>
+        <li>18% de linhas duplicadas no GA4 eliminadas após padronização</li>
+        <li>Redução de 4 horas semanais no tempo de limpeza de dados</li>
+        <li>Relatório de ROI por data comemorativa consolidado em uma única visão</li>
+    </ul>
+    <p>A fragmentação de dados por inconsistência de nomenclatura de campanha é um problema silencioso que corrói a qualidade analítica de qualquer operação de varejo multicanal. A padronização de caixa é o passo zero de qualquer estratégia de dados — e implementá-la com uma ferramenta que converte com precisão elimina o erro humano que sempre acompanha conversões manuais.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em feeds de produto para Google Merchant Center, títulos em <em>Title Case</em> têm CTR comprovadamente maior do que em UPPERCASE ou minúsculas. Padronize nomes de produto antes de subir o feed — especialmente em catálogos de materiais de construção onde SKUs chegam do ERP em caixa alta e precisam ser humanizados para converter em buscas orgânicas.</p>

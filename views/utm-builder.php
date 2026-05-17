@@ -88,6 +88,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Treinamento de Equipe de Mídia Paga de Grande Rede de Home Center</h3>
+    <p>Uma rede de home center com 24 lojas no estado de São Paulo decidiu internalizar a gestão de campanhas no Google Ads após dois anos terceirizando completamente para uma agência de performance. A equipe contratada eram dois analistas de mídia recém-formados com conhecimento teórico de UTMs, mas sem experiência prática com a nomenclatura de parâmetros em operações de varejo multicanal. O primeiro problema identificado no onboarding foi a ausência de um padrão: cada analista criava UTMs com convenções próprias — um usava <code>google</code> como utm_source e o outro usava <code>google-ads</code>, gerando relatórios fragmentados no GA4 desde o primeiro dia.</p>
+    <p>A NuAto usou o UTM Builder como ferramenta central do treinamento de nomenclatura. Em vez de entregar um documento de padrões para leitura, fizemos o processo ao contrário: pedimos a cada analista que construísse o primeiro UTM de uma campanha real usando o builder, campo por campo. A interface visual tornou concreto o que antes era abstrato — o analista via em tempo real como o link ia sendo montado e entendia a relação entre cada parâmetro e o que apareceria no relatório. Na sequência, formalizamos um padrão de nomenclatura da agência em um documento de duas páginas referenciando exatamente os valores aceitos em cada campo do builder.</p>
+    <p>Em 30 dias de operação com o padrão implantado, os relatórios de fonte/meio no GA4 deixaram de apresentar linhas duplicadas por variação de nomenclatura — problema que antes afetava 18% das linhas do relatório de aquisição. O padrão criado durante o treinamento com o builder tornou-se o documento base de onboarding de qualquer novo analista na equipe do cliente. A ferramenta funcionou como âncora pedagógica: o conceito abstrato de "parâmetros UTM" virou algo tangível e replicável.</p>
+    <p>Agências que assumem operações de mídia paga interna em varejistas deveriam adotar um builder como primeira ferramenta de alinhamento de nomenclatura. Um padrão definido no início evita meses de dados fragmentados que nunca podem ser recuperados retroativamente.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>No varejo, use sempre o parâmetro <code>utm_content</code> para identificar se o clique veio do preço ou da foto do produto no seu tabloide digital. Em campanhas de Black Friday com múltiplos criativos simultâneos, esse parâmetro revela qual elemento visual realmente converte — e essa informação vale mais do que qualquer teste de suposição.</p>

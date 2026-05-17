@@ -80,6 +80,24 @@ https://meusite.com.br/produto/camiseta"></textarea>
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Tabloide Digital Semanal de Grande Rede de Atacarejo</h3>
+    <p>Uma rede de atacarejo com 38 filiais no Sul e Sudeste publica tabloide digital toda quinta-feira com 60 a 80 produtos em oferta. Cada produto é divulgado em pelo menos quatro canais distintos — e-mail marketing para a base de 280.000 cadastros, stories no Instagram, anúncios no Google Shopping e push notification no app próprio — o que gerava, na prática, mais de 250 links UTM por edição. O processo era feito manualmente por dois analistas ao longo de toda a quarta-feira, resultando em cerca de quatro horas de trabalho repetitivo com taxa de erro de digitação de aproximadamente 12% nos parâmetros.</p>
+    <p>Com a adoção do Bulk UTM Generator, a equipe passou a manter uma planilha de controle com as colunas de URL base, campanha, fonte e meio já preenchidas para cada produto. Na quinta-feira de manhã, o analista de mídia cola as URLs no gerador em lote, revisa os parâmetros na interface, e exporta todos os links em bloco para o sistema de envio de e-mail e para o painel de anúncios. A consistência dos parâmetros passou a ser garantida pela estrutura da ferramenta: qualquer variação em <code>utm_source</code> ou <code>utm_medium</code> que antes passava despercebida agora é imediatamente visível na lista gerada.</p>
+    <p>O resultado foi uma redução do tempo de geração de links de 4 horas para aproximadamente 20 minutos por edição — uma economia de 80% do tempo dedicado a essa etapa. Mais importante: os relatórios de atribuição no GA4 deixaram de apresentar fragmentação por erros de nomenclatura, e a equipe de planejamento passou a ter confiança nos dados de canal para tomar decisões de alocação de verba. Em três meses de uso consistente, a rede identificou que o canal de e-mail gerava 2,3× mais conversões por clique do que os stories no produto "cesta básica", informação que antes se perdia no ruído dos UTMs inconsistentes.</p>
+    <ul>
+        <li>250+ links gerados por edição semanal (60–80 produtos × 4 canais)</li>
+        <li>Redução de 4 horas para 20 minutos no processo de geração</li>
+        <li>Taxa de erro nos parâmetros zerada (era 12% no processo manual)</li>
+        <li>Relatórios de atribuição confiáveis a partir do terceiro mês de uso</li>
+    </ul>
+    <p>Toda agência que atende redes varejistas com tabloides recorrentes deveria estabelecer um protocolo de UTM em lote desde a primeira edição. A consistência de nomenclatura não é uma questão de organização — é um pré-requisito para qualquer análise de performance que oriente decisões de verba com dados reais.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Quando você roda campanhas para múltiplos PDVs ou filiais, use <code>utm_source</code> com o código da loja (ex: <code>loja_sp_mooca</code>). Dessa forma, o relatório no GA4 mostra qual ponto de venda tem melhor performance digital — dado valioso para justificar a distribuição de verba entre unidades em reuniões de planejamento de mídia.</p>

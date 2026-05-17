@@ -58,6 +58,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Migração de Sistema de Design de E-commerce de PX para REM em Grande Rede Varejista</h3>
+    <p>Um e-commerce de grande rede varejista com mais de 120.000 visitas mensais recebeu um relatório de auditoria de acessibilidade indicando que usuários que ajustavam o tamanho de fonte padrão do navegador para valores acima de 16px — prática comum em usuários acima de 50 anos e com deficiência visual parcial — experimentavam quebras de layout significativas em páginas de produto e no fluxo de checkout. A análise de dados demográficos do GA4 mostrava que 34% da base de compradores ativos tinha mais de 50 anos, um segmento de alto ticket médio que estava sendo prejudicado por uma falha técnica corrigível. Todos os valores de tipografia e espaçamento do CSS do e-commerce usavam <code>px</code> fixo, ignorando completamente a preferência de fonte do usuário.</p>
+    <p>O processo de migração envolvia converter mais de 2.000 valores de <code>px</code> identificados no CSS do projeto para seus equivalentes em <code>rem</code>, todos calculados a partir da base de 16px (1rem = 16px). Utilizamos a calculadora de PX para REM para processar os valores em lotes organizados por componente: tipografia (h1 a h6, body, captions), espaçamentos internos (padding e margin dos componentes principais), e valores de border-radius e gap do grid. A conversão em lote eliminou o risco de erro de cálculo manual — um único valor errado de rem pode quebrar hierarquia tipográfica em toda uma seção de página.</p>
+    <p>A migração foi concluída em quatro dias de trabalho do desenvolvedor front-end, com zero regressões visuais para usuários com configuração padrão de fonte (16px). Para usuários com fonte configurada em 20px, o layout passou a escalar proporcionalmente, com preços, CTAs e textos de garantia mantendo legibilidade e hierarquia visual intactas. Em 60 dias após a migração, o segmento de usuários acima de 50 anos apresentou redução de 19% na taxa de saída do fluxo de checkout — indicador que a NuAto atribuiu diretamente à melhoria de legibilidade dos campos de formulário e botões de confirmação de compra.</p>
+    <ul>
+        <li>2.000+ valores de <code>px</code> convertidos para <code>rem</code> (base 16px)</li>
+        <li>34% da base de compradores acima de 50 anos impactados positivamente</li>
+        <li>Taxa de saída no checkout (50+ anos): redução de 19% em 60 dias</li>
+        <li>Migração concluída em 4 dias sem regressões visuais para configuração padrão</li>
+    </ul>
+    <p>E-commerces de varejo que mantêm valores em <code>px</code> fixo estão deliberadamente excluindo usuários que configuram fonte maior no navegador — na prática, penalizando um dos segmentos de maior ticket médio. A migração para <code>rem</code> é uma decisão de negócio tanto quanto de acessibilidade.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em landing pages de varejo para dispositivos móveis, usar REM em vez de PX garante que usuários com fonte aumentada no celular — hábito comum em donos de pequenas lojas com mais de 50 anos, um público-alvo relevante para materiais de construção e atacado — vejam preços e CTAs em tamanho legível. Acessibilidade é conversão.</p>

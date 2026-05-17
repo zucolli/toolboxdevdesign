@@ -67,6 +67,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Justificativa de Verba de Mídia Digital para Diretoria de Grande Rede de Atacarejo</h3>
+    <p>Uma rede de atacarejo com 12 lojas no interior de São Paulo investia R$ 45.000 mensais em mídia digital distribuídos entre Google Ads, Meta Ads e e-mail marketing sem critério claro de alocação — a divisão havia sido definida empiricamente no primeiro contrato e nunca revisada. A diretoria financeira passou a questionar o retorno do investimento em reunião de board trimestral, exigindo uma apresentação que comparasse ROI e ROAS por canal de forma que diretores sem background em marketing pudessem compreender. O desafio era traduzir métricas de plataforma (impressões, CTR, CPC) em linguagem financeira (receita gerada, custo por real investido, break-even).</p>
+    <p>Utilizamos a calculadora de ROI para construir a análise canal a canal com os dados reais dos últimos 90 dias. Para o Google Ads (investimento de R$ 22.000): receita atribuída de R$ 196.000, resultando em ROAS de 8,9× e ROI de 791%. Para Meta Ads (R$ 14.000 investidos): receita de R$ 68.000, ROAS de 4,9× e ROI de 386%. Para e-mail marketing (R$ 9.000 entre plataforma e produção): receita de R$ 112.000, ROAS de 12,4× e ROI de 1.144%. Os cálculos foram apresentados com o ROAS de break-even de cada canal — calculado a partir da margem bruta média de 18% da rede — para mostrar qual canal estava ou não sustentável independente dos números absolutos.</p>
+    <p>A apresentação com os dados estruturados pela calculadora resultou na aprovação de aumento de verba de R$ 45.000 para R$ 60.000 mensais, com a diretoria aceitando realocar recursos do Meta para e-mail e Google Ads com base nos números comparativos. A diretora financeira comentou que foi a primeira vez que a apresentação de marketing "falou a língua de uma DRE". O canal de e-mail, que estava sendo questionado por ter o menor número absoluto de cliques, foi reconhecido como o de maior eficiência por real investido.</p>
+    <ul>
+        <li>Google Ads: ROAS 8,9× — ROI 791%</li>
+        <li>Meta Ads: ROAS 4,9× — ROI 386%</li>
+        <li>E-mail marketing: ROAS 12,4× — ROI 1.144%</li>
+        <li>Resultado: aprovação de aumento de verba de R$ 45k para R$ 60k mensais</li>
+    </ul>
+    <p>Toda agência que apresenta resultado para diretoria de varejista deve traduzir métricas de plataforma para linguagem financeira. ROI e ROAS calculados com rigor — e comparados ao break-even da margem real do negócio — são a única forma de ter conversas produtivas sobre alocação de budget em reunião de board.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em campanhas para grandes varejistas, o ROAS mínimo aceitável varia por categoria: materiais de construção (margem baixa) exige ROAS de 8× ou mais para ser lucrativo; moda e decoração (margem alta) pode ser positivo com ROAS de 3×. Calcule sempre o ROAS de break-even antes de apresentar resultados — ele é mais honesto do que o ROAS bruto e evita discussões difíceis com o cliente.</p>

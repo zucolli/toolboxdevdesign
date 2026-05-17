@@ -58,6 +58,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: QR Codes com UTM por Filial para 200 Lojas de Grande Rede de Home Center</h3>
+    <p>Uma rede de home center com 200 lojas físicas no Brasil decidiu adicionar QR Codes nas etiquetas de prateleira de departamentos de alto ticket — elétrica, hidráulica e revestimentos — para conectar o cliente físico ao conteúdo técnico do site (tutoriais, especificações, comparativos de produto). O desafio operacional era considerável: 200 lojas em 11 estados, cada uma precisando de um QR Code diferente por departamento para que os scans fossem atribuídos corretamente por filial nos relatórios de analytics. Uma solução genérica com um único QR Code para todos faria a iniciativa perder todo o valor analítico.</p>
+    <p>A solução foi gerar um QR Code por combinação de loja e departamento, com a URL de destino incluindo parâmetros UTM estruturados: <code>utm_source=qr-prateleira</code>, <code>utm_medium=offline</code>, <code>utm_campaign=conteudo-tecnico</code> e <code>utm_content=loja-SP-001</code> variando por filial. Para cada uma das 200 lojas, foram gerados QR Codes para 4 departamentos, resultando em 800 URLs únicas. O processo de geração foi feito em lotes utilizando a ferramenta: a equipe de marketing preparou uma planilha com os 800 códigos de filial, montou as URLs com o padrão de UTM definido, e gerou os QR Codes de forma sistemática em sequência, exportando cada imagem nomeada com o código da loja.</p>
+    <p>Após 60 dias da implantação nas prateleiras, os dados de scan por filial revelaram uma distribuição completamente inesperada: 38% de todos os scans vieram de 12 lojas localizadas em cidades do interior de São Paulo com perfil de obras, enquanto as lojas em grandes centros urbanos geravam menos de 15% do total. Essa informação redirecionou a estratégia de conteúdo do site — a equipe passou a priorizar tutoriais de instalação elétrica e hidráulica para obras residenciais em vez de conteúdo de design de interiores, que era a aposta inicial.</p>
+    <ul>
+        <li>800 QR Codes únicos gerados (200 lojas × 4 departamentos)</li>
+        <li>Parâmetro <code>utm_content=loja-SP-001</code> variando por filial para rastreamento granular</li>
+        <li>38% dos scans concentrados em 12 lojas de cidades com perfil de obras</li>
+        <li>Reorientação de estratégia de conteúdo baseada em dados reais de scan por filial</li>
+    </ul>
+    <p>Redes varejistas com operação física em múltiplas filiais que não usam UTMs em QR Codes estão desperdiçando a oportunidade de entender qual PDV gera mais engajamento digital. O dado de scan por loja é tão estratégico quanto o dado de vendas por loja — e hoje é possível capturá-lo com custo operacional próximo de zero.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em tabloides digitais impressos para redes varejistas — encartes de supermercado, materiais de PDV — sempre incorpore UTMs na URL do QR Code antes de gerar. Isso transforma material impresso em dado rastreável: você saberá exatamente quantos clientes escanearam o encarte e o que compraram online depois, conectando o mundo físico ao digital com precisão.</p>

@@ -57,6 +57,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Links de WhatsApp com Mensagem Pré-formatada por Campanha para Rede de Atacarejo</h3>
+    <p>Uma rede de atacarejo com foco em pequenos varejistas e donos de bar e restaurante utilizava WhatsApp Business como canal principal de atendimento comercial — uma escolha pragmática dado que o público-alvo (donos de pequeno comércio) tem alta adesão ao WhatsApp como ferramenta de trabalho. A rede recebia entre 300 e 400 mensagens por semana no canal, gerenciadas por uma equipe de 8 atendentes no SAC comercial. O problema era que 60% das mensagens chegavam sem contexto — apenas "oi" ou "quero saber o preço" — obrigando o atendente a fazer uma série de perguntas de qualificação antes de conseguir entender o produto de interesse ou a campanha que havia gerado o contato. Esse ciclo de qualificação consumia em média 4 mensagens trocadas antes de chegar ao produto correto.</p>
+    <p>A NuAto criou uma estrutura de links de WhatsApp com mensagem pré-formatada específica para cada campanha semanal do tabloide. Para cada produto em destaque no tabloide, foi gerado um link com a mensagem: "Olá! Vi o tabloide da semana e tenho interesse no [nome do produto] por R$[preço]. Pode me dar mais informações?" — uma mensagem que chegava ao atendente com produto, contexto de campanha e intenção de compra já declarados. Os links foram gerados usando a ferramenta de Gerador de Link para WhatsApp, com cada mensagem pré-formatada para o produto específico, e incorporados nos banners clicáveis do tabloide digital publicado no Instagram Stories e no e-mail marketing.</p>
+    <p>Após a primeira quinzena com os links pré-formatados, o número médio de mensagens trocadas antes da qualificação caiu de 4 para 1 — o atendente recebia a mensagem pré-preenchida e já podia responder diretamente com disponibilidade de estoque e condições de pagamento. O tempo médio de atendimento por contato caiu de 12 minutos para 6 minutos, permitindo que a equipe de 8 atendentes absorvesse um aumento de 40% no volume de mensagens sem contratação adicional. A taxa de conversão de contato para pedido fechado subiu de 18% para 27% no mesmo período — atribuída pela equipe comercial à eliminação do atrito inicial que levava clientes a desistir durante a qualificação.</p>
+    <ul>
+        <li>Links com mensagem pré-formatada por produto e campanha (tabloide semanal)</li>
+        <li>Mensagens de qualificação por contato: de 4 para 1 (redução de 75%)</li>
+        <li>Tempo médio de atendimento: de 12 para 6 minutos por contato</li>
+        <li>Taxa de conversão contato → pedido: de 18% para 27% (+50%)</li>
+    </ul>
+    <p>Redes varejistas que usam WhatsApp como canal comercial sem links com mensagem pré-formatada estão desperdiçando capacidade de atendimento e elevando desnecessariamente a taxa de abandono de conversa. A mensagem pré-preenchida é o equivalente digital de um cliente que entra na loja já sabendo o que quer — e esse cliente converte muito mais.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Pré-configure a mensagem do link WhatsApp com contexto completo: nome do produto, campanha e origem (ex: <em>Vim pelo anúncio do Piso Vinílico no Instagram</em>). Isso elimina o atrito inicial da conversa e reduz significativamente o tempo de qualificação do atendente — crítico em operações de alto volume como atacadistas e redes varejistas com dezenas de atendentes simultâneos.</p>

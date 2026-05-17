@@ -75,6 +75,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Placeholders para Aprovação de Layout de Tabloide Digital Antes dos Assets Finais</h3>
+    <p>Uma grande rede de atacarejo publicava tabloide digital semanalmente com 60 a 80 produtos, organizado em um layout de grade com banners em diferentes formatos: banner hero (1200×400px), cards de produto em destaque (620×400px) e banners laterais de categoria (300×250px). O processo tradicional travava na etapa de aprovação de layout: o layout só poderia ser aprovado após os assets finais chegarem da equipe criativa, e a equipe criativa precisava da aprovação do layout para saber quais assets produzir — um ciclo vicioso que atrasava a publicação em média dois dias por edição. Em 52 semanas de tabloide, esses dois dias representavam mais de 100 dias de atraso acumulado ao longo do ano.</p>
+    <p>A NuAto implementou um protocolo de aprovação prévia de layout usando placeholders com dimensões exatas e cores da identidade visual da rede. Utilizando o gerador de Image Placeholder, a equipe produzia mockups do tabloide completo com os placeholders nas posições e dimensões corretas de cada formato — hero em 1200×400px com background na cor primária da marca, cards de produto em 620×400px com fundo neutro cinza, banners laterais em 300×250px. Os textos de preço, nome de produto e CTA eram preenchidos com valores reais provisórios (baseados no planejamento de campanha) enquanto os assets fotográficos ainda estavam em produção. O layout completo era enviado para aprovação da diretoria de marketing 48 horas antes da entrega dos assets.</p>
+    <p>Com o protocolo de aprovação prévia, os ciclos de revisão de layout — que antes consumiam dois dias — foram eliminados do caminho crítico da publicação. A equipe criativa passou a receber o layout aprovado como briefing visual, com dimensões exatas e posicionamento de texto já validados, o que reduziu em 40% o tempo de produção dos assets finais. O tempo médio de publicação do tabloide caiu de 5 dias para 3 dias por edição, liberando a equipe para planejar com mais antecedência.</p>
+    <ul>
+        <li>Formatos padronizados: hero 1200×400px, cards 620×400px, laterais 300×250px</li>
+        <li>Layout aprovado 48h antes da entrega dos assets finais</li>
+        <li>Ciclos de revisão de layout eliminados do caminho crítico</li>
+        <li>Tempo médio de publicação: de 5 dias para 3 dias por edição</li>
+    </ul>
+    <p>Agências que produzem tabloides digitais recorrentes para varejistas devem institucionalizar a aprovação de layout com placeholders dimensionados. Separar "aprovação de estrutura" de "aprovação de assets" é a única forma de paralelizar os dois processos e reduzir o tempo total de publicação sem comprometer a qualidade.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Ao apresentar wireframes de e-commerce para aprovação de clientes varejistas, use placeholders com as dimensões exatas dos seus formatos padrão de banner (ex: <code>1200×628</code> para Facebook/LinkedIn, <code>300×250</code> para Display). Apresentar o layout com proporções corretas elimina retrabalho e alinha expectativa visual antes da produção criativa.</p>

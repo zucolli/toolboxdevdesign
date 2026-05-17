@@ -69,6 +69,24 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Limpeza de Descrições de Produto de PDF de Fornecedor para Importação em E-commerce de Grande Varejista</h3>
+    <p>Um varejista de grande porte especializado em produtos de limpeza e higiene institucional precisava importar um catálogo de 1.400 SKUs de um novo fornecedor para seu e-commerce próprio. O fornecedor enviou as descrições técnicas dos produtos em formato PDF — um catálogo de 180 páginas com fichas técnicas em tabela, formatado para impressão. A equipe de e-commerce extraiu o texto do PDF usando um conversor online e recebeu um arquivo com descrições completamente inutilizáveis: quebras de linha arbitrárias no meio de frases, espaços duplos e triplos entre palavras, travessões substituídos por sequências de caracteres de controle (<code>–</code>), e hifenização de palavras que o PDF havia separado entre linhas para justificação de texto.</p>
+    <p>O processo de limpeza foi estruturado em etapas usando o Text Cleaner para cada lote de 50 produtos. Para cada lote, o analista de conteúdo colava o texto bruto extraído do PDF na ferramenta, aplicava as limpezas de espaços duplos, quebras de linha excessivas e caracteres especiais, e copiava o resultado já limpo diretamente para a planilha de importação do PIM (Product Information Manager). A ferramenta identificava e removia sistematicamente os caracteres invisíveis — especialmente os espaços de não-quebra (<code>&amp;nbsp;</code> codificados como UTF-8) que o conversor de PDF inseriu entre palavras e que causavam bugs no campo de busca do e-commerce ao serem indexados pelo motor de busca interno.</p>
+    <p>A importação dos 1.400 SKUs foi concluída em quatro dias de trabalho — estimativa inicial era de 10 dias se a limpeza fosse manual palavra por palavra. Zero erros de importação foram reportados pelo sistema de PIM na validação final, contra uma taxa histórica de 8% de erro em importações anteriores feitas sem limpeza prévia. O feed de Google Shopping gerado a partir dos dados importados foi aprovado pelo Merchant Center na primeira submissão, sem rejeições por caracteres inválidos em campos de título e descrição.</p>
+    <ul>
+        <li>1.400 SKUs importados com descrições originadas de PDF de fornecedor</li>
+        <li>Tempo de importação: 4 dias vs. 10 dias estimados sem a ferramenta</li>
+        <li>Taxa de erro na importação: 0% vs. histórico de 8% sem limpeza prévia</li>
+        <li>Feed de Google Shopping aprovado na primeira submissão ao Merchant Center</li>
+    </ul>
+    <p>Varejistas que importam catálogos de fornecedores em PDF ou de sistemas legados precisam de um protocolo de limpeza de texto antes de qualquer importação em plataforma de e-commerce. Texto sujo inserido no PIM se propaga para todos os canais de venda downstream — feed de Google Shopping, buscas no site, e-mail de produto — multiplicando o problema a cada exportação.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Ao importar textos de descrição de produto de sistemas de ERP legados para plataformas de e-commerce, sempre passe pelo limpador antes. Espaços duplos, quebras de linha invisíveis e caracteres de controle causam bugs visuais em fichas técnicas e podem silenciosamente quebrar o parse de feeds de produto — problemas que só aparecem depois que o catálogo vai ao ar.</p>
