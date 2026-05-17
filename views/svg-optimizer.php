@@ -112,6 +112,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Otimização de SVGs de Banners para Displays Digitais em Lojas de Grande Rede de Atacarejo</h3>
+    <p>Uma grande rede de atacarejo com 85 lojas implementou um sistema de displays digitais (digital signage) nas faixas de gôndola e totens de entrada. Os banners eram criados pela equipe de design no Adobe Illustrator e exportados como SVG para upload na plataforma de gestão de displays. O problema: cada banner exportado do Illustrator chegava com 600 a 900 KB — carregados com metadados de edição do Adobe (<code>xmlns:dc</code>, <code>xmlns:cc</code>, <code>xmlns:rdf</code>), guias e grades do arquivo, comentários de versão, IDs gerados automaticamente como <code>path4823-2-copy-3</code> e coordenadas de path com 8 casas decimais desnecessárias. Os displays operavam com conexão 4G limitada, e o carregamento dos banners estava levando 8 a 12 segundos — tempo suficiente para um cliente passar pela gôndola sem ver a promoção.</p>
+    <p>Adotamos o Otimizador SVG como etapa obrigatória antes de qualquer upload para a plataforma de displays. O fluxo de otimização removia sistematicamente todos os metadados de editores, IDs não referenciados, comentários e namespaces desnecessários, além de arredondar as coordenadas de path para 2 casas decimais. O resultado foi consistentemente dramático: banners de 800 KB saíam com 38 a 52 KB — uma redução média de 94%. O maior ganho individual foi um banner de promoção do Dia dos Pais com 847 KB que saiu com 41 KB após otimização, mantendo qualidade visual perfeita em tela de 55 polegadas.</p>
+    <p>Com os SVGs otimizados, o tempo de carregamento nos displays caiu para menos de 1 segundo mesmo em conexões 4G de baixa qualidade. A rede reportou aumento de 12% nas vendas das categorias promovidas via displays nos dois meses seguintes — um resultado que a equipe comercial atribuiu parcialmente à melhora na velocidade de exibição dos banners (a promoção estava sendo vista antes do cliente tomar a decisão na gôndola). O processo de upload passou a incluir a etapa de otimização como obrigatória no manual de operação dos displays.</p>
+    <p>Para qualquer rede varejista com digital signage, o tamanho dos assets é tão crítico quanto o design. Um banner lindo que carrega em 10 segundos é menos eficaz do que um banner simples que aparece instantaneamente. Otimização de SVG é infraestrutura invisível que impacta diretamente a eficácia do ponto de venda digital.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em e-mails de campanha para grandes redes varejistas, ícones e logotipos em SVG otimizados reduzem o peso do e-mail em até 60%. Isso impacta diretamente a taxa de entrega: provedores como Gmail e Outlook penalizam e-mails acima de 100 KB, aumentando a chance de cair no spam — especialmente crítico em disparos para bases de centenas de milhares de contatos.</p>

@@ -87,6 +87,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Padronização de Queries SQL de Relatórios de Campanha em Grande Rede de Atacarejo</h3>
+    <p>Ao assumir a conta de uma grande rede de atacarejo, herdamos um repositório de relatórios SQL com mais de 340 queries desenvolvidas por 7 analistas diferentes ao longo de 3 anos. Cada analista tinha seu estilo: alguns usavam palavras-chave em maiúsculas, outros em minúsculas, indentação com 2 espaços, 4 espaços ou tabs, aliases de tabela criativos como <code>t1</code>, <code>tbl</code> ou sem alias algum. Queries críticas de apuração de performance de campanha estavam ilegíveis — uma delas tinha 180 linhas sem uma única quebra de linha consistente. Qualquer manutenção exigia reescrever mentalmente a lógica antes de entender o que a query fazia.</p>
+    <p>Estabelecemos o Formatador SQL como etapa obrigatória no processo de code review do time. Toda query nova ou modificada deveria ser formatada antes de ser submetida para revisão — sem exceção. Criamos um guia interno de 2 páginas com os padrões adotados (keywords em maiúsculas, indentação de 4 espaços, aliases descritivos como <code>p</code> para produtos e <code>v</code> para vendas, uma cláusula por linha no <code>WHERE</code>). As 340 queries do repositório legado foram formatadas em lotes durante um sprint dedicado, com cada analista responsável pelo seu conjunto histórico.</p>
+    <p>O impacto foi mensurável: o tempo médio de revisão de queries caiu de 22 minutos para 8 minutos por query. Dois bugs críticos foram descobertos durante a reformatação — uma query de comissão de vendedores com um <code>LEFT JOIN</code> que deveria ser <code>INNER JOIN</code> (gerando pagamento indevido de comissão) e uma query de inventário com um <code>GROUP BY</code> faltando que inflava os totais por fator 3x. Esses bugs existiam há meses no código não formatado e eram invisíveis na leitura rápida.</p>
+    <p>Para agências que entregam relatórios de BI e performance para varejistas, SQL não formatado é risco operacional real. Formatação consistente não é questão estética — é a diferença entre um bug que passa despercebido por meses e um que é capturado em revisão antes de ir para produção.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Antes de rodar qualquer query de atualização em massa em banco de e-commerce (ex: <code>UPDATE produtos SET preco = preco * 0.9</code>), formate e revise o SQL completo com atenção ao <code>WHERE</code>. Um filtro faltando em uma query de desconto pode zerar a margem de todo o catálogo em segundos. Formatação é a primeira linha de defesa contra desastres silenciosos.</p>

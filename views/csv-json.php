@@ -73,6 +73,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Conversão de Planilha de Preços de Promoção para Importação no E-commerce</h3>
+    <p>A equipe comercial de um grande supermercado regional com 45 lojas enviava semanalmente uma planilha Excel com os preços promocionais da semana — em média 1.200 produtos — para a equipe de e-commerce atualizar no sistema. O arquivo era exportado do Excel como CSV pela equipe comercial, que não tinha treinamento técnico e usava versões diferentes do Office em Windows e Mac. O resultado era um CSV diferente a cada semana: às vezes com BOM UTF-8 no início, às vezes em codificação Latin-1, campos de preço com vírgula decimal dentro de aspas que quebravam o parser, e nomes de produtos com caracteres especiais truncados. A equipe de e-commerce gastava em média 3 horas toda segunda-feira apenas para limpar e importar esses dados.</p>
+    <p>Usamos o Conversor CSV→JSON para estabelecer um fluxo padronizado. A ferramenta lidava automaticamente com o BOM UTF-8, interpretava corretamente campos entre aspas com vírgulas internas (como preços no formato <code>"1.299,90"</code>) e normalizava o encoding. O JSON gerado era então consumido por um script de importação no e-commerce que mapeava os campos da planilha para os campos da API da plataforma. O fluxo completo foi documentado com capturas de tela para que a equipe de e-commerce pudesse executar sem suporte técnico.</p>
+    <p>O tempo de importação semanal caiu de 3 horas para 25 minutos — uma redução de 86%. Os erros de importação (produtos com preço zerado, descrições cortadas, SKUs duplicados) caíram de uma média de 47 por semana para menos de 3. Nos meses seguintes, o mesmo fluxo foi adaptado para outras fontes de dados do cliente: relatórios de estoque do sistema de logística e dados de performance de categorias do ERP. O aprendizado central foi que o problema não era a planilha — era a falta de um conversor que tolerasse a imperfeição real do dado de origem.</p>
+    <p>Em operações de varejo, dados nunca chegam limpos. Qualquer fluxo de importação de dados que dependa de um CSV "perfeito" vai falhar semanalmente. Ter uma camada de conversão tolerante a falhas de encoding, BOM e formatação regional é o que separa um processo estável de um incêndio recorrente.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em operações de varejo de médio e grande porte, dados de performance de campanha vivem em planilhas Excel. Converter o CSV do relatório para JSON antes de importar no sistema analítico mantém histórico estruturado e permite cruzamento entre Google Ads, Meta e e-mail em uma única fonte de verdade — sem depender de integrações pagas de BI.</p>

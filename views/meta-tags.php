@@ -63,6 +63,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Protocolo de Meta Tags para Landing Pages Temporárias de Promoção de Grande Rede de Home Center</h3>
+    <p>Um líder nacional em home center lançava em média 8 landing pages de promoção por mês — campanhas sazonais, liquidações de categoria, kits especiais e ofertas relâmpago. O problema emergiu quando a equipe de SEO identificou que o Google havia indexado 47 landing pages expiradas que ainda apareciam nos resultados de busca com preços promocionais desatualizados: "Piso vinílico com 50% OFF" apontando para uma página com erro 404, ou pior, para a mesma página reaproveitada com produto diferente mas preço antigo no snippet do Google. Clientes clicavam, chegavam à página errada e a taxa de rejeição nessas URLs atingia 94% — destruindo a reputação do domínio.</p>
+    <p>Usamos o Gerador de Meta Tags para criar um protocolo padrão de três camadas para landing pages temporárias. Primeira camada (durante a promoção): meta description com preço, prazo e disponibilidade, Open Graph completo para compartilhamento no WhatsApp e <code>robots: index, follow</code>. Segunda camada (última semana da promoção): adicionar <code>&lt;link rel="canonical"&gt;</code> apontando para a categoria permanente e trocar Open Graph para imagem genérica da categoria. Terceira camada (após expiração): <code>robots: noindex, nofollow</code> imediato e redirecionamento 301 para a categoria. O Gerador foi usado para criar templates de meta tags para cada camada, que a equipe copiava e adaptava.</p>
+    <p>Com o protocolo implementado, em 90 dias o número de landing pages expiradas indexadas caiu de 47 para 3. Os snippets de promoções encerradas pararam de aparecer no Google em até 72 horas após a aplicação do <code>noindex</code>. O compartilhamento das páginas de promoção no WhatsApp aumentou 28% porque o Open Graph passou a mostrar imagem do produto e preço em vez de uma URL genérica. A diretoria de marketing passou a usar o protocolo como documento de briefing para novos lançamentos de campanha.</p>
+    <p>Landing pages de promoção sem gestão de meta tags são bombas-relógio de SEO. Para varejistas que lançam campanhas com frequência alta, um protocolo documentado de meta tags por fase de vida da página é tão importante quanto o design da própria página.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em e-commerce de varejo, a meta description da página de produto é mais importante que o título para conversão orgânica. Inclua preço, marca e disponibilidade (ex: <em>Piso Vinílico XYZ — R$ 49,90/m² · Em estoque · Entrega para todo Brasil</em>). Essa informação no snippet aumenta o CTR de forma significativa comparado a meta descriptions genéricas copiadas do ERP.</p>

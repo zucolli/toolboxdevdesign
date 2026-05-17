@@ -76,6 +76,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Correção de UTMs Quebrados em Campanha de E-mail de Grande Varejista</h3>
+    <p>Uma grande rede varejista de móveis e decoração com presença nacional realizou uma campanha de e-mail marketing para sua base de 1,2 milhão de contatos ativos em maio. Três semanas após o disparo, ao analisar os relatórios de performance no GA4, identificamos que os dados de origem da campanha estavam completamente fragmentados: em vez de aparecer como uma única campanha coerente, o tráfego estava distribuído em dezenas de fontes diferentes como <code>utm_campaign=black%2520friday</code>, <code>utm_campaign=black friday</code> e <code>utm_campaign=black+friday</code> — três variações do mesmo valor, todas geradas por erro de encoding duplo ou ausente no momento da criação dos links.</p>
+    <p>O problema havia começado quando a equipe de CRM exportou os links de rastreamento de uma planilha Excel para a plataforma de e-mail. O Excel havia feito um encoding automático parcial dos valores ao salvar, e a plataforma de e-mail fez um segundo encoding por cima — resultando em <code>%2520</code> (o <code>%</code> do <code>%20</code> sendo ele mesmo encodado). Usamos o Decodificador URL para inspecionar cada link da campanha, revelar o encoding real de cada parâmetro e identificar exatamente onde a cadeia de encoding havia quebrado. A visualização decodificada deixou imediatamente claro quais links estavam com encoding duplo e quais estavam sem encoding algum.</p>
+    <p>Três semanas de dados de campanha haviam sido contaminados de forma irrecuperável — o GA4 já havia registrado as sessões com os parâmetros incorretos, e não há como corrigir dados históricos retroativamente. Para as semanas seguintes, implementamos um protocolo de validação obrigatória: cada link é decodificado e inspecionado antes de entrar na plataforma de e-mail. A ferramenta passou a fazer parte do checklist de go-live de toda campanha de e-mail. Estimamos que 35% do tráfego da campanha original ficou sem atribuição correta.</p>
+    <p>URLs de campanha com parâmetros UTM são frágeis por natureza — qualquer ferramenta intermediária (Excel, planilha Google, CRM, plataforma de e-mail) pode introduzir encoding incorreto sem nenhum aviso. Decodificar e verificar cada URL antes do disparo é o único jeito de garantir que os dados de retorno da campanha sejam confiáveis.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Ao criar links de rastreio com múltiplos parâmetros <code>utm_</code>, nunca encode a URL inteira — encode apenas os valores de cada parâmetro individualmente. Um erro aqui faz o GA4 registrar a URL completa como parâmetro em vez de rota, poluindo seus relatórios de campanha com dados completamente inúteis e impossíveis de corrigir retroativamente.</p>

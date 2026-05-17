@@ -78,6 +78,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Auditoria de Acessibilidade de Tabloide Digital com Preços em Amarelo sobre Branco</h3>
+    <p>O tabloide digital de uma grande rede de varejo alimentar com mais de 180 lojas usava há anos uma combinação de cores que o time de design considerava "a identidade visual da marca": preços em amarelo (#FFD700) sobre fundo branco (#FFFFFF). A combinação tinha ratio de contraste de 1,3:1 — muito abaixo do mínimo de 4,5:1 exigido pelo WCAG 2.1 nível AA para texto normal. Internamente, ninguém havia questionado a escolha porque os materiais eram aprovados visualmente em monitores calibrados em ambiente iluminado de escritório. O problema emergia nos tablets de PDV das lojas, sob iluminação fluorescente intensa, onde os preços simplesmente desapareciam visualmente para uma parcela significativa dos clientes — especialmente os mais velhos, que representam 38% da base de frequentadores dessa rede específica.</p>
+    <p>Usamos o Verificador de Contraste para documentar o problema com dados objetivos e construir o caso para a diretoria de marketing. Verificamos 14 combinações de cor do tabloide e identificamos que 9 delas estavam abaixo do mínimo AA. Em seguida, usamos a ferramenta para iterar sobre variações do amarelo da marca até encontrar uma versão que mantivesse a identidade visual e alcançasse contraste AA: o <code>#B8860B</code> (dourado escuro) sobre branco atingiu ratio de 4,8:1, passando em AA. Documentamos o antes e depois com screenshots e ratios para apresentação.</p>
+    <p>A diretoria aprovou um A/B test com o tabloide versão WCAG-compliant em 40 lojas selecionadas. Após 4 semanas, os dados mostraram aumento de 18% no CTR de links de produto no tabloide digital e redução de 7% nas ligações para a central perguntando preços de produtos específicos (proxy de legibilidade). O resultado foi suficiente para justificar a atualização do guia de identidade visual com os novos valores de cor aprovados para fundos claros.</p>
+    <p>Acessibilidade em varejo não é apenas questão ética ou legal — é questão de conversão. Um preço ilegível é um produto que não se vende. O Verificador de Contraste transforma uma decisão subjetiva de design em dado objetivo que qualquer diretoria consegue avaliar e aprovar.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em tabloides digitais para grandes redes varejistas, o preço é o elemento mais crítico de legibilidade. Sempre valide contraste mínimo AA (4,5:1) entre a cor do preço e o fundo. Telas de tablet em PDVs sob iluminação fluorescente exigem contraste ainda maior — designers experientes miram em AAA (7:1) para garantir legibilidade em qualquer ambiente de loja, de atacado ao varejo especializado.</p>

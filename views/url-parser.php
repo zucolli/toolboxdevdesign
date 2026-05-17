@@ -82,6 +82,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Auditoria de 500+ URLs de Campanha de Grande Rede para Padronização UTM</h3>
+    <p>Ao assumir a gestão de mídia de uma grande rede de farmácias com 320 unidades, recebemos um repositório histórico com mais de 500 URLs de campanha geradas por três equipes diferentes ao longo de 18 meses: a agência de mídia paga, a equipe interna de e-mail marketing e o time de redes sociais. Cada equipe havia criado suas próprias convenções de UTM sem coordenação — o parâmetro <code>utm_medium</code> aparecia como <code>cpc</code>, <code>paid</code>, <code>google-ads</code> e <code>pago</code> para referir-se à mesma origem. O <code>utm_source</code> tinha 23 variações diferentes para Google e 11 para Meta. Os relatórios no GA4 eram completamente incoerentes — impossível comparar performance entre canais ou períodos.</p>
+    <p>Usamos o Parser de URL para dissecar cada uma das 500+ URLs e extrair sistematicamente os valores de todos os parâmetros UTM. Processávamos cada URL individualmente, copiávamos os parâmetros decompostos para uma planilha de auditoria e classificávamos as inconsistências. A ferramenta foi essencial porque tornava imediatamente visível a estrutura de cada URL sem precisar decodificar manualmente — o que seria inviável em escala. Em 4 horas de trabalho analítico, mapeamos todas as inconsistências e criamos uma tabela de normalização com os valores canônicos para cada combinação de canal.</p>
+    <p>O resultado foi um documento de governança de UTM de 8 páginas com a taxonomia oficial da rede: 4 fontes válidas, 6 meios válidos e uma convenção obrigatória de nomenclatura de campanha no formato <code>AAAA-MM_PRODUTO_OBJETIVO</code>. As URLs antigas foram reclassificadas com filtros no GA4 (para dados históricos) e todas as campanhas novas passaram a usar o padrão. Em 6 meses de dados limpos, o custo por conversão atribuído caiu 22% — não porque as campanhas melhoraram, mas porque o GA4 finalmente conseguia atribuir corretamente o crédito de conversão ao canal real.</p>
+    <p>Governança de URL é uma das iniciativas de maior impacto em ROI que uma agência pode entregar para um varejista com múltiplos canais. O Parser de URL transforma o que seria uma análise manual exaustiva em um processo sistematizado e repetível.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Antes de lançar qualquer campanha de mídia paga para grandes varejistas, use o parser para auditar todas as URLs de destino. Uma landing page com parâmetros UTM quebrados ou um redirecionamento inesperado pode desperdiçar dezenas de milhares de reais em verba sem gerar nenhum dado de retorno. Auditoria de URL é a primeira checklist antes de qualquer go-live.</p>

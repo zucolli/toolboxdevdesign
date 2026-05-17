@@ -84,6 +84,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Migração de MD5 para BCrypt em Portal de Fornecedores de Grande Rede de Atacarejo</h3>
+    <p>Durante uma auditoria de segurança em um portal B2B de grande rede de atacarejo com mais de 800 fornecedores cadastrados, identificamos que todas as senhas estavam armazenadas como hashes MD5 sem salt — um algoritmo quebrado desde 2004 e trivialmente reversível com tabelas rainbow disponíveis gratuitamente na internet. O portal dava acesso a notas fiscais, pedidos de compra e dados financeiros sensíveis de toda a cadeia de suprimentos. O risco não era hipotético: qualquer vazamento do banco de dados (mesmo por um backup mal protegido) exporia 100% das senhas em minutos.</p>
+    <p>O Gerador de Hash foi usado em duas fases. Primeiro, para demonstrar para a diretoria de TI do cliente a diferença real entre os algoritmos: geramos o MD5 de uma senha simples e mostramos que ferramentas online a revertem em segundos; depois geramos o BCrypt cost 12 da mesma senha e explicamos que a reversão levaria anos em hardware dedicado. Segundo, para validar o padrão de hash escolhido (BCrypt cost 12) antes de implementar o script de migração. O processo foi verify-then-rehash: no login, o sistema verificava se o hash existente era MD5 e, se fosse, rehasheava automaticamente para BCrypt após autenticação bem-sucedida.</p>
+    <p>A migração transparente levou 47 dias para cobrir 92% da base ativa de fornecedores sem nenhuma notificação de troca de senha. Os 8% restantes (contas inativas) foram forçados a redefinir senha no próximo acesso. Nenhum fornecedor registrou problema durante o processo. O relatório final de auditoria foi apresentado ao conselho da empresa como case de melhoria de segurança proativa, evitando o que poderia ter sido uma multa significativa sob a LGPD em caso de vazamento documentado.</p>
+    <p>Agências de marketing que desenvolvem ou mantêm portais B2B para varejistas têm responsabilidade direta sobre a segurança dos dados dos parceiros comerciais do cliente. Implementar BCrypt não é complexidade desnecessária — é o mínimo responsável para qualquer sistema com autenticação por senha em 2025.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Nunca armazene senhas com MD5. Em sistemas corporativos, mesmo que seja apenas um acesso de painel de campanha, o vazamento de um hash MD5 pode comprometer toda a rede em minutos. Use sempre Bcrypt com cost ≥ 12 para qualquer senha que precise ser verificada servidor a servidor — o custo computacional extra é a proteção contra força bruta.</p>

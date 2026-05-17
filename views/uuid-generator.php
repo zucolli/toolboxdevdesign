@@ -75,6 +75,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Substituição de IDs Sequenciais por UUIDs em Sistema de Cupons de Cashback</h3>
+    <p>Uma cooperativa de consumo com faturamento bilionário lançou um programa de cashback digital com cupons individuais enviados por SMS para os 800.000 membros da base ativa. Os cupons eram gerados com IDs sequenciais no formato <code>CASH-2024-001</code>, <code>CASH-2024-002</code>... até <code>CASH-2024-800000</code>. Em menos de 72 horas após o lançamento, a equipe de segurança identificou tentativas de uso de cupons nunca enviados — usuários simplesmente incrementando o número do cupom para tentar resgatar benefícios de outros membros. Em 3 dias, foram bloqueadas 4.200 tentativas de fraude por adivinhação de ID, e pelo menos 180 resgates fraudulentos haviam sido processados antes da detecção, gerando um prejuízo direto de R$ 27.000 em cashback indevido.</p>
+    <p>A correção emergencial foi substituir todos os IDs por UUIDs v4 gerados criptograficamente. Usamos este Gerador de UUID para validar o formato e gerar amostras para os testes de integração antes de implementar a mudança em produção. O UUID v4 tem 122 bits de aleatoriedade — a probabilidade de adivinhar um UUID válido é estatisticamente equivalente a zero para qualquer atacante prático. A migração incluiu invalidar todos os 800.000 cupons originais e reenviar novos por SMS em lotes de 50.000 ao longo de 16 horas, evitando sobrecarga no gateway de SMS.</p>
+    <p>Após a migração, as tentativas de fraude por adivinhação caíram para zero em 48 horas. O sistema de monitoramento que havia capturado os ataques continuou ativo e, nos 6 meses seguintes, não registrou nenhuma tentativa bem-sucedida de adivinhação de cupom. O custo técnico da migração (desenvolvimento, SMS de reenvio, operação) foi de aproximadamente R$ 45.000 — menos do que o prejuízo teria sido se a vulnerabilidade continuasse ativa por mais 3 semanas.</p>
+    <p>Sistemas de cupom, voucher e cashback são alvos primários de fraude em varejo. Usar IDs sequenciais em qualquer identificador que tenha valor monetário associado é uma vulnerabilidade crítica que não requer sofisticação técnica para explorar — qualquer usuário com um loop de browser pode fazê-lo. UUID v4 é o mínimo de proteção aceitável.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Em sistemas de cupom ou sorteio para campanhas de varejo, gere UUIDs v4 para cada participante em vez de IDs sequenciais. IDs sequenciais são previsíveis: um usuário mal-intencionado pode tentar <code>cupom_1001</code>, <code>cupom_1002</code> e assim por diante. UUIDs criptograficamente gerados tornam força bruta inviável mesmo em campanhas de milhões de participantes.</p>

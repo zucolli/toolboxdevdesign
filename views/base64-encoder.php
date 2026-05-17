@@ -76,6 +76,18 @@
     </section>
 </article>
 
+<section class="varejo-real">
+    <div class="varejo-real-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Como Usamos Isso na NuAto</span>
+    </div>
+    <h3>Cenário: Hotsite de Black Friday com Assets Críticos em Ambiente CORS Restritivo</h3>
+    <p>Durante a preparação do hotsite de Black Friday de uma grande rede de varejo de eletrodomésticos, enfrentamos um problema técnico inesperado a 48 horas do lançamento: o servidor de produção do cliente operava atrás de um proxy corporativo com política de CORS extremamente restritiva que bloqueava requisições a domínios externos — incluindo o nosso CDN onde estavam hospedados o logo da campanha, o badge de "50% OFF" e os ícones de categorias. Em ambiente de homologação tudo funcionava, mas em produção os assets simplesmente não carregavam, quebrando visualmente toda a identidade da campanha. A janela de Black Friday não permitia reconfigurações de infraestrutura.</p>
+    <p>A solução foi converter todos os assets críticos para Base64 e embutir diretamente no HTML e CSS. Usamos este Codificador Base64 para processar cada arquivo: o logo SVG da campanha (12 KB), o badge de desconto em PNG (8 KB), os 6 ícones de categorias em SVG e o padrão de fundo em PNG (22 KB). Cada arquivo foi codificado individualmente, e o resultado foi inserido diretamente nos atributos <code>src</code> das tags <code>&lt;img&gt;</code> e nos <code>background-image</code> do CSS como Data URLs. O processo completo levou 40 minutos para os 9 assets envolvidos.</p>
+    <p>O hotsite foi lançado no horário sem nenhum asset quebrado. A campanha gerou R$ 4,2 milhões em vendas no primeiro dia — o melhor resultado de Black Friday da história do cliente até aquele momento. A solução Base64 aumentou o peso da página inicial em cerca de 58 KB, que foi compensado com compressão GZIP no servidor e eliminação de 9 requisições HTTP separadas. O tempo de carregamento em 4G medido pelo PageSpeed ficou em 2,1 segundos, dentro do target estabelecido.</p>
+    <p>Para agências que desenvolvem hotsites de campanha para varejistas com infraestruturas corporativas heterogêneas, ter o fluxo de conversão Base64 como recurso disponível é seguro de emergência. Ambientes de produção de grandes redes frequentemente têm restrições de rede que o ambiente de desenvolvimento nunca reproduz fielmente.</p>
+</section>
+
 <aside class="expert-insight">
     <p class="expert-insight-label">💡 Dica NuAto</p>
     <p>Ao criar banners HTML5 para campanhas de display em redes varejistas com ambientes corporativos, embutir logotipos e badges pequenos via Base64 diretamente no HTML elimina dependência de CDN externo. Isso garante que o criativo seja exibido mesmo em redes com política de bloqueio de domínios de terceiros — problema comum em filiais de grandes atacadistas.</p>
