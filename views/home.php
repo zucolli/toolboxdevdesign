@@ -422,3 +422,86 @@
 
     <p>Para profissionais de marketing digital e desenvolvimento que precisam de agilidade no dia a dia — gerar um UTM durante uma reunião, formatar um JSON no meio de um deploy, checar contraste de cor antes de aprovar um banner — essa confiabilidade faz diferença real. É tecnologia a serviço do trabalho, sem atrito, sem dependências externas e sem riscos de privacidade.</p>
 </article>
+
+<section class="faq-section" style="margin-top:48px;">
+    <h2>Perguntas Frequentes</h2>
+
+    <div class="faq-item">
+        <h3 class="faq-pergunta">Os dados que eu insiro nas ferramentas são enviados para algum servidor?</h3>
+        <p class="faq-resposta">Não. Todas as ferramentas da Toolbox Dev Design processam os dados 100% no seu navegador (client-side), usando JavaScript nativo. Nenhuma informação que você insere — senhas, textos, imagens, JSONs — é transmitida para nossos servidores ou terceiros. O processamento acontece localmente no seu dispositivo e os dados nunca saem da sua máquina.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-pergunta">Preciso criar uma conta para usar as ferramentas?</h3>
+        <p class="faq-resposta">Não. Todas as 33 ferramentas da Toolbox Dev Design são gratuitas e de acesso irrestrito — sem cadastro, sem login, sem planos pagos. Abra a ferramenta, use e feche. É assim que funciona.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-pergunta">As ferramentas funcionam sem internet?</h3>
+        <p class="faq-resposta">Sim, depois do carregamento inicial da página. Como todo o processamento é client-side (JavaScript no navegador), você pode usar as ferramentas offline após carregá-las. Isso é especialmente útil em ambientes com conexão instável ou em viagens.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-pergunta">Quem desenvolveu e mantém a Toolbox Dev Design?</h3>
+        <p class="faq-resposta">A Toolbox foi criada por <a href="/carlos-zucolli">Carlos Zucolli</a>, especialista com 30 anos de experiência em varejo e marketing digital, e é mantida pela <strong>NuAto Comunicação</strong>, agência especializada em soluções digitais para o setor do comércio brasileiro. Cada ferramenta foi criada para resolver problemas reais enfrentados no dia a dia de campanhas para grandes redes de varejo.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-pergunta">Posso usar as ferramentas para fins comerciais?</h3>
+        <p class="faq-resposta">Sim. Todas as ferramentas são de uso livre, inclusive para fins comerciais. Não há restrição de uso. Se você usa alguma ferramenta regularmente no seu trabalho e quer apoiar o projeto, considere compartilhá-lo com colegas — essa é a melhor forma de ajudar.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-pergunta">Onde posso encontrar conteúdo mais aprofundado sobre as ferramentas?</h3>
+        <p class="faq-resposta">Na <a href="/base-de-conhecimento">Base de Conhecimento</a> da Toolbox Dev Design, publicamos estudos de caso e artigos técnicos escritos a partir da experiência real da NuAto com grandes redes de varejo. Lá você encontra casos de uso práticos, protocolos de validação e aprendizados de 30 anos de operações de alto volume.</p>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Os dados que eu insiro nas ferramentas são enviados para algum servidor?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não. Todas as ferramentas processam os dados 100% no navegador (client-side). Nenhuma informação é transmitida para servidores ou terceiros."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Preciso criar uma conta para usar as ferramentas?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não. Todas as 33 ferramentas são gratuitas e de acesso irrestrito — sem cadastro, sem login, sem planos pagos."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "As ferramentas funcionam sem internet?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim, após o carregamento inicial. Como todo o processamento é client-side, as ferramentas funcionam offline."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Quem desenvolveu e mantém a Toolbox Dev Design?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Toolbox foi criada por Carlos Zucolli, especialista com 30 anos de experiência em varejo e marketing digital, e é mantida pela NuAto Comunicação."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Posso usar as ferramentas para fins comerciais?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Todas as ferramentas são de uso livre, inclusive para fins comerciais, sem restrição de uso."
+            }
+        }
+    ]
+}
+</script>

@@ -2509,7 +2509,6 @@ document.addEventListener('click', (e) => {
         searchInput.addEventListener('input', applyFilters);
     }
 
-    // Auto-fill from URL ?q= param (topbar search redirect)
     var urlQ = new URLSearchParams(window.location.search).get('q');
     if (urlQ && searchInput) {
         searchInput.value = urlQ;
@@ -2530,5 +2529,28 @@ document.addEventListener('click', (e) => {
         kbInput.dispatchEvent(new Event('input'));
         kbInput.focus();
         kbInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+})();
+
+// ── Base de Conhecimento Complementar — Filtro por Categoria ───────────────
+(function () {
+    var filterBtns = document.querySelectorAll('.bc-filter-btn');
+    var cards      = document.querySelectorAll('.bc-card');
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) { b.classList.remove('bc-filter-active'); });
+            btn.classList.add('bc-filter-active');
+
+            var filter = btn.dataset.filter;
+            cards.forEach(function (card) {
+                if (filter === 'all' || card.dataset.categoria === filter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
 })();

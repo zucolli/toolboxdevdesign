@@ -103,6 +103,24 @@ if (in_array($path, $_tool_slugs, true)) {
     exit;
 }
 
+// ── Artigos novos (dinâmico — fallthrough para o match se slug não estiver no meta) ──
+if (str_starts_with($path, 'artigos/')) {
+    $artigoSlug  = preg_replace('/[^a-z0-9\-]/', '', substr($path, 8));
+    $artigosMeta = require BASE_PATH . '/includes/artigos-meta.php';
+    $artigoFile  = BASE_PATH . '/views/artigos/' . $artigoSlug . '.php';
+    if (isset($artigosMeta[$artigoSlug]) && file_exists($artigoFile)) {
+        $titulo          = $artigosMeta[$artigoSlug]['titulo'];
+        $pageDescription = $artigosMeta[$artigoSlug]['desc'];
+        $view            = $artigoFile;
+        require BASE_PATH . '/includes/header.php';
+        require BASE_PATH . '/includes/sidebar.php';
+        require $view;
+        require BASE_PATH . '/includes/footer.php';
+        exit;
+    }
+    // Slug não está no meta → deixa o match lidar (artigos estáticos do remote)
+}
+
 match ($path) {
     '' => (function () use (&$titulo, &$pageDescription, &$view, &$bodyClass) {
         $titulo          = 'Toolbox Dev Design — 33 Ferramentas Gratuitas para Dev & Design';
@@ -285,7 +303,7 @@ match ($path) {
         $view            = BASE_PATH . '/views/ab-test-calculator.php';
     })(),
 
-    // ── Artigos ─────────────────────────────────────────────────────────────
+    // ── Artigos (existentes) ────────────────────────────────────────────────
     'artigos' => (function () use (&$titulo, &$pageDescription, &$view) {
         $titulo          = 'Base de Conhecimento | Toolbox Dev Design';
         $pageDescription = 'Artigos de profundidade sobre marketing digital, analytics, testes A/B e privacidade LGPD — escritos por Carlos Zucolli, NuAto Comunicação.';
@@ -340,6 +358,18 @@ match ($path) {
         $titulo          = 'Core Web Vitals para Varejistas: Velocidade e Conversão | Toolbox Dev Design';
         $pageDescription = 'Como LCP, INP e CLS impactam diretamente o faturamento de e-commerce. Dados de ROI por décimo de segundo, otimização de imagens e gestão de scripts de terceiros.';
         $view            = BASE_PATH . '/views/artigos/core-web-vitals-varejo.php';
+    })(),
+
+    // ── Páginas de Autor e KB complementar ──────────────────────────────────
+    'carlos-zucolli' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Carlos Zucolli — Especialista em Tecnologia para o Varejo | Toolbox Dev Design';
+        $pageDescription = '30 anos de experiência em varejo, marketing digital e desenvolvimento de soluções tecnológicas para o comércio brasileiro. Criador da Toolbox Dev Design e sócio da NuAto Comunicação.';
+        $view            = BASE_PATH . '/views/carlos-zucolli.php';
+    })(),
+    'base-de-conhecimento' => (function () use (&$titulo, &$pageDescription, &$view) {
+        $titulo          = 'Base de Conhecimento — Varejo Digital na Prática | Toolbox Dev Design';
+        $pageDescription = 'Estudos de caso e artigos técnicos sobre marketing digital, SEO, segurança e desenvolvimento para o varejo brasileiro — escritos por quem vive o setor há 30 anos.';
+        $view            = BASE_PATH . '/views/base-de-conhecimento.php';
     })(),
 
     // ── Páginas estáticas ────────────────────────────────────────────────────
